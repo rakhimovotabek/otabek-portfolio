@@ -14,16 +14,16 @@ export function HeroMotion({ children }: { children: ReactNode }) {
           "(prefers-reduced-motion: no-preference)",
           () => {
             gsap.from(root.current!.querySelectorAll("[data-hero-reveal]"), {
-              y: 35,
+              y: 16,
               opacity: 0,
-              duration: 0.9,
-              stagger: 0.12,
+              duration: 0.75,
+              stagger: 0.08,
               ease: "power3.out",
               clearProps: "all",
             });
-            gsap.to(root.current!.querySelector(".orbital-art"), {
-              y: -45,
-              rotation: 8,
+            gsap.to(root.current!.querySelector(".hero-art"), {
+              y: -20,
+              rotation: 0,
               ease: "none",
               scrollTrigger: {
                 trigger: root.current,

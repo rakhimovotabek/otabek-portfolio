@@ -3,6 +3,9 @@ import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { ProjectIndex } from "@/components/sections/project-index";
+import { SideQuests } from "@/components/sections/side-quests";
+import { Achievements } from "@/components/sections/achievements";
+import { Guestbook } from "@/components/sections/guestbook";
 import { ContactLauncher } from "@/components/contact/contact-launcher";
 export default function Home() {
   return (
@@ -16,6 +19,9 @@ export default function Home() {
           <Hero />
           <About />
           <ProjectIndex />
+          <SideQuests />
+          <Achievements />
+          <Guestbook />
         </main>
         <Footer />
         <ContactLauncher />

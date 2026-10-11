@@ -1,5 +1,5 @@
 import type { ProjectId } from "@/data/portfolio";
-// Future domain contracts only. No persistence or submission exists in Phase 1.
+// Future domain contracts only. No persistence or submission exists in Phase 2.
 export type CommentTarget =
   { kind: "project"; projectId: ProjectId } | { kind: "guestbook" };
 export type ModerationStatus = "pending" | "approved" | "rejected";

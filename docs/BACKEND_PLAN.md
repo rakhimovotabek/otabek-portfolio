@@ -1,6 +1,6 @@
 # Future backend plan — Phase 4 only
 
-This is a design proposal, not a database migration or an implemented feature. No Supabase project, SDK, credentials, routes, forms, or endpoints exist in Phase 1.
+This is a design proposal, not a database migration or an implemented feature. No Supabase project, SDK, credentials, routes, forms, or endpoints exist in Phase 2. Disabled visual field previews exist, without submission or persistence.
 
 ## Planned records
 
@@ -22,6 +22,6 @@ The service-role credential belongs exclusively in server deployment secrets, ne
 
 ## Deployment requirements
 
-Use a Node-compatible Next.js host such as a managed Next.js platform or Node container with HTTPS. Phase 1 is a normal Next.js application; no deployment provider is configured. Phase 4 needs a Supabase project/region, migrations reviewed before application, RLS policy tests, backup/restore procedure, admin access, Turnstile site/secret keys, and durable rate-limit storage. Keep staging and production separate. Set server-side secrets in the host secret manager and keep `.env*` untracked.
+Use a Node-compatible Next.js host such as a managed Next.js platform or Node container with HTTPS. The portfolio is a normal Next.js application; no deployment provider is configured. Phase 4 needs a Supabase project/region, migrations reviewed before application, RLS policy tests, backup/restore procedure, admin access, Turnstile site/secret keys, and durable rate-limit storage. Keep staging and production separate. Set server-side secrets in the host secret manager and keep `.env*` untracked.
 
 Choose and verify hosting/database regions, logging, retention/deletion policy, privacy notice, spam handling and owner notification method before launch. Do not log message bodies, contact details, or tokens. Test anonymous submissions and private inbox isolation before enabling forms. No admin credentials or social/email placeholders are published now.

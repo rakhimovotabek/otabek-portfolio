@@ -1,9 +1,11 @@
 "use client";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { useRef } from "react";
+import { site } from "@/data/site";
 const links = [
-  { href: "#work", label: "Selected work" },
-  { href: "#about", label: "About me" },
+  { href: "#work", label: "The Vault" },
+  { href: "#about", label: "About" },
+  { href: "#side-quests", label: "Side Quests" },
   { href: "#contact", label: "Contact" },
 ];
 export function Navigation() {
@@ -13,9 +15,10 @@ export function Navigation() {
       <a
         className="wordmark"
         href="#top"
-        aria-label="Otabek Rakhimov, back to top"
+        aria-label={`${site.brand}, back to top`}
       >
-        otabek<span className="brand-dot">.</span>
+        {site.brand}
+        <span className="brand-dot">.</span>
       </a>
       <nav className="desktop-nav" aria-label="Main navigation">
         {links.map((link) => (
