@@ -4,9 +4,11 @@ Implementation verified on 2026-10-11, Linux / Node 26.11.1. Baseline: `0fee8e65
 
 ## External connection status
 
-Supplied Supabase URL and keys were written only to ignored `.env.local`, with mode 0600. Auth settings and the secret-key Data API root returned HTTP 200. These checks prove basic gateway connectivity, **not** working private storage, schema permissions or owner authentication. The comments table endpoint returned HTTP 404 / PGRST205 (schema absent). Auth reported new signups were not disabled. The CLI account listed two existing unrelated projects and did not list the supplied portfolio project; those projects were left untouched. No hosted migration, owner account, allowlist or production Turnstile widget was created or verified.
+Supplied Supabase URL and keys were written only to ignored `.env.local`, with mode 0600. The owner subsequently applied both migrations in the intended project's SQL Editor and reported creating/allowlisting the owner. Hosted public comment reads now return HTTP 200. Anonymous inbox reads, direct writes, moderation-column reads and the pre-MFA identity RPC are denied; service credentials also cannot select inbox/comments through the Data API. The CLI account listed two unrelated projects, which were left untouched.
 
-The owner needs to authenticate the CLI with the account owning the intended project, or apply the two migrations in its SQL Editor. Owner email/password provisioning, UUID allowlisting, TOTP verification and production protection remain necessary. Credentials are never part of this report or screenshots. Rotate the secret key that was shared in chat, then replace it privately in `.env.local`. [Exact setup guide](SUPABASE_SETUP.md).
+The local development preview is connected to hosted storage using published Cloudflare dummy credentials with explicit test mode. Actual Next submission routes and real Siteverify produced HTTP 201 for one labeled private contact, one guestbook comment and one SAT’chi comment. Both comments returned pending acknowledgements and remained absent from public retrieval. Empty/oversized fields, honeypots, missing CAPTCHA and client-supplied moderation status were rejected. Six concurrent calls to the hosted quota RPC using a separate random test subject allowed exactly five and denied one, without consuming the visitor's local-IP bucket. [Hosted evidence](preview/phase4b/hosted-backend-results.json).
+
+Owner password/TOTP and moderation acceptance are pending. The user reported disabling signups, but a fresh Auth settings read still returned `disable_signup=false`; rechecking/saving the setting was requested. A production Turnstile widget remains unconfigured. Credentials are never part of this report or screenshots. Rotate the secret key shared in chat and replace it privately in `.env.local`. [Exact setup guide](SUPABASE_SETUP.md).
 
 ## Implemented behavior
 
@@ -66,7 +68,7 @@ For production unconfigured checks, start an additional preview with all databas
 
 ## Remaining limits and live acceptance
 
-- Hosted SQL/permissions, real owner password/TOTP, production proxy provenance, real Turnstile hostname/action and the complete visitor → inbox/moderation → public chain have **not** been tested. A reachable Auth endpoint is not that acceptance test.
+- Hosted anonymous database permissions, persistence, pending visibility and concurrent quota enforcement have been tested. Real owner password/TOTP, production proxy provenance, real Turnstile hostname/action and the complete owner moderation → public chain remain pending. Local CAPTCHA test mode does not validate a production widget.
 - Supabase access JWTs may remain valid until expiry after refresh-session logout. Configure appropriate lifetimes; this application does not claim instant copied-JWT revocation.
 - A lost submission response can follow a successful insert. The form blocks concurrent submissions, but cross-tab/network-level idempotency is not added. Retry carefully after ambiguous network failures.
 - Recent moderation is current status/timestamp, not an immutable historical audit log. No editing/deletion, notifications or analytics were added.

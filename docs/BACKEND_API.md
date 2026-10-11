@@ -66,7 +66,7 @@ Every owner route verifies Supabase identity plus the database UID allowlist and
 | Method and route                              | Operation                                                                                    |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `GET /api/owner/inbox?limit=20&status=unread` | Private inbox; optional unread/read/archived filter; descending `(created_at,id)` pagination |
-| `GET /api/owner/comments?limit=20`            | Optional `status=pending                                                                     | approved | rejected`(default pending); ascending`(created_at,id)` pagination |
+| `GET /api/owner/comments?limit=20`            | Optional status: `pending`, `approved`, `rejected` (default pending); ascending `(created_at,id)` pagination |
 | `PATCH /api/owner/inbox/UUID`                 | JSON `{ "status": "unread" }`, `read` or `archived`                                          |
 | `PATCH /api/owner/comments/UUID`              | JSON `{ "status": "approved" }` or `rejected`                                                |
 

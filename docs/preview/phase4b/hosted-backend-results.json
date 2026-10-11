@@ -1,0 +1,108 @@
+{
+  "testedAt": "2026-10-11T14:20:54.331848+00:00",
+  "database": "hosted Supabase portfolio project",
+  "captcha": "actual Cloudflare Siteverify with published local-development test credentials",
+  "results": [
+    {
+      "check": "configured hosted reads and local submissions",
+      "status": 200
+    },
+    {
+      "check": "approved guestbook retrieval",
+      "status": 200
+    },
+    {
+      "check": "anonymous owner inbox denied",
+      "status": 401
+    },
+    {
+      "check": "empty required field rejected",
+      "status": 400
+    },
+    {
+      "check": "oversized input rejected",
+      "status": 400
+    },
+    {
+      "check": "honeypot rejected",
+      "status": 400
+    },
+    {
+      "check": "missing CAPTCHA rejected",
+      "status": 400
+    },
+    {
+      "check": "client moderation status rejected",
+      "status": 400
+    },
+    {
+      "check": "hosted private contact persistence",
+      "status": 201
+    },
+    {
+      "check": "hosted pending guestbook persistence",
+      "status": 201
+    },
+    {
+      "check": "hosted pending project persistence",
+      "status": 201
+    },
+    {
+      "check": "pending guestbook hidden publicly",
+      "status": 200
+    },
+    {
+      "check": "pending project comment hidden publicly",
+      "status": 200
+    },
+    {
+      "check": "public Data API comment projection",
+      "status": 200
+    },
+    {
+      "check": "anonymous Data API inbox read denied",
+      "status": 401,
+      "postgresCode": "42501"
+    },
+    {
+      "check": "anonymous moderation column read denied",
+      "status": 401,
+      "postgresCode": "42501"
+    },
+    {
+      "check": "anonymous owner identity RPC denied",
+      "status": 401,
+      "postgresCode": "42501"
+    },
+    {
+      "check": "anonymous direct contact write denied",
+      "status": 401,
+      "postgresCode": "42501"
+    },
+    {
+      "check": "anonymous direct comment write denied",
+      "status": 401,
+      "postgresCode": "42501"
+    },
+    {
+      "check": "service credential inbox read denied",
+      "status": 403,
+      "postgresCode": "42501"
+    },
+    {
+      "check": "service credential comment read denied",
+      "status": 403,
+      "postgresCode": "42501"
+    },
+    {
+      "check": "concurrent hosted quota RPC",
+      "requests": 6,
+      "allowed": 5,
+      "denied": 1,
+      "separateTestSubject": true
+    }
+  ],
+  "ownerAcceptance": "Pending user login/MFA and moderation verification",
+  "productionTurnstile": "Not configured; published test credentials are used only in local development",
+  "signupConfiguration": "API still reports disable_signup=false; user asked to recheck/save"
+}

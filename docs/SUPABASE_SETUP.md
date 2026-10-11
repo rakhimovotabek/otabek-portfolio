@@ -2,7 +2,7 @@
 
 Visitor forms and a private owner dashboard are implemented. This guide covers setup; configuration alone does not prove that migrations, RLS, MFA or a production widget work. The homepage renders without backend variables and displays safe unavailable states. Never paste credentials into chat, commit them, or include them in screenshots.
 
-Current local checkpoint: supplied project keys are in ignored `.env.local` (mode 0600). Its Auth endpoint is reachable, but the initial schema was absent when checked. The CLI account did not list the supplied project. Until migration/owner/widget setup is completed and verified, **do not describe hosted messaging as operational**. Rotate a secret key shared in chat and update `.env.local` privately.
+Current local checkpoint: supplied project keys are in ignored `.env.local` (mode 0600). The owner applied both migrations through the SQL Editor. The hosted public comment projection returns HTTP 200; anonymous inbox reads, moderation-column reads and the pre-MFA identity RPC are denied. Owner provisioning/MFA and production protection still require verification. The CLI account did not list the supplied project; unrelated projects were left untouched. Rotate a secret key shared in chat and update `.env.local` privately.
 
 ## 1. Create and identify your project
 
@@ -52,9 +52,9 @@ values ('REPLACE_WITH_YOUR_ACTUAL_AUTH_USER_UUID'::uuid);
 3. Enroll a TOTP factor and obtain a verified MFA session. Owner routes require `aal2`; a password-only session receives 403 even for an allowlisted owner. Supabase dashboard-account MFA is separate from this application's Auth-user MFA.
 4. Keep recovery details private. To revoke application access, delete that UUID from `private.portfolio_owners`; each API request and RLS policy rechecks membership.
 
-Phase 4B will provide the sign-in/enrollment interface. Until then, a trusted private Supabase SDK test client can use `auth.signInWithPassword`, `auth.mfa.enroll({ factorType: 'totp' })`, then `auth.mfa.challengeAndVerify({ factorId, code })`. For subsequent sessions, challenge an existing verified factor. Display the enrollment QR/secret privately, never in shared logs; retain the resulting access token only in that private test session. Do not publish a token or add any credentials to source code. [Supabase TOTP flow](https://supabase.com/docs/guides/auth/auth-mfa/totp).
+Use the implemented `/admin/login` sign-in/enrollment interface described below. A trusted private Supabase SDK test client can alternatively use `auth.signInWithPassword`, `auth.mfa.enroll({ factorType: 'totp' })`, then `auth.mfa.challengeAndVerify({ factorId, code })`. For subsequent sessions, challenge an existing verified factor. Display the enrollment QR/secret privately, never in shared logs; retain the resulting access token only in that private test session. Do not publish a token or add any credentials to source code. [Supabase TOTP flow](https://supabase.com/docs/guides/auth/auth-mfa/totp).
 
-Owner endpoints accept `Authorization: Bearer <access token>` only. The server calls [Supabase `getUser(token)`](https://supabase.com/docs/reference/javascript/auth-getuser) to verify identity over the network, then calls the owner RPC using that same JWT. Private data access also uses the owner JWT and RLS, not a service client. Client emails, decoded-but-unverified JWTs and JSON `status`/`role` fields never establish ownership. Cookie sessions/CSRF handling and the private interface are Phase 4B work.
+Owner endpoints accept the browser's protected HttpOnly session cookies or `Authorization: Bearer <access token>` for trusted CLI use. The server calls [Supabase `getUser(token)`](https://supabase.com/docs/reference/javascript/auth-getuser) to verify identity over the network, then calls the owner RPC using that same JWT. Private data access also uses the owner JWT and RLS, not a service client. Client emails, decoded-but-unverified JWTs and JSON `status`/`role` fields never establish ownership. Cookie-based mutations additionally require the exact configured Origin.
 
 ## 4. Configure environment variables
 
@@ -140,7 +140,7 @@ See [Phase 4A validation](PHASE_4A_VALIDATION.md) for which checks actually ran.
 
 No deployment was created. A future deployment needs Node **22+** (the installed Supabase SDK requires it), normal Next.js server/route support rather than a static export, server-scoped environment secrets, production HTTPS origin, matching Turnstile hostname/site key, the reviewed database migration, allowlisted MFA owner and working scheduled quota cleanup. Keep preview/staging data separate and disable submissions until the preview's origin/CAPTCHA/trusted proxy configuration is verified. Prove Netlify's client-IP header handling before selecting it. Do not put keys in `netlify.toml`, Git, build output, frontend config or shared logs.
 
-Phase 4B owns usable forms, token-refresh/submission states, escaped comment rendering, owner sign-in/MFA flows, a private inbox/moderation interface and retention/privacy presentation. This phase supplies the protected endpoints only.
+Phase 4B includes visitor forms, token-refresh/submission states, escaped comment rendering, owner sign-in/MFA flows and a private inbox/moderation interface. Production configuration and live acceptance remain required before launch.
 
 ## Phase 4B owner login and visitor workflow
 
@@ -160,7 +160,7 @@ Access/refresh tokens remain in HttpOnly, SameSite Strict, path `/` cookies, Sec
 
 Visitor messages never require login. Success is shown only for the expected `201` persistence acknowledgement. Pending comments are not optimistically added to the public list. Lists use UTC dates and load five approved entries at a time. A failed or ambiguous network request preserves the draft; check connectivity before retrying, since a lost response could follow a successful insert. The busy lock prevents simultaneous submissions in one mounted form, but this phase adds no cross-tab/idempotency-key deduplication.
 
-Turnstile is rendered explicitly, removed on unmount, and refreshed after every attempted submission. Expiry, errors and timeout remove stale tokens. Production never accepts the published test credentials or missing protection. Local test mode uses the documented dummy keys while still calling real Siteverify. Restart after changing configuration; rebuild production bundles after changing `NEXT_PUBLIC_TURNSTILE_SITE_KEY`. the feature endpoint reports safe configuration availability, not hosted health. [Widget lifecycle](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/).
+Turnstile is rendered explicitly, removed on unmount, and refreshed after every attempted submission. Expiry, errors and timeout remove stale tokens. Production never accepts the published test credentials or missing protection. Local test mode uses the documented dummy keys while still calling real Siteverify. Restart after changing configuration; rebuild production bundles after changing `NEXT_PUBLIC_TURNSTILE_SITE_KEY`. The feature endpoint reports safe configuration availability, not hosted health. [Widget lifecycle](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/).
 
 ### Isolated UI test environment
 
