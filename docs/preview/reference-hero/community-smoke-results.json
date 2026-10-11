@@ -1,0 +1,11 @@
+{
+  "productionSmoke": true,
+  "projectTargets": 5,
+  "discussionDisclosures": true,
+  "guestbookFields": true,
+  "anonymousInboxStatus": 401,
+  "anonymousAdminRedirect": "/admin/login",
+  "ownerLoginRendered": true,
+  "hostedWrites": false,
+  "fullCommunitySuiteRerun": false
+}

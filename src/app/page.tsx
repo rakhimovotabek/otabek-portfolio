@@ -18,24 +18,26 @@ export default function Home() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <CommunityProvider>
-        <PageMotion>
-          <Navigation />
-          <main id="main" tabIndex={-1}>
-            <Hero />
-            <About />
-            <ProjectIndex />
-            <Archive />
-            <Writing />
-            <Sketchbook />
-            <SideQuests />
-            <Achievements />
-            <Guestbook />
-          </main>
-          <Footer />
-          <ContactLauncher />
-        </PageMotion>
-      </CommunityProvider>
+      <div className="reference-home">
+        <CommunityProvider>
+          <PageMotion>
+            <Navigation />
+            <main id="main" tabIndex={-1}>
+              <Hero />
+              <About />
+              <ProjectIndex />
+              <Archive />
+              <Writing />
+              <Sketchbook />
+              <SideQuests />
+              <Achievements />
+              <Guestbook />
+            </main>
+            <Footer />
+            <ContactLauncher />
+          </PageMotion>
+        </CommunityProvider>
+      </div>
     </>
   );
 }

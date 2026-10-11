@@ -67,19 +67,17 @@ const snapshot = async (page, name) =>
       );
       await sleep(page, 1700);
       await overflow(page);
-      assert.equal(await page.locator("h1").innerText(), "default.");
       assert.equal(
-        await page
-          .locator(".wordmark-reveal")
-          .evaluate((el) => Math.round(el.getBoundingClientRect().top)),
-        await page
-          .locator("h1")
-          .evaluate((el) =>
-            Math.round(
-              el.getBoundingClientRect().top +
-                parseFloat(getComputedStyle(el).paddingTop),
-            ),
-          ),
+        await page.locator("h1").getAttribute("aria-label"),
+        "OTABEK RAKHIMOV",
+      );
+      const lastLetter = await page
+        .locator("[data-hero-letter]")
+        .last()
+        .boundingBox();
+      assert.ok(
+        lastLetter.x + lastLetter.width <= width + 1,
+        "Hero name is clipped",
       );
       await snapshot(page, `${name}-hero`);
       const pinned = width >= 1100;
@@ -254,7 +252,9 @@ const snapshot = async (page, name) =>
       assert.equal(await page.locator(".pin-spacer").count(), 0);
       assert.equal(await page.locator(".project[inert]").count(), 0);
       assert.equal(
-        await page.locator(".hero-art").evaluate((el) => el.style.transform),
+        await page
+          .locator("[data-hero-head]")
+          .evaluate((el) => el.style.transform),
         "",
       );
       assert.equal(

@@ -35,7 +35,7 @@ export function Navigation() {
     return () => observer.disconnect();
   }, []);
   return (
-    <header className="site-header" ref={header}>
+    <header className="site-header reference-navigation" ref={header}>
       <a
         className="wordmark"
         href="#top"

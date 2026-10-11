@@ -58,21 +58,19 @@ async function move(page, selector, offset = 0) {
       await page.evaluate(() => document.fonts.ready);
       await sleep(page, 1800);
       await overflow(page);
-      assert.equal(await page.locator("h1").innerText(), "default.");
-      const signature = await page.locator(".wordmark-reveal").boundingBox();
+      assert.equal(
+        await page.locator("h1").getAttribute("aria-label"),
+        "OTABEK RAKHIMOV",
+      );
+      const signature = await page
+        .locator("[data-hero-letter]")
+        .last()
+        .boundingBox();
       assert.ok(
         signature.x + signature.width <= width + 1,
         "Opening signature is clipped",
       );
-      if (width < 700) {
-        const caption = await page
-          .locator(".hero-art figcaption")
-          .boundingBox();
-        assert.ok(
-          caption.y + caption.height < signature.y,
-          "Hero caption overlaps signature",
-        );
-      }
+      assert.equal(await page.locator("[data-world]").count(), 4);
       await page.screenshot({
         path: path.join(output, name + "-hero.png"),
         style,

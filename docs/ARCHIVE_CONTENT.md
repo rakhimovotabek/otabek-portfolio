@@ -9,10 +9,13 @@ Phase 5 treats the site as a collection of a person, selected software, words an
 | Temporary nickname, metadata title, navigation, opening and contact copy       | `src/data/site.ts`                               |
 | Real name, country, biography, interests, verified achievements and projects   | `src/data/portfolio.ts`                          |
 | Presence headings, three photo slots, archive entries, writing, visual studies | `src/data/archive.ts`                            |
+| Four-world opening, featured-project reference and first editorial spread      | `src/data/hero.ts`                               |
 | Optional verified social profiles                                              | `profile.socialLinks` in `src/data/portfolio.ts` |
 | Server credentials/protection and connection                                   | Ignored `.env.local`; see `SUPABASE_SETUP.md`    |
 
 Change only `site.brand` to replace the nickname throughout the site. Do not alter project IDs casually: they are database foreign keys and existing comment targets. Unknown stacks, dates, links and statuses remain null; they are never inferred.
+
+The reference-driven opening links its four worlds to the existing Software, Writing, Sketchbook and About sections. Its project focus derives from `projects[0]`, preserving SAT’chi’s canonical ID and description. `presence.portraits[0].src` supplies both the hero portrait world and the first editorial portrait tile; `visualStudies[0].src` supplies the visual world. Their null states remain explicitly reserved or original site artwork. Adding a verified `projects[0].image` replaces the featured concept device with the real screenshot. No extra image files or duplicate personal records are required.
 
 ## Photographs and drawings
 

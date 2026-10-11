@@ -46,6 +46,11 @@ const screenshot = async (page, name) =>
       ["mobile", 390, 844],
       ["narrow-mobile", 360, 800],
     ]) {
+      if (
+        process.env.PORTFOLIO_QA_VIEWS &&
+        !process.env.PORTFOLIO_QA_VIEWS.split(",").includes(label)
+      )
+        continue;
       await fetch(fixture + "/__test/reset", { method: "POST", body: "{}" });
       const page = await browser.newPage({
         viewport: { width, height },

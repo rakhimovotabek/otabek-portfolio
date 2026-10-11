@@ -1,6 +1,8 @@
-# Personal archive design system — Phase 5
+# Personal archive design system
 
 The site is an editorial collection: presence, selected software, an archive index, a reading room, a visual notebook, parallel interests, milestones, visitors and correspondence. Earlier forms and security behavior are preserved. There are no fabricated personal artworks, photographs, project screenshots, metrics or social profiles.
+
+The current opening supersedes the Phase 5 paper-volume cover. It is adapted from Otabek’s supplied working HTML, not copied from the saved Strade page. The four narrow colored worlds, huge overlapping full name, original illustrated SAT’chi focus and diagonal striped paper wipe are preserved as the visual starting point. The rebuild stops after the first editorial handoff; later archive rooms retain their compositions.
 
 ## Type and surfaces
 
@@ -8,12 +10,14 @@ Self-hosted Newsreader supplies a lighter, optically sized display/reading face 
 
 Charcoal has a muted olive cast (`#141711`), warm paper (`#efede5`) carries the personal spread/index, and sage paper (`#d7d9cd`) marks visitor correspondence. Writing has a restrained oxblood surface (`#392c2c`); the gallery uses soft stone. Project accents are localized to original artwork. Large serif type and carefully set smaller sans text replace the repetition of uniformly enormous technical headings. No full-screen glowing gradients, glass panels or repeated pill system is used.
 
-`globals.css` retains shared base, form, admin, exhibition and accessibility rules. `archive.css` supplies the revised public compositions, tokens and compact layouts, imported afterward through the root layout. Preserve that import order; verify production CSS when changing it. Public selectors are scoped to their sections; private dashboard layouts retain their existing controls.
+`globals.css` retains shared base, form, admin, exhibition and accessibility rules. `archive.css` supplies public archive compositions; `worlds-theme.css` follows it with narrowly scoped `.reference-home` integration. `hero-worlds.module.css` contains the prototype-derived opening and first editorial geometry. Preserve import order and verify production CSS when changing it. Private dashboard layouts retain their existing controls.
+
+The opening deliberately retains the prototype’s Arial/Helvetica display typography and Georgia paper typography, with blue-black `#0b1015`, bone `#f0eee8`, acid lime `#c5fb57` and cyan `#42e7e1`. No additional font download is needed. Software is blue, writing bone, the visual world green and the portrait reservation violet. The large name is the real person; the smaller navigation/footer brand remains the centrally configured `default`. Newsreader and DM Sans remain in the later archive rooms.
 
 ## Composition
 
-- Opening: a tall original paper-volume study intersects a restrained lower-case signature. The person, role and location remain explicit. Negative space separates the artwork from the invitation to explore.
-- Presence: main portrait reservation, offset landscape reservation, substantial biography and a smaller detail image beside the reflective afterword. Replaceable frames state that photographs are absent; no fake likeness is supplied.
+- Opening: four colored worlds under the full name, spreading into one large blue SAT’chi scene before the diagonal paper wipe. Every world links into the actual archive. Concept previews are explicitly labeled; no app statistics or fabricated screenshots are shown.
+- Presence: a large “More / than code.” heading and the prototype’s overlapping yellow/blue/green editorial tiles introduce the retained biography and three honest photo reservations. Tile links lead to the personal story, writing and sketchbook. No fake likeness is supplied.
 - Vault: a dark exhibition with a refined title, original concept artwork, close descriptions and stable project disclosures. SAT’chi gets a new geometric learning study; the old opening/fold motif is removed. Unknown links/stacks/statuses remain honest.
 - Archive: a chronological-label index with unequal text columns, native expanded entries, category filters and visibly reserved pages. This is a collection browser, not another grid of cards.
 - Writing: a quiet oxblood reading room, margin metadata and expressive but readable lines. The specimen is clearly identified as a replaceable sample rather than the owner's published writing.
@@ -23,4 +27,4 @@ Charcoal has a muted olive cast (`#141711`), warm paper (`#efede5`) carries the 
 
 ## Responsive/accessibility boundaries
 
-At 700px the opening becomes a purpose-built vertical cover, presence images overlap within reserved space, archive metadata wraps into a compact index, and gallery mounts stagger down one natural-scroll column. Minimum controls remain 44px. Focus, skip link, native disclosures, textual image labels and reduced motion remain supported. Covered desktop exhibition panels remain inert and aria-hidden. See `MOTION_ARCHITECTURE.md` for animation ownership and `ARCHIVE_CONTENT.md` for content editing.
+At 800px the four opening worlds become a two-by-two composition and the featured project separates copy from artwork vertically. The following editorial spread stacks while retaining its rotated tile composition. Existing 700px archive/biography/gallery layouts remain in place. Focus, skip link, native disclosures, textual image labels and reduced motion remain supported. Covered opening and desktop exhibition controls remain inert and aria-hidden. Reduced motion and failed/no JavaScript enhancement leave a single readable opening without a long empty scroll range. See `MOTION_ARCHITECTURE.md` for animation ownership and `ARCHIVE_CONTENT.md` for content editing.

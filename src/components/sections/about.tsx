@@ -1,20 +1,66 @@
-import { Section } from "@/components/ui/section";
+import Image from "next/image";
 import { MediaFrame } from "@/components/archive/media-frame";
 import { presence } from "@/data/archive";
 import { profile } from "@/data/portfolio";
 import { site } from "@/data/site";
+import { heroCopy } from "@/data/hero";
+import styles from "./hero-worlds.module.css";
 export function About() {
   return (
-    <Section id="about" label="01 / PRESENCE" className="about-section">
-      <div className="about-head">
-        <h2 id="about-heading">
-          {presence.heading[0]}
-          <br />
-          <span className="serif-word">{presence.heading[1]}</span>
-        </h2>
-        <p className="margin-note">{presence.short}</p>
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className={`about-section ${styles.editorial}`}
+      data-hero-editorial
+    >
+      <div className={styles["editorial-shape"]} aria-hidden="true" />
+      <div className={styles["editorial-grid"]}>
+        <div>
+          <span className={styles.eyebrow}>{heroCopy.editorial.label}</span>
+          <h2 id="about-heading" data-editorial-heading>
+            {heroCopy.editorial.heading[0]}
+            <br />
+            <em>{heroCopy.editorial.heading[1]}</em>
+          </h2>
+          <p className={styles["editorial-copy"]}>
+            {heroCopy.editorial.description}
+          </p>
+          <a className={styles["editorial-note"]} href="#personal-story">
+            {heroCopy.editorial.note} ↗
+          </a>
+        </div>
+        <div className={styles["editorial-aside"]}>
+          {heroCopy.editorial.tiles.map((tile) => (
+            <div
+              key={tile.color}
+              className={styles["tile-motion"]}
+              data-editorial-card
+            >
+              <a
+                className={`${styles["archive-card"]} ${styles[tile.color]}`}
+                href={tile.href}
+              >
+                {tile.color === "yellow" && presence.portraits[0].src && (
+                  <Image
+                    src={presence.portraits[0].src}
+                    alt={presence.portraits[0].alt}
+                    fill
+                    sizes="(max-width: 800px) 50vw, 25vw"
+                  />
+                )}
+                <span className={styles["tile-label"]}>{tile.label}</span>
+                <span className={styles["tile-status"]}>
+                  {tile.color === "yellow" && presence.portraits[0].src
+                    ? "SELECTED PORTRAIT"
+                    : tile.status}
+                </span>
+                <h3>{tile.title}</h3>
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="about-feature">
+      <div className="about-feature" id="personal-story">
         <div className="presence-images">
           <MediaFrame media={presence.portraits[0]} className="presence-main" />
           <MediaFrame
@@ -56,6 +102,12 @@ export function About() {
           sizes="(max-width: 700px) 40vw, 22vw"
         />
       </div>
-    </Section>
+      <div className={styles["editorial-foot"]}>
+        <span>{site.brand.toUpperCase()} / A PERSONAL ARCHIVE</span>
+        <span>
+          {profile.country.toUpperCase()} / {profile.name.toUpperCase()}
+        </span>
+      </div>
+    </section>
   );
 }

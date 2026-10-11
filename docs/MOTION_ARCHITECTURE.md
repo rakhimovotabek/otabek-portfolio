@@ -1,4 +1,4 @@
-# Personal archive motion — Phase 5
+# Personal archive motion
 
 ## Ownership and lifecycle
 
@@ -10,8 +10,8 @@ The existing debounced `useDiscussionLayout` observer also serves the archive in
 
 ## Choreography
 
-- **Opening:** a 1.5-second rising image mask, a staggered paper-edge detail, a signature revealed from its lower edge, then the smaller two-line invitation and identity. All controls/content are rendered before enhancement. The artwork travels farther than the signature during scrolling; mobile uses shorter distances and a tighter static crop.
-- **Presence:** rounded paper boundary, a vertical headline reveal, different directional image masks and a small internal image-depth pass. Biography paragraphs move only at entry, then stay still for reading. Captions do not travel independently of their figures.
+- **Reference opening:** `hero-timeline.ts` translates Otabek’s prototype’s normalized scroll math into one reversible GSAP timeline. Four colored worlds sit under individually staggered name characters. Inner character spans own the one-second entrance; their outer spans own scroll departure. From progress .07–.23 the heading recedes; .22–.51 spreads the worlds and reveals the SAT’chi scene through a horizontal inset mask. Its original concept device settles in perspective while copy enters separately. From .72–.96 a scaled, seven-degree paper plane carrying orange/blue/lime rules crosses the viewport. The final .04 holds the paper. A transformed rule tracks progress without React state.
+- **Opening → Presence:** the next paper section overlaps the journey’s end by 28svh on desktop and 18svh on mobile, avoiding a dead interval between the wipe and real editorial content. A headline mask and three differently paced tile wrappers continue the composition; inner tiles independently own CSS hover feedback. Biography frames and paragraphs retain the existing restrained entry treatments. Captions stay with their figures.
 - **Vault:** the original 82svh stage and five native-scroll chapters remain on wide/tall desktops. A 4.5-viewport scroll range allocates 64% of each chapter to reading and 36% to handoff. Artwork eases from a close framing during each hold. Outgoing panels lift/recede while incoming artwork uncovers upward and the project title opens separately. A thin progress rule tracks the timeline without React state. Covered layers remain inert/pointer-disabled/aria-hidden; chapter anchors and list escape remain functional.
 - **Vault → Archive:** the collection closes on an editorial line, and a rule opens across the warm-paper index. The index stays a natural-scroll reading surface, without an additional long pin.
 - **Writing:** the oxblood room has different pacing: a quiet title shift, then staggered masked lines in a wide reading column. Paragraphs remain static. No pinned text, kinetic word-by-word distraction or artificial scrolling deadline is used.
@@ -21,7 +21,11 @@ The existing debounced `useDiscussionLayout` observer also serves the archive in
 
 ## Responsive and accessible states
 
-Below 1100px or 760px viewport height, the Vault uses the existing natural-scroll presentation. Phones receive shorter artwork travel, single-column reading, compact archive metadata and staggered gallery mounts. The desktop pin is the only long exhibition pin; nothing traps native scroll or requires hover.
+The opening uses a native CSS sticky stage, not a GSAP pin. Only successful enhancement extends the journey from one viewport to 360svh; phones use 290svh, two-by-two worlds, shorter transforms, lighter perspective and project copy above the artwork. Its end is measured from journey height minus stage height and refreshed by the existing GSAP lifecycle. The first transition can be reversed without scroll locking or inserting a pin spacer.
+
+At opening progress .38 the covered world links become inert/aria-hidden and the project link becomes available; at .83 the wipe hides both. Changing accessibility state happens only at phase boundaries. If a focused control is being covered, focus moves to the navigation wordmark without moving scroll. Teardown restores the four links and the focus scene’s original hidden/inert state.
+
+Below 1100px or 760px viewport height, the Vault uses the existing natural-scroll presentation. Phones receive shorter artwork travel, single-column reading, compact archive metadata and staggered gallery mounts. The desktop Vault pin remains the only GSAP exhibition pin; nothing traps native scroll or requires hover.
 
 Reduced motion disables pins, parallax, large reveals and pointer decoration. GSAP reversion restores all panels, masks, transforms and interactions. CSS disables smooth scrolling and decorative transitions. All meaningful content is readable without animation initialization. With JavaScript disabled, navigation and archive/project native disclosures remain available, all entries show, and forms require JavaScript with accurate notices. Submitted/pending/private content behavior remains governed by the Phase 4B backend, not motion.
 
@@ -29,4 +33,4 @@ Reduced motion disables pins, parallax, large reveals and pointer decoration. GS
 
 Transforms, opacity, simple inset masks and thin transformed rules carry the motion. No animated filters, layout dimensions, cursor tracker, permanent `will-change`, full-screen raster effects or new runtime packages were added. Newsreader's two official Latin WOFF2 files total 278,872 bytes; Syne is no longer loaded. Frames reserve their image ratios before real assets arrive.
 
-See `PHASE_5_VALIDATION.md` for actual Chromium checks and measured observations. Headless local measurements cannot guarantee frame rates on all devices. Real assets should remain optimized; oversized uploads can harm performance even when the animation architecture is lightweight.
+See `REFERENCE_HERO_VALIDATION.md` for current prototype comparisons and `PHASE_5_VALIDATION.md` for historical archive measurements. The opening retains the owner’s static CSS lighting and geometric artwork; it omits the prototype’s always-running pointer-light loop and animated blur. It uses native scrolling and existing GSAP packages. Headless local checks cannot guarantee frame rates on all devices. Real assets should remain optimized; oversized uploads can harm performance even when the animation architecture is lightweight.

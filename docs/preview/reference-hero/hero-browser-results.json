@@ -1,0 +1,373 @@
+[
+  {
+    "label": "desktop",
+    "width": 1440,
+    "height": 900,
+    "originalBoxes": [
+      {
+        "x": 37.4375,
+        "y": 160.1875,
+        "width": 334.53125,
+        "height": 613.8125
+      },
+      {
+        "x": 380.96875,
+        "y": 160.1875,
+        "width": 334.53125,
+        "height": 613.8125
+      },
+      {
+        "x": 724.5,
+        "y": 160.1875,
+        "width": 334.53125,
+        "height": 613.8125
+      },
+      {
+        "x": 1068.03125,
+        "y": 160.1875,
+        "width": 334.53125,
+        "height": 613.8125
+      }
+    ],
+    "updatedBoxes": [
+      {
+        "x": 37.4375,
+        "y": 160.1875,
+        "width": 330.78125,
+        "height": 613.8125
+      },
+      {
+        "x": 377.21875,
+        "y": 160.1875,
+        "width": 330.78125,
+        "height": 613.8125
+      },
+      {
+        "x": 717,
+        "y": 160.1875,
+        "width": 330.78125,
+        "height": 613.8125
+      },
+      {
+        "x": 1056.78125,
+        "y": 160.1875,
+        "width": 330.78125,
+        "height": 613.8125
+      }
+    ],
+    "deviations": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      },
+      {
+        "x": 8,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      },
+      {
+        "x": 11,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      }
+    ],
+    "forwardReverse": true,
+    "fastJumps": true,
+    "diagonalWipe": true,
+    "anchors": true,
+    "focusRescue": true,
+    "dialog": true,
+    "reducedMotion": true,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "label": "laptop",
+    "width": 1366,
+    "height": 900,
+    "originalBoxes": [
+      {
+        "x": 35.515625,
+        "y": 160.1875,
+        "width": 316.984375,
+        "height": 613.8125
+      },
+      {
+        "x": 361.5,
+        "y": 160.1875,
+        "width": 317,
+        "height": 613.8125
+      },
+      {
+        "x": 687.5,
+        "y": 160.1875,
+        "width": 316.984375,
+        "height": 613.8125
+      },
+      {
+        "x": 1013.484375,
+        "y": 160.1875,
+        "width": 317,
+        "height": 613.8125
+      }
+    ],
+    "updatedBoxes": [
+      {
+        "x": 35.515625,
+        "y": 160.1875,
+        "width": 313.234375,
+        "height": 613.8125
+      },
+      {
+        "x": 357.75,
+        "y": 160.1875,
+        "width": 313.25,
+        "height": 613.8125
+      },
+      {
+        "x": 680,
+        "y": 160.1875,
+        "width": 313.234375,
+        "height": 613.8125
+      },
+      {
+        "x": 1002.234375,
+        "y": 160.1875,
+        "width": 313.25,
+        "height": 613.8125
+      }
+    ],
+    "deviations": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      },
+      {
+        "x": 8,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      },
+      {
+        "x": 11,
+        "y": 0,
+        "width": 4,
+        "height": 0
+      }
+    ],
+    "forwardReverse": true,
+    "fastJumps": true,
+    "diagonalWipe": true,
+    "anchors": true,
+    "focusRescue": true,
+    "dialog": true,
+    "reducedMotion": true,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "label": "mobile",
+    "width": 390,
+    "height": 844,
+    "originalBoxes": [
+      {
+        "x": 9,
+        "y": 168.796875,
+        "width": 183,
+        "height": 254.421875
+      },
+      {
+        "x": 198,
+        "y": 168.796875,
+        "width": 183,
+        "height": 254.421875
+      },
+      {
+        "x": 9,
+        "y": 429.21875,
+        "width": 183,
+        "height": 254.421875
+      },
+      {
+        "x": 198,
+        "y": 429.21875,
+        "width": 183,
+        "height": 254.421875
+      }
+    ],
+    "updatedBoxes": [
+      {
+        "x": 9,
+        "y": 168.796875,
+        "width": 183,
+        "height": 254.421875
+      },
+      {
+        "x": 198,
+        "y": 168.796875,
+        "width": 183,
+        "height": 254.421875
+      },
+      {
+        "x": 9,
+        "y": 429.21875,
+        "width": 183,
+        "height": 254.421875
+      },
+      {
+        "x": 198,
+        "y": 429.21875,
+        "width": 183,
+        "height": 254.421875
+      }
+    ],
+    "deviations": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "forwardReverse": true,
+    "fastJumps": true,
+    "diagonalWipe": true,
+    "anchors": true,
+    "focusRescue": true,
+    "dialog": true,
+    "reducedMotion": true,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "label": "narrow-mobile",
+    "width": 360,
+    "height": 800,
+    "originalBoxes": [
+      {
+        "x": 9,
+        "y": 160,
+        "width": 168,
+        "height": 241
+      },
+      {
+        "x": 183,
+        "y": 160,
+        "width": 168,
+        "height": 241
+      },
+      {
+        "x": 9,
+        "y": 407,
+        "width": 168,
+        "height": 241
+      },
+      {
+        "x": 183,
+        "y": 407,
+        "width": 168,
+        "height": 241
+      }
+    ],
+    "updatedBoxes": [
+      {
+        "x": 9,
+        "y": 160,
+        "width": 168,
+        "height": 241
+      },
+      {
+        "x": 183,
+        "y": 160,
+        "width": 168,
+        "height": 241
+      },
+      {
+        "x": 9,
+        "y": 407,
+        "width": 168,
+        "height": 241
+      },
+      {
+        "x": 183,
+        "y": 407,
+        "width": 168,
+        "height": 241
+      }
+    ],
+    "deviations": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "forwardReverse": true,
+    "fastJumps": true,
+    "diagonalWipe": true,
+    "anchors": true,
+    "focusRescue": true,
+    "dialog": true,
+    "reducedMotion": true,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "noJavaScript": "four visible worlds, compact opening, native navigation and editorial content passed"
+  }
+]

@@ -27,13 +27,21 @@ export function PageMotion({ children }: { children: ReactNode }) {
           },
           (context) => {
             if (!context.conditions?.motion || !root.current) return;
-            heroTimeline(gsap, root.current, !!context.conditions.desktop);
-            return editorialTimelines(
+            const heroCleanup = heroTimeline(
+              gsap,
+              root.current,
+              !!context.conditions.desktop,
+            );
+            const editorialCleanup = editorialTimelines(
               gsap,
               root.current,
               !!context.conditions.desktop,
               !!context.conditions.pointer,
             );
+            return () => {
+              heroCleanup();
+              editorialCleanup();
+            };
           },
           root,
         );

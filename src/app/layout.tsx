@@ -4,6 +4,7 @@ import { site } from "@/data/site";
 import { profile } from "@/data/portfolio";
 import "./globals.css";
 import "./archive.css";
+import "./worlds-theme.css";
 const body = localFont({
   src: "./fonts/DMSans.ttf",
   variable: "--font-body",

@@ -1,0 +1,85 @@
+/* Public-only integration: the backend and private owner screens retain their styles. */
+.reference-home {
+  --ink: #0b1015;
+  --ink-soft: #121923;
+  --paper: #f0eee7;
+  --cyan: #42e7e1;
+  --lime: #c5fb57;
+}
+.reference-home .reference-navigation {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0;
+  padding: 0 clamp(16px, 2.6vw, 44px);
+  border: 0;
+  color: #f9f7f1;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+.reference-navigation > * {
+  pointer-events: auto;
+}
+.reference-home .reference-navigation .wordmark {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.08em;
+}
+.reference-navigation .desktop-nav {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+.reference-navigation .header-location {
+  font-size: 9px;
+}
+.reference-home .about-section {
+  background: #f0eee7;
+  isolation: isolate;
+  border-radius: 0;
+  padding-bottom: 140px;
+}
+.reference-home .about-section::before {
+  display: none;
+}
+.reference-home .about-feature {
+  position: relative;
+  margin-top: clamp(100px, 10vw, 160px);
+  scroll-margin-top: 90px;
+}
+.reference-home .presence-afternote {
+  position: relative;
+}
+.reference-home .vault-section,
+.reference-home .footer {
+  background: #0b1015;
+}
+@media (max-width: 800px) {
+  .reference-home .reference-navigation {
+    height: 68px;
+  }
+  .reference-navigation .header-location {
+    display: none;
+  }
+  .reference-navigation .mobile-menu {
+    display: block;
+  }
+  .reference-navigation .desktop-nav {
+    display: none;
+  }
+  .reference-navigation:has(.mobile-menu[open]) {
+    mix-blend-mode: normal;
+  }
+  .reference-navigation .mobile-menu nav {
+    background: #0b1015;
+    color: #f9f7f1;
+  }
+}

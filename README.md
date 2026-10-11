@@ -1,8 +1,8 @@
 # default — Otabek Rakhimov’s portfolio
 
-Phase 5 of a six-phase personal portfolio: an editorial archive of a person, selected software, words and images. The revised opening and portrait spread lead into The Vault, a browsable collection, a reading room and a visual notebook. Original site studies and unpublished personal works are clearly distinguished.
+A personal archive of a person, selected software, words and images. The opening now adapts Otabek’s working HTML prototype directly: four colored worlds, a massive overlapping name, an expanding SAT’chi focus scene and a diagonal paper transition. The existing biography, Vault, collection, reading room and visual notebook follow it. Original site studies and unpublished personal works are clearly distinguished.
 
-Private messaging, moderated project comments, the guestbook and the MFA owner dashboard remain connected to the existing protected backend. No database/security model was redesigned. Connection requirements and previous hosted checks are recorded in [Supabase setup](docs/SUPABASE_SETUP.md) and [Phase 4B validation](docs/PHASE_4B_VALIDATION.md); production Turnstile/proxy configuration and owner acceptance must not be inferred from mock tests. See [Phase 5 validation](docs/PHASE_5_VALIDATION.md) for current checks.
+Private messaging, moderated project comments, the guestbook and the MFA owner dashboard remain connected to the existing protected backend. No database/security model was redesigned. Connection requirements and previous hosted checks are recorded in [Supabase setup](docs/SUPABASE_SETUP.md) and [Phase 4B validation](docs/PHASE_4B_VALIDATION.md); production Turnstile/proxy configuration and owner acceptance must not be inferred from mock tests. See [reference rebuild validation](docs/REFERENCE_HERO_VALIDATION.md) for current checks and [Phase 5 validation](docs/PHASE_5_VALIDATION.md) for the earlier archive work.
 
 ## Run locally
 
@@ -28,6 +28,7 @@ npm run build
 - `src/data/site.ts`: change the public nickname once here to update navigation, hero, biography, footer and metadata.
 - `src/data/portfolio.ts`: editable profile, five projects, eight achievement/experience entries. `null` means unverified; do not invent details.
 - `src/data/archive.ts`: typed portraits, archive entries, writing and visual studies. See [content editing](docs/ARCHIVE_CONTENT.md).
+- `src/data/hero.ts`: four-world labels/links, featured-project reference and first editorial spread. The name and nickname still come from the existing profile/site configuration.
 - `src/components/archive/`: image frames and the accessible filter/disclosure index.
 - `src/components/sections/`: opening, personal presence, Vault, archive, reading room, visual notebook, parallel interests, milestones and guestbook.
 - `src/components/layout/`: responsive navigation and footer.
@@ -46,6 +47,7 @@ npm run build
 
 ## Documentation
 
+- [Prototype comparison and rebuild verification](docs/REFERENCE_HERO_VALIDATION.md)
 - [Phase 5 verification](docs/PHASE_5_VALIDATION.md)
 - [Editing photographs and personal works](docs/ARCHIVE_CONTENT.md)
 - [Design system](docs/DESIGN_SYSTEM.md)

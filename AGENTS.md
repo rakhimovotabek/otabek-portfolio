@@ -10,10 +10,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Portfolio boundaries
 
-- Current scope is Phase 5. Do not start a later phase without the owner’s prompt.
+- Current scope is the reference-driven hero rebuild. Stop after the hero and first editorial transition; do not deploy or broaden the redesign.
 - Edit the public nickname only in `src/data/site.ts`.
 - Edit personal facts in `src/data/portfolio.ts`; archive/media/writing content lives in `src/data/archive.ts`. Preserve unknown values as null and label sample work.
-- Phase 5 establishes a personal creative archive and elevates its motion. Preserve messaging, canonical comment targets, MFA and database security. Do not deploy or start Phase 6. Never return fake submission success.
+- Build from the owner’s `otabek_reference_hero_demo.html` and motion video. Saved Strade material is reference-only and must not be redistributed. Preserve messaging, canonical comment targets, MFA and database security. Never return fake submission success.
 - Read `docs/DESIGN_SYSTEM.md` for UI changes and `docs/BACKEND_PLAN.md` before backend work.
 - Keep downloaded ZIPs outside this repository unchanged.
 - Preserve reduced motion, readable server HTML, keyboard access, and scoped animation teardown.
