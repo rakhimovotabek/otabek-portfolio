@@ -5,6 +5,11 @@ All four archives were read with Python zipfile; no downloaded code was executed
 | Archive | Contents | SHA-256 |
 | ------- | -------- | ------- |
 
+| design-system-interviewer.zip | 1 Markdown files | `a191ba7b624016fcfc540072d6666d8f52880c9dad439e5c77bd453ae8d393ce` |
+| landing-page-beautifier.zip | 11 Markdown files | `64cc600227c64b145efbf591d80f09380f29d24f226dc479b8d9b3994285ea30` |
+| ship-safe.zip | 1 Markdown files | `3cec7c15b642a97fe34d385be17bff408dc71b4bad3f7f028b70986cf136b805` |
+| ssot-builder.zip | 1 Markdown files | `7202c812d1409a37779a96e2b150136caacf5dcdd4c605b1b8b354f41dc65cf6` |
+
 ## Findings
 
 - landing-page-beautifier: responsive sizing, asymmetric composition, typography, role-based colors, reusable component guidance, GSAP motion examples and QA checklists. Useful principles: visible HTML first, scoped effects, reduced motion, lifecycle cleanup, intentional contrast between sections.
