@@ -1,6 +1,6 @@
 # default — Otabek Rakhimov’s portfolio
 
-Phase 2 of a six-phase personal portfolio: an original editorial working archive, five-project Vault, Side Quests collage, biography, milestones, guestbook/contact previews, and foundational motion. No backend, data collection, or working submission forms exist.
+Phase 3 of a six-phase personal portfolio: an editorial working archive with a cinematic hero, layered desktop Vault, responsive scroll choreography, Side Quests interactions, biography, milestones and disabled guestbook/contact previews. No backend, data collection, or working submission forms exist.
 
 ## Run locally
 
@@ -40,8 +40,10 @@ npm run build
 - [Future backend and deployment](docs/BACKEND_PLAN.md)
 - [Phase 1 verification](docs/VALIDATION.md)
 - [Phase 2 verification](docs/PHASE_2_VALIDATION.md)
+- [Motion architecture](docs/MOTION_ARCHITECTURE.md)
+- [Phase 3 verification](docs/PHASE_3_VALIDATION.md)
 - [Font sources and licenses](docs/FONTS.md)
 
-Keep content readable without animation. Reduced-motion preferences disable hero animation, subtle art movement, smooth scrolling, and button transforms. The mobile navigation works without JavaScript. The contact panel needs JavaScript and clearly says messaging is unavailable.
+Keep content readable without animation. Reduced-motion preferences restore the original exhibition and disable pinning, parallax, smooth scrolling and button transforms. Mobile uses natural scrolling. The desktop Vault provides chapter links and a “Read as list” escape; opening project notes also restores the reading layout. Mobile navigation works without JavaScript. The contact panel needs JavaScript and clearly says messaging is unavailable.
 
 No private personal information or unverified social accounts are included. Never commit environment files or credentials. Downloaded reference ZIPs remain outside this repository and are unchanged.

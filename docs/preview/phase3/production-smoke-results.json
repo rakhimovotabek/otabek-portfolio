@@ -1,0 +1,46 @@
+[
+  {
+    "width": 1440,
+    "height": 1000,
+    "status": 200,
+    "skipFocus": "passed",
+    "contactEntrance": "settled",
+    "dialogFocusReturn": "passed",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "height": 900,
+    "status": 200,
+    "skipFocus": "passed",
+    "contactEntrance": "settled",
+    "dialogFocusReturn": "passed",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "status": 200,
+    "skipFocus": "passed",
+    "contactEntrance": "settled",
+    "dialogFocusReturn": "passed",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 360,
+    "height": 800,
+    "status": 200,
+    "skipFocus": "passed",
+    "contactEntrance": "settled",
+    "dialogFocusReturn": "passed",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  }
+]

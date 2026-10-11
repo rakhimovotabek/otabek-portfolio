@@ -1,19 +1,26 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FormPreview } from "@/components/community/form-preview";
 import { MessageSquare, ArrowUpRight, X } from "lucide-react";
 import { motion, MotionConfig, useReducedMotion } from "motion/react";
 export function ContactLauncher() {
   const dialog = useRef<HTMLDialogElement>(null);
   const reduced = useReducedMotion();
+  const [open, setOpen] = useState(false);
   return (
     <MotionConfig reducedMotion="user">
       <motion.button
         type="button"
         className="message-button"
+        initial={{ y: 8 }}
+        animate={{ y: 0 }}
         whileHover={reduced ? undefined : { y: -3 }}
         whileTap={reduced ? undefined : { scale: 0.97 }}
-        onClick={() => dialog.current?.showModal()}
+        transition={{ type: "spring", stiffness: 360, damping: 28 }}
+        onClick={() => {
+          dialog.current?.showModal();
+          setOpen(true);
+        }}
         aria-haspopup="dialog"
         aria-label="Message me"
       >
@@ -26,11 +33,20 @@ export function ContactLauncher() {
         className="contact-dialog"
         aria-labelledby="dialog-title"
         aria-describedby="dialog-description private-contact-status"
+        onClose={() => setOpen(false)}
         onClick={(event) => {
           if (event.target === event.currentTarget) dialog.current?.close();
         }}
       >
-        <div className="dialog-content">
+        <motion.div
+          className="dialog-content"
+          initial={false}
+          animate={{ y: open || reduced ? 0 : 12 }}
+          transition={{
+            duration: reduced ? 0 : 0.25,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
           <button
             type="button"
             className="close-button"
@@ -49,7 +65,7 @@ export function ContactLauncher() {
             will be needed.
           </p>
           <FormPreview id="private-contact" kind="contact" />
-        </div>
+        </motion.div>
       </dialog>
     </MotionConfig>
   );

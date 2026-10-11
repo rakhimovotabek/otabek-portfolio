@@ -1,19 +1,20 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { HeroMotion } from "@/components/motion/hero-motion";
 import { FoldMark } from "@/components/visuals/fold-mark";
 import { site } from "@/data/site";
 import { profile } from "@/data/portfolio";
 export function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
-      <HeroMotion>
+      <div className="hero-motion">
         <div className="hero-kicker" data-hero-reveal>
           <span>A PERSONAL WORKING ARCHIVE</span>
           <span>SOFTWARE / IDEAS / EXPLORATION</span>
         </div>
         <h1 id="hero-heading" className="hero-wordmark" data-hero-reveal>
-          {site.brand}
-          <span className="brand-period">.</span>
+          <span className="wordmark-reveal">
+            {site.brand}
+            <span className="brand-period">.</span>
+          </span>
         </h1>
         <div className="hero-lower">
           <div className="hero-intro" data-hero-reveal>
@@ -21,9 +22,12 @@ export function Hero() {
               {profile.name} — {profile.role}
             </p>
             <h2>
-              Code, questions
-              <br />
-              <span className="serif-word">& other pursuits.</span>
+              <span className="motion-line">
+                <span>Code, questions</span>
+              </span>
+              <span className="motion-line">
+                <span className="serif-word">& other pursuits.</span>
+              </span>
             </h2>
             <p className="hero-description">
               From Uzbekistan. Exploring computer science,
@@ -54,7 +58,7 @@ export function Hero() {
           <span>PERSONAL PORTFOLIO / WORKING COLLECTION</span>
           <span>UZBEKISTAN · UZT / UTC+5</span>
         </div>
-      </HeroMotion>
+      </div>
     </section>
   );
 }

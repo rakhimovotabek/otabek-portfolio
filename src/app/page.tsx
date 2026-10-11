@@ -7,15 +7,16 @@ import { SideQuests } from "@/components/sections/side-quests";
 import { Achievements } from "@/components/sections/achievements";
 import { Guestbook } from "@/components/sections/guestbook";
 import { ContactLauncher } from "@/components/contact/contact-launcher";
+import { PageMotion } from "@/components/motion/page-motion";
 export default function Home() {
   return (
     <>
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <div id="top">
+      <PageMotion>
         <Navigation />
-        <main id="main">
+        <main id="main" tabIndex={-1}>
           <Hero />
           <About />
           <ProjectIndex />
@@ -25,7 +26,7 @@ export default function Home() {
         </main>
         <Footer />
         <ContactLauncher />
-      </div>
+      </PageMotion>
     </>
   );
 }

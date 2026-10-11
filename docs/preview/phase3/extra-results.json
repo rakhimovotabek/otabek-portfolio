@@ -1,0 +1,24 @@
+{
+  "initialCLS": 0,
+  "anchors": "hero, chapter, back history, contact, direct project deep-link passed",
+  "listEscape": "passed",
+  "touchScrollY": 485,
+  "orientation": "passed",
+  "noJavaScriptMobile": "passed",
+  "warmLifecycle": [
+    {
+      "cycle": 5,
+      "heapBytes": 4711016,
+      "nodes": 1228,
+      "listeners": 372
+    },
+    {
+      "cycle": 10,
+      "heapBytes": 4789084,
+      "nodes": 1228,
+      "listeners": 372
+    }
+  ],
+  "errors": [],
+  "video": "desktop-scroll.webm"
+}

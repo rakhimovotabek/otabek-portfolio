@@ -1,6 +1,6 @@
 "use client";
 import { ArrowUpRight, Menu } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { site } from "@/data/site";
 const links = [
   { href: "#work", label: "The Vault" },
@@ -10,8 +10,37 @@ const links = [
 ];
 export function Navigation() {
   const menu = useRef<HTMLDetailsElement>(null);
+  const header = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const anchors = header.current?.querySelectorAll<HTMLAnchorElement>(
+            `a[href="#${entry.target.id}"]`,
+          );
+          if (entry.isIntersecting) {
+            header.current
+              ?.querySelectorAll("[aria-current]")
+              .forEach((anchor) => anchor.removeAttribute("aria-current"));
+            anchors?.forEach((anchor) =>
+              anchor.setAttribute("aria-current", "location"),
+            );
+          } else
+            anchors?.forEach((anchor) =>
+              anchor.removeAttribute("aria-current"),
+            );
+        }
+      },
+      { rootMargin: "-15% 0px -60% 0px" },
+    );
+    links.forEach(({ href }) => {
+      const section = document.querySelector(href);
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
+  }, []);
   return (
-    <header className="site-header">
+    <header className="site-header" ref={header}>
       <a
         className="wordmark"
         href="#top"
