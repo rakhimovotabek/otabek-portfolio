@@ -1,0 +1,30 @@
+[
+  {
+    "label": "desktop",
+    "width": 1440,
+    "dialogLabelContrast": 5.8,
+    "overflow": false
+  },
+  {
+    "label": "laptop",
+    "width": 1366,
+    "dialogLabelContrast": 5.8,
+    "overflow": false
+  },
+  {
+    "label": "mobile",
+    "width": 390,
+    "dialogLabelContrast": 5.8,
+    "overflow": false
+  },
+  {
+    "label": "narrow-mobile",
+    "width": 360,
+    "dialogLabelContrast": 5.8,
+    "overflow": false
+  },
+  {
+    "finalProduction": "homepage 200; three gallery studies rendered; centralized achievement values preserved",
+    "galleryScreenshot": "reduced motion / complete section"
+  }
+]

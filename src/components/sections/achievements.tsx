@@ -1,22 +1,14 @@
 import { Section } from "@/components/ui/section";
 import { achievements } from "@/data/portfolio";
 export function Achievements() {
-  const highlights = achievements.filter((a) =>
-    ["regional", "national", "stem", "ielts"].includes(a.id),
-  );
+  const highlights = achievements.filter((a) => a.display);
   const supporting = achievements.filter((a) =>
     ["district", "debate", "judge"].includes(a.id),
   );
-  const numbers: Record<string, string> = {
-    regional: "01",
-    national: "17",
-    stem: "03",
-    ielts: "6.5",
-  };
   return (
     <Section
       id="achievements"
-      label="04 / A FEW MILESTONES"
+      label="07 / A FEW MILESTONES"
       className="achievements-section"
     >
       <div className="achievements-heading">
@@ -35,19 +27,13 @@ export function Achievements() {
           <article key={a.id} className="milestone">
             <span className="milestone-index">0{i + 1}</span>
             <span className="milestone-number" aria-hidden="true">
-              {numbers[a.id]}
+              {a.display?.value}
             </span>
             <div>
               <h3>{a.title}</h3>
               <p>{a.detail}</p>
             </div>
-            <span className="milestone-note">
-              {a.id === "ielts"
-                ? "ACADEMIC / OVERALL BAND"
-                : a.id === "stem"
-                  ? "STEM OLYMPIAD"
-                  : "INFORMATICS"}
-            </span>
+            <span className="milestone-note">{a.display?.label}</span>
           </article>
         ))}
       </div>

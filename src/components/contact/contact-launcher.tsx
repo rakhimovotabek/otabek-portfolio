@@ -9,6 +9,16 @@ export function ContactLauncher() {
   const [open, setOpen] = useState(false);
   const [activated, setActivated] = useState(false);
   useEffect(() => {
+    const show = () => {
+      if (!dialog.current || dialog.current.open) return;
+      dialog.current.showModal();
+      setActivated(true);
+      setOpen(true);
+    };
+    window.addEventListener("portfolio:open-contact", show);
+    return () => window.removeEventListener("portfolio:open-contact", show);
+  }, []);
+  useEffect(() => {
     if (!open) return;
     const html = document.documentElement;
     const previous = html.style.overflow;

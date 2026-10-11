@@ -1,8 +1,8 @@
 # default — Otabek Rakhimov’s portfolio
 
-Phase 4B of a six-phase personal portfolio. The cinematic archive now includes private visitor messaging, moderated project comments and a guestbook, plus an owner inbox and moderation dashboard protected by an allowlist and TOTP MFA. The public layout and scroll choreography are preserved.
+Phase 5 of a six-phase personal portfolio: an editorial archive of a person, selected software, words and images. The revised opening and portrait spread lead into The Vault, a browsable collection, a reading room and a visual notebook. Original site studies and unpublished personal works are clearly distinguished.
 
-Interfaces use real server endpoints; unavailable configuration never produces fake success. Supabase keys have been saved privately for local setup and Auth connectivity checked, but hosted migrations/owner/Turnstile setup must be completed before live use. See the current [validation report](docs/PHASE_4B_VALIDATION.md).
+Private messaging, moderated project comments, the guestbook and the MFA owner dashboard remain connected to the existing protected backend. No database/security model was redesigned. Connection requirements and previous hosted checks are recorded in [Supabase setup](docs/SUPABASE_SETUP.md) and [Phase 4B validation](docs/PHASE_4B_VALIDATION.md); production Turnstile/proxy configuration and owner acceptance must not be inferred from mock tests. See [Phase 5 validation](docs/PHASE_5_VALIDATION.md) for current checks.
 
 ## Run locally
 
@@ -27,9 +27,11 @@ npm run build
 - `src/app/`: App Router layout, homepage, global design tokens.
 - `src/data/site.ts`: change the public nickname once here to update navigation, hero, biography, footer and metadata.
 - `src/data/portfolio.ts`: editable profile, five projects, eight achievement/experience entries. `null` means unverified; do not invent details.
-- `src/components/sections/`: hero, editorial biography, Vault exhibition, Side Quests, achievements and guestbook.
+- `src/data/archive.ts`: typed portraits, archive entries, writing and visual studies. See [content editing](docs/ARCHIVE_CONTENT.md).
+- `src/components/archive/`: image frames and the accessible filter/disclosure index.
+- `src/components/sections/`: opening, personal presence, Vault, archive, reading room, visual notebook, parallel interests, milestones and guestbook.
 - `src/components/layout/`: responsive navigation and footer.
-- `src/components/visuals/`: original fold motif and five conceptual project artworks.
+- `src/components/visuals/`: original geometric site studies and conceptual project artwork.
 - `src/components/community/`: shared validated visitor forms, approved-comment lists, and Turnstile lifecycle.
 - `src/components/ui/`: reusable section shell.
 - `src/components/motion/`: scoped GSAP/ScrollTrigger lifecycle.
@@ -44,6 +46,8 @@ npm run build
 
 ## Documentation
 
+- [Phase 5 verification](docs/PHASE_5_VALIDATION.md)
+- [Editing photographs and personal works](docs/ARCHIVE_CONTENT.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Archive inspection](docs/REFERENCE_AUDIT.md)
 - [Backend setup and deployment requirements](docs/SUPABASE_SETUP.md)

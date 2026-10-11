@@ -4,14 +4,14 @@ export function SideQuests() {
   return (
     <Section
       id="side-quests"
-      label="03 / OFF THE MAIN PATH"
+      label="06 / PARALLEL INTERESTS"
       className="quests-section"
     >
       <div className="quests-heading">
         <h2 id="side-quests-heading">
-          SIDE
+          Side
           <br />
-          <span className="serif-word">QUESTS</span>
+          <span className="serif-word">quests.</span>
           <span className="quests-star" aria-hidden="true">
             ✳
           </span>

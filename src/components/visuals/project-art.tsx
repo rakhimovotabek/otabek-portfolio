@@ -1,5 +1,4 @@
 import type { ProjectId } from "@/data/portfolio";
-import { FoldMark } from "./fold-mark";
 export function ProjectArt({ id }: { id: ProjectId }) {
   switch (id) {
     case "sat-chi":
@@ -12,7 +11,21 @@ export function ProjectArt({ id }: { id: ProjectId }) {
           <div className="sat-letters">
             SAT<span>’chi</span>
           </div>
-          <FoldMark className="sat-fold" />
+          <svg className="sat-geometry" viewBox="0 0 500 600" fill="none">
+            {Array.from({ length: 18 }, (_, i) => (
+              <path
+                key={i}
+                d={`M${30 + i * 19} 600V${300 - i * 12}Q${245 + i * 8} ${40 + i * 6} 500 ${190 + i * 18}`}
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+            ))}
+            <path
+              d="M70 510h355M250 555V190"
+              stroke="currentColor"
+              opacity=".5"
+            />
+          </svg>
           <div className="sat-bottom">
             <span>
               READ.

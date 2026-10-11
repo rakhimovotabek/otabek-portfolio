@@ -10,10 +10,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Portfolio boundaries
 
-- Current scope is Phase 4B. Do not start a later phase without the owner’s prompt.
+- Current scope is Phase 5. Do not start a later phase without the owner’s prompt.
 - Edit the public nickname only in `src/data/site.ts`.
-- Edit personal facts only in `src/data/portfolio.ts`; preserve unknown values as null.
-- Phase 4B connects visitor forms, comments, guestbook, owner MFA login and private dashboard to the existing protected backend. Preserve animations and schema; do not deploy or start Phase 5. Never return fake submission success.
+- Edit personal facts in `src/data/portfolio.ts`; archive/media/writing content lives in `src/data/archive.ts`. Preserve unknown values as null and label sample work.
+- Phase 5 establishes a personal creative archive and elevates its motion. Preserve messaging, canonical comment targets, MFA and database security. Do not deploy or start Phase 6. Never return fake submission success.
 - Read `docs/DESIGN_SYSTEM.md` for UI changes and `docs/BACKEND_PLAN.md` before backend work.
 - Keep downloaded ZIPs outside this repository unchanged.
 - Preserve reduced motion, readable server HTML, keyboard access, and scoped animation teardown.

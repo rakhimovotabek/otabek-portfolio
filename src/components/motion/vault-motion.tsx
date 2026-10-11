@@ -43,7 +43,7 @@ export function VaultMotion({
                 panel.removeAttribute("style");
                 panel
                   .querySelectorAll<HTMLElement>(
-                    ".project-text, .project-figure, .artwork > svg, .sat-fold, .paper-stack",
+                    ".project-text, .project-text h3, .project-figure, .artwork > svg, .sat-geometry, .paper-stack, .project-screenshot img",
                   )
                   .forEach((layer) => layer.removeAttribute("style"));
               });
@@ -64,7 +64,7 @@ export function VaultMotion({
                 });
                 gsap.from(
                   panel.querySelector(
-                    ".artwork > svg, .sat-fold, .paper-stack",
+                    ".artwork > svg, .sat-geometry, .paper-stack, .project-screenshot img",
                   ),
                   {
                     y: i % 2 ? -16 : 16,
@@ -124,13 +124,26 @@ export function VaultMotion({
             });
             // Each chapter has a reading hold, then a short layered handoff.
             panels.forEach((panel, i) => {
-              timeline.to({}, { duration: 0.64 });
+              timeline.fromTo(
+                panel.querySelector(".project-figure"),
+                { scale: 1.035 },
+                { scale: 1, duration: 0.64, ease: "none" },
+                i,
+              );
+              timeline.fromTo(
+                panel.querySelector(
+                  ".artwork > svg, .paper-stack, .project-screenshot img",
+                ),
+                { y: 12 },
+                { y: -8, duration: 0.64, ease: "none" },
+                i,
+              );
               if (i === panels.length - 1) return;
               const next = panels[i + 1];
               timeline
                 .to(
                   panel,
-                  { yPercent: -6, scale: 0.94, autoAlpha: 0, duration: 0.36 },
+                  { yPercent: -9, scale: 0.93, autoAlpha: 0, duration: 0.36 },
                   i + 0.64,
                 )
                 .fromTo(
@@ -145,28 +158,38 @@ export function VaultMotion({
                   i + 0.64,
                 )
                 .fromTo(
+                  next.querySelector(".project-figure"),
+                  { clipPath: "inset(100% 0 0 0)" },
+                  { clipPath: "inset(0% 0 0 0)", duration: 0.36 },
+                  i + 0.64,
+                )
+                .fromTo(
                   next.querySelector(".project-text"),
                   { y: 22 },
                   { y: 0, duration: 0.36 },
                   i + 0.64,
                 )
                 .fromTo(
-                  next.querySelector(".artwork > svg, .sat-fold, .paper-stack"),
-                  { y: 22, rotation: i % 2 ? -2 : 2 },
-                  { y: 0, rotation: 0, duration: 0.36 },
+                  next.querySelector(".project-text h3"),
+                  { clipPath: "inset(0 0 100% 0)", y: 14 },
+                  { clipPath: "inset(0 0 0% 0)", y: 0, duration: 0.36 },
                   i + 0.64,
                 );
             });
             // Duration is precisely five chapters, including the last reading hold.
             timeline.to({}, { duration: 0.36 });
-            timeline.eventCallback("onUpdate", () =>
+            timeline.eventCallback("onUpdate", () => {
+              element.style.setProperty(
+                "--vault-progress",
+                String(timeline.progress()),
+              );
               activate(
                 Math.min(
                   panels.length - 1,
                   Math.floor(timeline.progress() * panels.length + 0.18),
                 ),
-              ),
-            );
+              );
+            });
             const trigger = timeline.scrollTrigger!;
             const goTo = (id: string) => {
               const index = panels.findIndex((panel) => panel.id === id);
@@ -222,6 +245,7 @@ export function VaultMotion({
               element.removeEventListener("toggle", onToggle, true);
               element.classList.remove("is-cinematic");
               delete element.dataset.activeProject;
+              element.style.removeProperty("--vault-progress");
               panels.forEach((panel) => {
                 panel.inert = false;
                 panel.removeAttribute("aria-hidden");
@@ -260,6 +284,7 @@ export function VaultMotion({
   return (
     <div className="vault-motion" ref={root}>
       <div className="vault-controls">
+        <span className="vault-progress" aria-hidden="true" />
         <nav className="vault-chapters" aria-label="Vault projects">
           {chapters.map((chapter, i) => (
             <a

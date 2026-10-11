@@ -4,7 +4,7 @@ export function Guestbook() {
   return (
     <Section
       id="guestbook"
-      label="05 / A SPACE FOR YOUR WORDS"
+      label="08 / NOTES FROM VISITORS"
       className="guestbook-section"
     >
       <div className="guestbook-layout">

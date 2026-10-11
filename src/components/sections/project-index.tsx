@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { Section } from "@/components/ui/section";
 import { projects } from "@/data/portfolio";
 import { ProjectArt } from "@/components/visuals/project-art";
@@ -9,18 +10,14 @@ export function ProjectIndex() {
     <Section id="work" label="02 / SELECTED WORK" className="vault-section">
       <div className="vault-heading">
         <h2 id="work-heading">
-          THE
+          The
           <br />
-          <span>VAULT</span>
+          <span>Vault</span>
           <span className="vault-count">(05)</span>
         </h2>
         <div className="vault-intro">
-          <p>
-            A collection of things
-            <br />
-            <span className="serif-word">I’ve been building.</span>
-          </p>
-          <span className="eyebrow">FIVE PROJECTS. DIFFERENT QUESTIONS.</span>
+          <p>Selected software, each built around a different question.</p>
+          <span className="eyebrow">SOFTWARE / PART OF THE COLLECTION</span>
         </div>
       </div>
       <div className="vault-rule">
@@ -42,10 +39,26 @@ export function ProjectIndex() {
                 <span className="eyebrow">{project.category}</span>
               </div>
               <figure className="project-figure">
-                <ProjectArt id={project.id} />
+                {project.image ? (
+                  <div className="artwork project-screenshot">
+                    <Image
+                      src={project.image}
+                      alt={`${project.name} application screenshot`}
+                      fill
+                      sizes="(max-width: 700px) 90vw, 55vw"
+                    />
+                  </div>
+                ) : (
+                  <ProjectArt id={project.id} />
+                )}
                 <figcaption>
-                  <span>FIG. 0{i + 1} — ORIGINAL CONCEPT ART</span>
-                  <span>NOT AN APPLICATION SCREENSHOT</span>
+                  <span>
+                    FIG. 0{i + 1} —{" "}
+                    {project.image
+                      ? "APPLICATION SCREENSHOT"
+                      : "ORIGINAL CONCEPT ART"}
+                  </span>
+                  {!project.image && <span>NOT AN APPLICATION SCREENSHOT</span>}
                 </figcaption>
               </figure>
               <div className="project-text">
@@ -87,7 +100,7 @@ export function ProjectIndex() {
       <div className="vault-end">
         <span className="eyebrow">END OF COLLECTION</span>
         <span className="serif-word">
-          There’s more to a person than their projects.
+          From things that work to things worth keeping.
         </span>
         <span aria-hidden="true">↓</span>
       </div>

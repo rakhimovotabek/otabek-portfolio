@@ -1,62 +1,64 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { FoldMark } from "@/components/visuals/fold-mark";
+import { StudyArt } from "@/components/visuals/study-art";
 import { site } from "@/data/site";
 import { profile } from "@/data/portfolio";
 export function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
       <div className="hero-motion">
-        <div className="hero-kicker" data-hero-reveal>
-          <span>A PERSONAL WORKING ARCHIVE</span>
-          <span>SOFTWARE / IDEAS / EXPLORATION</span>
+        <div className="hero-kicker">
+          <span>{site.opening.label}</span>
+          <span>{profile.country} / UZT</span>
         </div>
-        <h1 id="hero-heading" className="hero-wordmark" data-hero-reveal>
+        <figure className="hero-art">
+          <div className="hero-art-reveal">
+            <StudyArt />
+          </div>
+          <figcaption>
+            <span>STUDY 00</span>
+            <span>{site.opening.artworkCaption}</span>
+          </figcaption>
+        </figure>
+        <div className="hero-index" aria-hidden="true">
+          <span>01—</span>
+          <span>
+            ENTER
+            <br />
+            THE COLLECTION
+          </span>
+        </div>
+        <div className="hero-identity">
+          <span>{profile.name}</span>
+          <span>{profile.role}</span>
+        </div>
+        <h1 id="hero-heading" className="hero-wordmark">
           <span className="wordmark-reveal">
             {site.brand}
             <span className="brand-period">.</span>
           </span>
         </h1>
         <div className="hero-lower">
-          <div className="hero-intro" data-hero-reveal>
-            <p className="eyebrow">
-              {profile.name} — {profile.role}
-            </p>
+          <div className="hero-intro">
             <h2>
-              <span className="motion-line">
-                <span>Code, questions</span>
-              </span>
-              <span className="motion-line">
-                <span className="serif-word">& other pursuits.</span>
-              </span>
+              {site.opening.lines.map((line, i) => (
+                <span className="motion-line" key={line}>
+                  <span className={i ? "serif-word" : ""}>{line}</span>
+                </span>
+              ))}
             </h2>
-            <p className="hero-description">
-              From Uzbekistan. Exploring computer science,
-              <br className="desktop-break" /> building useful software, and
-              learning as I go.
-            </p>
-            <a className="text-link" href="#work">
-              Enter the Vault <ArrowUpRight size={19} aria-hidden="true" />
+            <p className="hero-description">{site.opening.note}</p>
+            <a className="text-link" href="#archive">
+              Open the archive <ArrowUpRight size={17} aria-hidden="true" />
             </a>
           </div>
-          <figure className="hero-art">
-            <FoldMark />
-            <figcaption>
-              <span>FIG. 01</span>
-              <span>
-                AN OPEN FRAME.
-                <br />
-                ROOM FOR WHAT COMES NEXT.
-              </span>
-            </figcaption>
-          </figure>
           <a className="scroll-cue" href="#about">
             <ArrowDown size={18} aria-hidden="true" />
-            <span>SCROLL TO EXPLORE</span>
+            <span>A LITTLE FURTHER</span>
           </a>
         </div>
         <div className="hero-footnote">
-          <span>PERSONAL PORTFOLIO / WORKING COLLECTION</span>
-          <span>UZBEKISTAN · UZT / UTC+5</span>
+          <span>A COLLECTION IN PROGRESS</span>
+          <span>SOFTWARE / WORDS / IMAGES</span>
         </div>
       </div>
     </section>

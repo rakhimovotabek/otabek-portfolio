@@ -9,6 +9,9 @@ import { Guestbook } from "@/components/sections/guestbook";
 import { ContactLauncher } from "@/components/contact/contact-launcher";
 import { PageMotion } from "@/components/motion/page-motion";
 import { CommunityProvider } from "@/components/community/community-provider";
+import { Archive } from "@/components/sections/archive";
+import { Writing } from "@/components/sections/writing";
+import { Sketchbook } from "@/components/sections/sketchbook";
 export default function Home() {
   return (
     <>
@@ -22,6 +25,9 @@ export default function Home() {
             <Hero />
             <About />
             <ProjectIndex />
+            <Archive />
+            <Writing />
+            <Sketchbook />
             <SideQuests />
             <Achievements />
             <Guestbook />

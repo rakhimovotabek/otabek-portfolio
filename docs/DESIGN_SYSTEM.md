@@ -1,39 +1,26 @@
-# Design system — Phase 2
+# Personal archive design system — Phase 5
 
-## Direction
+The site is an editorial collection: presence, selected software, an archive index, a reading room, a visual notebook, parallel interests, milestones, visitors and correspondence. Earlier forms and security behavior are preserved. There are no fabricated personal artworks, photographs, project screenshots, metrics or social profiles.
 
-A working archive, with a visual language drawn from exhibition posters, folded paper, and editorial field notes. The public nickname is `site.brand` in `src/data/site.ts`; it is the only editable nickname value. Otabek Rakhimov remains the person in the biography and copyright. No business success, metrics, launch statuses, or social links are invented.
+## Type and surfaces
 
-## Typography and color
+Self-hosted Newsreader supplies a lighter, optically sized display/reading face with a true italic. DM Sans provides navigation, readable biography, controls and technical context. Small monospace labels are subordinate. The previous wide, heavy Syne display treatment is no longer loaded. Original font notices remain; see `FONTS.md`.
 
-Syne is the distinctive display family, DM Sans the reading family, and system Georgia italic supplies editorial emphasis. Variable font files are self-hosted through next/font/local with swap behavior and fallback metrics. No browser request to a font provider is needed. Font files and original SIL Open Font License 1.1 notices live in `src/app/fonts/`; see FONTS.md for provenance. No font package or runtime dependency was added.
+Charcoal has a muted olive cast (`#141711`), warm paper (`#efede5`) carries the personal spread/index, and sage paper (`#d7d9cd`) marks visitor correspondence. Writing has a restrained oxblood surface (`#392c2c`); the gallery uses soft stone. Project accents are localized to original artwork. Large serif type and carefully set smaller sans text replace the repetition of uniformly enormous technical headings. No full-screen glowing gradients, glass panels or repeated pill system is used.
 
-`src/app/globals.css` owns tokens. Charcoal #151619, graphite #202226, midnight #1e2535, warm paper #f2efe7 and bone #e7e3d9 form the surfaces. Muted cyan #b7d5d2 is reserved for correspondence/download art; electric blue #3256db anchors SAT’chi and debate; lime #d8ef9f connects the hero frame and problem-solving; warm orange #bd643e belongs to the financial project/hackathons. Burgundy #692b3d is local to the examination artwork. Secondary text has separate dark/light tokens.
+`globals.css` retains shared base, form, admin, exhibition and accessibility rules. `archive.css` supplies the revised public compositions, tokens and compact layouts, imported afterward through the root layout. Preserve that import order; verify production CSS when changing it. Public selectors are scoped to their sections; private dashboard layouts retain their existing controls.
 
-There are no glowing backgrounds, glass cards, gradient heroes, or pill systems. Hairlines, square edges, strong type, and deliberately unequal layouts supply the hierarchy. Desktop display scales are constrained to the actual wide font glyphs; mobile uses separate compositions at 700px, with tablet adjustments at 1000px. Shared gutters and fluid section spacing retain alignment.
+## Composition
 
-## Journey and geometry
+- Opening: a tall original paper-volume study intersects a restrained lower-case signature. The person, role and location remain explicit. Negative space separates the artwork from the invitation to explore.
+- Presence: main portrait reservation, offset landscape reservation, substantial biography and a smaller detail image beside the reflective afterword. Replaceable frames state that photographs are absent; no fake likeness is supplied.
+- Vault: a dark exhibition with a refined title, original concept artwork, close descriptions and stable project disclosures. SAT’chi gets a new geometric learning study; the old opening/fold motif is removed. Unknown links/stacks/statuses remain honest.
+- Archive: a chronological-label index with unequal text columns, native expanded entries, category filters and visibly reserved pages. This is a collection browser, not another grid of cards.
+- Writing: a quiet oxblood reading room, margin metadata and expressive but readable lines. The specimen is clearly identified as a replaceable sample rather than the owner's published writing.
+- Visual notebook: three uneven original studies, large editorial mounts and museum-like captions. It supports real drawings, photos and sketches through the same image model.
+- Parallel interests and milestones: subdued paper/ink compositions and truthful records; numbers never act as invented counters.
+- Guestbook and ending: an open correspondence spread, approved visitor entries, and a direct private-note action in the closing section. The floating trigger and secure forms remain available.
 
-- Hero: a large, legible nickname, left-aligned personal context, and an original folded architectural frame. The frame is a visual metaphor for room to learn, not a product icon.
-- About: calm paper, asymmetric portrait-reserved typographic specimen, substantial biography, and interests as a reading line rather than badges.
-- Vault: charcoal exhibition, enormous section heading, lead SAT’chi presentation, and four offset projects. Education gets a blue typography poster; examinations a burgundy balance study; finance architectural steps; the downloader layered sheets; IELTS repeated arches. Every image is visibly labelled original concept art, not a screenshot.
-- Side Quests: a magazine collage with unequal spans, distinct typography and sparing original geometry. Layout collapses into purposeful staggered mobile blocks, including a narrow two-column pair.
-- Achievements: quiet bone paper, truthful ranks/band score, and supporting milestones. Numbers are records, not counters. No inferred dates or chronological timeline.
-- Guestbook: an unwritten page beside an inert, labelled preview sheet. No fake visitors or comments.
-- Contact: midnight surface and the opening frame motif repeated in muted cyan. Large closing brand, private-message preview in a native dialog, and an always-available square floating trigger. At phone widths it becomes a compact icon with an explicit accessible name to reduce overlap with reading areas.
+## Responsive/accessibility boundaries
 
-Stepped paper/charcoal boundary tabs establish section handoffs. Each section has its own isolation context; project IDs, articles, artwork containers with explicit aspect ratios, and separate text/figure blocks remain stable. Phase 3 animates those edges and adds a desktop exhibition while preserving the original grid for compact/reduced-motion views and reading mode. Existing hash anchors remain valid. See [Motion architecture](MOTION_ARCHITECTURE.md).
-
-## Interaction and accessibility
-
-The server renders readable finished content. Scoped GSAP contexts choreograph the hero, exhibition and editorial handoffs with full teardown and live reduced-motion restoration. Motion for React owns contact controls and dialog entry. Native mobile disclosure works without JavaScript; the native modal requires JavaScript, restores trigger focus on Escape, and makes background content inert. Headings, labels, landmarks, comment targets, focus rings and skip link remain semantic. Covered exhibition layers are inert; chapter links and list mode preserve access to every project.
-
-FormPreview is presentation only: disabled fieldsets, visible unavailability notices, labelled fields and disabled “opens later” controls. It never issues a request or stores values. All comment targets discriminate between stable project IDs and the separate guestbook. The contact preview is private-inbox presentation only; Phase 4 owns validation, permissions and persistence.
-
-## Extension rules
-
-Replace conceptual artwork only with verified screenshots, updating captions. Confirm stacks/status/URLs before editing unknown values. Add a genuine portrait later. Never ship visitor forms until the backend requirements and security checks are satisfied. Phase 3 motion must preserve the final no-JavaScript/reduced-motion compositions and avoid layout shifts. Keep SVG graphics and content server-rendered, and add client boundaries only for actual interaction.
-
-## Build pipeline
-
-Tailwind uses the documented `@tailwindcss/postcss` integration in `postcss.config.mjs`. The starter’s custom Turbopack CSS loader was replaced after production rebuilds reused stale stylesheet output. The application still uses Next.js/Turbopack; no runtime animation or UI dependency was added.
+At 700px the opening becomes a purpose-built vertical cover, presence images overlap within reserved space, archive metadata wraps into a compact index, and gallery mounts stagger down one natural-scroll column. Minimum controls remain 44px. Focus, skip link, native disclosures, textual image labels and reduced motion remain supported. Covered desktop exhibition panels remain inert and aria-hidden. See `MOTION_ARCHITECTURE.md` for animation ownership and `ARCHIVE_CONTENT.md` for content editing.

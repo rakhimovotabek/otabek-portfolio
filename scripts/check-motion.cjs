@@ -201,6 +201,16 @@ const snapshot = async (page, name) =>
           await page.locator(".mobile-menu").getAttribute("open"),
           null,
         );
+        // Native smooth scrolling can take longer on the expanded page and
+        // modest hardware; assert arrival rather than a fixed animation time.
+        await page.waitForFunction(
+          () =>
+            Math.abs(
+              document.querySelector("#work").getBoundingClientRect().y,
+            ) < 50,
+          undefined,
+          { timeout: 5000 },
+        );
         assert.ok(Math.abs((await page.locator("#work").boundingBox()).y) < 50);
       }
       for (const [label, selector] of [

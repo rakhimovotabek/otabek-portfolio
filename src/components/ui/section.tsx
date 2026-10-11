@@ -17,7 +17,7 @@ export function Section({
       className={`section ${className}`}
     >
       <div className="section-label">
-        <span aria-hidden="true">+</span>
+        <span aria-hidden="true">—</span>
         {label}
       </div>
       {children}
