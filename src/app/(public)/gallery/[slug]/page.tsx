@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { publishedGallery, publishedJournal } from "@/data/universe";
 import { site } from "@/data/site";
-import { MediaFrame } from "@/components/archive/media-frame";
+import { AlbumViewer } from "@/components/universe/album-viewer";
 import { PageHeading } from "@/components/universe/page-heading";
 export function generateStaticParams() {
   return publishedGallery().map((album) => ({ slug: album.slug }));
@@ -47,16 +47,7 @@ export default async function GalleryDetail({
           {album.date}
         </time>
       )}
-      <div className="album-images">
-        {album.images.map((image, i) => (
-          <MediaFrame
-            key={image.id}
-            media={image}
-            className={`album-mount mount-${i % 3}`}
-            sizes="(max-width: 700px) 90vw, 70vw"
-          />
-        ))}
-      </div>
+      <AlbumViewer images={album.images} title={album.title} />
       {entries.length > 0 && (
         <nav className="related-pages" aria-label="Associated journal entries">
           <span className="eyebrow">THE WORDS BEHIND THE IMAGES</span>

@@ -1,0 +1,65 @@
+{
+  "environment": "Headless Chromium on this laptop; fixture availability disabled; one foreground tab; no FPS guarantee",
+  "before": {
+    "heapBytes": 5841243,
+    "nodes": 210,
+    "pins": 0
+  },
+  "after": {
+    "heapBytes": 8233933,
+    "nodes": 210,
+    "pins": 0
+  },
+  "workSamples": [
+    {
+      "heapBytes": 8864372,
+      "nodes": 210,
+      "pins": 0
+    },
+    {
+      "heapBytes": 9204009,
+      "nodes": 210,
+      "pins": 0
+    },
+    {
+      "heapBytes": 8630028,
+      "nodes": 210,
+      "pins": 0
+    }
+  ],
+  "timings": [
+    {
+      "href": "/gallery",
+      "ms": 945
+    },
+    {
+      "href": "/work",
+      "ms": 914
+    },
+    {
+      "href": "/about",
+      "ms": 890
+    },
+    {
+      "href": "/work",
+      "ms": 902
+    },
+    {
+      "href": "/journal",
+      "ms": 858
+    },
+    {
+      "href": "/work",
+      "ms": 882
+    }
+  ],
+  "longTasks": {
+    "count": 2,
+    "maxMs": 159,
+    "durationsMs": [
+      159,
+      57
+    ]
+  },
+  "limitations": "Memory includes warmed route/module caches. CDP collection does not prove absence of all leaks; no physical-phone or GPU benchmark. The bundled ScrollTrigger instance is not exposed globally, so total trigger count was not inspected."
+}

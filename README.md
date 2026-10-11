@@ -2,7 +2,7 @@
 
 A multi-page personal archive. The cinematic homepage preserves the four-world prototype: a massive overlapping name, layered SAT’chi focus and diagonal paper transition, followed by a brief introduction, two selected works and Now / Lately. About, Work, Journal, Gallery, Links and Guestbook each have their own page. Original site studies and unpublished personal works are clearly distinguished.
 
-Private messaging, moderated project comments, the guestbook and the MFA owner dashboard remain connected to the existing protected backend. No database/security model was redesigned. Connection requirements and previous hosted checks are recorded in [Supabase setup](docs/SUPABASE_SETUP.md) and [Phase 4B validation](docs/PHASE_4B_VALIDATION.md); production Turnstile/proxy configuration and owner acceptance must not be inferred from mock tests. See [organization validation](docs/ORGANIZATION_VALIDATION.md) for current checks, [reference rebuild validation](docs/REFERENCE_HERO_VALIDATION.md) for the preserved cinematic opening, and [Phase 5 validation](docs/PHASE_5_VALIDATION.md) for the earlier archive work.
+Private messaging, moderated project comments, the guestbook and the MFA owner dashboard remain connected to the existing protected backend. No database/security model was redesigned. Connection requirements and previous hosted checks are recorded in [Supabase setup](docs/SUPABASE_SETUP.md) and [Phase 4B validation](docs/PHASE_4B_VALIDATION.md); production Turnstile/proxy configuration and owner acceptance must not be inferred from mock tests. See [creative motion validation](docs/CREATIVE_MOTION_VALIDATION.md) for current alignment/transitions and [organization validation](docs/ORGANIZATION_VALIDATION.md) for the route structure, [reference rebuild validation](docs/REFERENCE_HERO_VALIDATION.md) for the preserved cinematic opening, and [Phase 5 validation](docs/PHASE_5_VALIDATION.md) for the earlier archive work.
 
 ## Run locally
 
@@ -49,6 +49,7 @@ npm run build
 ## Documentation
 
 - [Routes, content and future CMS boundaries](docs/ROUTES_AND_CONTENT.md)
+- [Creative motion validation](docs/CREATIVE_MOTION_VALIDATION.md)
 - [Organization validation](docs/ORGANIZATION_VALIDATION.md)
 - [Prototype comparison and rebuild verification](docs/REFERENCE_HERO_VALIDATION.md)
 - [Phase 5 verification](docs/PHASE_5_VALIDATION.md)

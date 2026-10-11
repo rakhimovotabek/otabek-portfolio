@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { MediaFrame } from "@/components/archive/media-frame";
 import { presence } from "@/data/archive";
 import { profile } from "@/data/portfolio";

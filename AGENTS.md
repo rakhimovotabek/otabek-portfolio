@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Portfolio boundaries
 
-- Current scope is multi-page organization. Preserve the reference hero, existing backend and MFA. No CMS, migrations, two-way chat or deployment.
+- Current scope is shared alignment and creative route motion. Preserve the reference hero, existing backend and MFA. No CMS, migrations, two-way chat or deployment.
 - Edit the public nickname only in `src/data/site.ts`.
 - Edit personal facts in `src/data/portfolio.ts`; archive/media/writing content lives in `src/data/archive.ts`. Preserve unknown values as null and label sample work.
 - Build from the owner’s `otabek_reference_hero_demo.html` and motion video. Saved Strade material is reference-only and must not be redistributed. Preserve messaging, canonical comment targets, MFA and database security. Never return fake submission success.

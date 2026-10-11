@@ -1,0 +1,48 @@
+{
+  "midCoverReducedMotionCompletesNavigation": true,
+  "normalMotionAndHistoryAfterPreferenceReset": true,
+  "intermediateWidths": [
+    {
+      "width": 960,
+      "href": "/",
+      "brand": 24.953125,
+      "nav": 299.890625,
+      "overflow": false
+    },
+    {
+      "width": 960,
+      "href": "/about",
+      "brand": 24.953125,
+      "nav": 299.890625,
+      "overflow": false
+    },
+    {
+      "width": 820,
+      "href": "/",
+      "brand": 21.3125,
+      "nav": 236.875,
+      "overflow": false
+    },
+    {
+      "width": 820,
+      "href": "/about",
+      "brand": 21.3125,
+      "nav": 236.875,
+      "overflow": false
+    },
+    {
+      "width": 700,
+      "href": "/",
+      "brand": 18.1875,
+      "nav": 0,
+      "overflow": false
+    },
+    {
+      "width": 700,
+      "href": "/about",
+      "brand": 18.1875,
+      "nav": 0,
+      "overflow": false
+    }
+  ]
+}

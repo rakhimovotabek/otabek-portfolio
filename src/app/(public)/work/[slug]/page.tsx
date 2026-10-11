@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { getWork, works } from "@/data/universe";
 import { site } from "@/data/site";
 import { PageHeading } from "@/components/universe/page-heading";

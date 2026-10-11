@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { heroCopy, heroWorlds } from "@/data/hero";
 import { site } from "@/data/site";
 import { profile } from "@/data/portfolio";

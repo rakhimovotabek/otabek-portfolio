@@ -1,7 +1,7 @@
 "use client";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { useRef } from "react";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
 const links = site.navigation;

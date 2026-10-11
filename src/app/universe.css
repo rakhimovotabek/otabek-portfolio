@@ -1,3 +1,8 @@
+/* Shared public grid: never change the navigation inset when changing rooms. */
+.reference-home,
+.archive-site {
+  --public-gutter: clamp(16px, 2.6vw, 44px);
+}
 /* Public route organization. Existing hero/worlds and private admin styles remain independent. */
 .archive-site {
   --ink: #0b1015;
@@ -9,8 +14,9 @@
 .archive-site .site-header {
   margin: 0;
   width: 100%;
-  height: 90px;
-  padding: 0 clamp(20px, 4vw, 64px);
+  height: 86px;
+  gap: 20px;
+  padding: 0 var(--public-gutter);
   border-bottom: 1px solid #0b101526;
   background: var(--paper);
   color: var(--ink);
@@ -19,7 +25,7 @@
 }
 .archive-site .site-header .wordmark {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
   letter-spacing: -0.08em;
 }
@@ -27,7 +33,12 @@
   color: inherit;
 }
 .archive-site .header-location {
-  display: none;
+  display: block;
+  color: inherit;
+  opacity: 0.7;
+}
+.reference-home .header-location {
+  display: block;
 }
 .archive-site .desktop-nav,
 .reference-home .desktop-nav {
@@ -42,7 +53,7 @@
   background: #0b1015;
 }
 .inner-page {
-  padding: 0 clamp(20px, 4vw, 64px) 100px;
+  padding: 0 var(--public-gutter) 100px;
 }
 .page-heading {
   padding: clamp(60px, 8vw, 130px) 0 clamp(55px, 6vw, 100px);
@@ -608,6 +619,10 @@
   }
   .archive-site .mobile-menu {
     display: block;
+  }
+  .archive-site .header-location,
+  .reference-home .header-location {
+    display: none;
   }
   .reference-home .about-compact {
     min-height: 100svh;

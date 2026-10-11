@@ -42,6 +42,7 @@ export function editorialTimelines(
   gsap.utils
     .toArray<HTMLElement>(select(".media-window"))
     .filter((el) => !el.closest(".archive-entry"))
+    .filter((el) => !el.closest(".inner-page"))
     .forEach((frame, i) => {
       gsap.from(frame, {
         clipPath: i % 2 ? "inset(0 0 0 100%)" : "inset(100% 0 0 0)",

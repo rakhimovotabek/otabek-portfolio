@@ -3,6 +3,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { heroTimeline } from "./hero-timeline";
 import { editorialTimelines } from "./editorial-timelines";
 import { motionTokens as m } from "./tokens";
+import { roomTimelines } from "./room-timelines";
 
 export function PageMotion({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
@@ -27,16 +28,11 @@ export function PageMotion({ children }: { children: ReactNode }) {
           },
           (context) => {
             if (!context.conditions?.motion || !root.current) return;
-            const title = root.current.querySelector(
-              "[data-page-title] > span",
+            const roomCleanup = roomTimelines(
+              gsap,
+              root.current,
+              !!context.conditions.pointer,
             );
-            if (title)
-              gsap.from(title, {
-                yPercent: 105,
-                duration: 0.85,
-                ease: "power3.out",
-                clearProps: "transform",
-              });
             const heroCleanup = heroTimeline(
               gsap,
               root.current,
@@ -51,6 +47,7 @@ export function PageMotion({ children }: { children: ReactNode }) {
             return () => {
               heroCleanup();
               editorialCleanup();
+              roomCleanup();
             };
           },
           root,

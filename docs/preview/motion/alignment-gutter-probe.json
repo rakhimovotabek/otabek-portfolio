@@ -1,0 +1,62 @@
+[
+  {
+    "width": 1440,
+    "route": "/",
+    "brand": 37.4375,
+    "body": 0,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/about",
+    "brand": 37.4375,
+    "heading": 37.4375,
+    "body": 0,
+    "overflow": false
+  },
+  {
+    "width": 1366,
+    "route": "/",
+    "brand": 35.515625,
+    "body": 0,
+    "overflow": false
+  },
+  {
+    "width": 1366,
+    "route": "/about",
+    "brand": 35.515625,
+    "heading": 35.515625,
+    "body": 0,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "brand": 16,
+    "body": 0,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/about",
+    "brand": 16,
+    "heading": 16,
+    "body": 0,
+    "overflow": false
+  },
+  {
+    "width": 360,
+    "route": "/",
+    "brand": 16,
+    "body": 0,
+    "overflow": false
+  },
+  {
+    "width": 360,
+    "route": "/about",
+    "brand": 16,
+    "heading": 16,
+    "body": 0,
+    "overflow": false
+  }
+]

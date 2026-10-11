@@ -2,6 +2,7 @@
 export const site = {
   brand: "default",
   title: "A personal archive",
+  discovery: "Simply Lovely",
   navigation: [
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },

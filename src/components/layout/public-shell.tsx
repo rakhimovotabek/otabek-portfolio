@@ -6,6 +6,7 @@ import { ContactLauncher } from "@/components/contact/contact-launcher";
 import { PageMotion } from "@/components/motion/page-motion";
 import { Navigation } from "./navigation";
 import { Footer } from "./footer";
+import { RouteTransitions } from "@/components/motion/route-transitions";
 
 export function PublicShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -15,14 +16,16 @@ export function PublicShell({ children }: { children: ReactNode }) {
         Skip to content
       </a>
       <CommunityProvider>
-        <PageMotion key={pathname}>
-          <Navigation />
-          <main id="main" tabIndex={-1}>
-            {children}
-          </main>
-          <Footer />
-        </PageMotion>
-        <ContactLauncher />
+        <RouteTransitions>
+          <PageMotion key={pathname}>
+            <Navigation />
+            <main id="main" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </PageMotion>
+          <ContactLauncher />
+        </RouteTransitions>
       </CommunityProvider>
     </div>
   );

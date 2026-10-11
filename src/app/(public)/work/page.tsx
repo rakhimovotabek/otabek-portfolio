@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import {
   works,
   workCategories,
@@ -11,6 +11,7 @@ import { PageHeading } from "@/components/universe/page-heading";
 import { WorkActions } from "@/components/universe/work-actions";
 import { MediaFrame } from "@/components/archive/media-frame";
 import { ProjectArt } from "@/components/visuals/project-art";
+import { FilterScene } from "@/components/universe/filter-scene";
 export const metadata: Metadata = { title: `Work — ${site.brand}` };
 export default async function WorkPage({
   searchParams,
@@ -48,57 +49,61 @@ export default async function WorkPage({
           </Link>
         ))}
       </nav>
-      {entries.length ? (
-        <div className="work-index">
-          {entries.map((work, i) => (
-            <article
-              key={work.id}
-              className={`work-index-entry ${i === 0 ? "is-first" : ""}`}
-            >
-              <div className="work-index-number">
-                {String(i + 1).padStart(2, "0")}
-                <span className="eyebrow">{work.category}</span>
-              </div>
-              <Link
-                href={`/work/${work.slug}`}
-                className="work-index-art"
-                aria-label={`Open ${work.title}`}
+      <FilterScene selected={selected}>
+        {entries.length ? (
+          <div className="work-index">
+            {entries.map((work, i) => (
+              <article
+                key={work.id}
+                className={`work-index-entry ${i === 0 ? "is-first" : ""}`}
               >
-                {work.images[0] ? (
-                  <MediaFrame media={work.images[0]} />
-                ) : work.commentProjectId ? (
-                  <ProjectArt id={work.commentProjectId} />
-                ) : (
-                  <span className="work-no-image">Images to come.</span>
-                )}
-                <span className="work-art-label">
-                  {work.images.length
-                    ? "SELECTED IMAGE"
-                    : "ORIGINAL CONCEPT ART / NOT A SCREENSHOT"}
-                </span>
-              </Link>
-              <div className="work-index-copy">
-                <span className="eyebrow">{work.discipline}</span>
-                <h2>
-                  <Link href={`/work/${work.slug}`}>{work.title}</Link>
-                </h2>
-                <p>{work.description}</p>
-                <Link className="text-link" href={`/work/${work.slug}`}>
-                  View the work ↗
+                <div className="work-index-number">
+                  {String(i + 1).padStart(2, "0")}
+                  <span className="eyebrow">{work.category}</span>
+                </div>
+                <Link
+                  href={`/work/${work.slug}`}
+                  className="work-index-art"
+                  aria-label={`Open ${work.title}`}
+                >
+                  {work.images[0] ? (
+                    <MediaFrame media={work.images[0]} />
+                  ) : work.commentProjectId ? (
+                    <ProjectArt id={work.commentProjectId} />
+                  ) : (
+                    <span className="work-no-image">Images to come.</span>
+                  )}
+                  <span className="work-art-label">
+                    {work.images.length
+                      ? "SELECTED IMAGE"
+                      : "ORIGINAL CONCEPT ART / NOT A SCREENSHOT"}
+                  </span>
                 </Link>
-                <WorkActions work={work} />
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div className="quiet-empty">
-          <span aria-hidden="true">—</span>
-          <h2>{workCategories.find((item) => item.id === selected)?.title}</h2>
-          <p>{universeCopy.work.empty}</p>
-          <p>{workCategories.find((item) => item.id === selected)?.note}</p>
-        </div>
-      )}
+                <div className="work-index-copy">
+                  <span className="eyebrow">{work.discipline}</span>
+                  <h2>
+                    <Link href={`/work/${work.slug}`}>{work.title}</Link>
+                  </h2>
+                  <p>{work.description}</p>
+                  <Link className="text-link" href={`/work/${work.slug}`}>
+                    View the work ↗
+                  </Link>
+                  <WorkActions work={work} />
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="quiet-empty">
+            <span aria-hidden="true">—</span>
+            <h2>
+              {workCategories.find((item) => item.id === selected)?.title}
+            </h2>
+            <p>{universeCopy.work.empty}</p>
+            <p>{workCategories.find((item) => item.id === selected)?.note}</p>
+          </div>
+        )}
+      </FilterScene>
     </div>
   );
 }

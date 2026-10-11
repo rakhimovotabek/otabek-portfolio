@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { featuredWorkIds, getWork } from "@/data/universe";
 import { WorkActions } from "@/components/universe/work-actions";
 import { Section } from "@/components/ui/section";

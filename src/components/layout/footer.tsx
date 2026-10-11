@@ -1,7 +1,8 @@
 import { OpenMessage } from "@/components/contact/open-message";
 import { site } from "@/data/site";
 import { profile } from "@/data/portfolio";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
+import { QuietDiscovery } from "@/components/universe/quiet-discovery";
 export function Footer() {
   return (
     <footer
@@ -43,6 +44,7 @@ export function Footer() {
         <span>.</span>
       </div>
       <div className="footer-bottom">
+        <QuietDiscovery />
         <span>
           © {new Date().getFullYear()} {site.brand} / {profile.name}
         </span>

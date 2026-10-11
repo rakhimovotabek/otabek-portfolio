@@ -30,3 +30,7 @@ The opening deliberately retains the prototype’s Arial/Helvetica display typog
 ## Responsive/accessibility boundaries
 
 At 800px the four opening worlds become a two-by-two composition and the featured project separates copy from artwork vertically. The following editorial spread stacks while retaining its rotated tile composition. Existing 700px archive/biography/gallery layouts remain in place. Focus, skip link, native disclosures, textual image labels and reduced motion remain supported. Covered opening and desktop exhibition controls remain inert and aria-hidden. Reduced motion and failed/no JavaScript enhancement leave a single readable opening without a long empty scroll range. See `MOTION_ARCHITECTURE.md` for animation ownership and `ARCHIVE_CONTENT.md` for content editing.
+
+## Room motion and the shared grid
+
+Public navigation and inner content share `--public-gutter`; the header keeps identical desktop brand/location slots across rooms. Intentional internal editorial offsets remain. `room-motion.css` layers folio transitions, framed biography images, ruled literary margins, exhibition responses, a native gallery viewer and directory highlights after existing public styles. Dark/paper focus colors remain visible. The footer’s “One last detail” reveals the centrally configured `Simply Lovely` Easter egg. See `CREATIVE_MOTION_VALIDATION.md` for measurements and actual browser evidence.

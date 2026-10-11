@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { MediaFrame } from "@/components/archive/media-frame";
 import { latelyItems, universeCopy } from "@/data/universe";
 export function Lately() {

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { publishedJournal, publishedGallery } from "@/data/universe";
 import { site } from "@/data/site";
 import { PageHeading } from "@/components/universe/page-heading";
@@ -34,6 +34,9 @@ export default async function JournalDetail({
     <article
       className={`inner-page journal-page journal-detail ${entry.category === "poem" ? "is-poem" : ""}`}
     >
+      <div className="reading-progress" aria-hidden="true">
+        <span />
+      </div>
       <PageHeading
         label={entry.category.toUpperCase()}
         title={entry.title}

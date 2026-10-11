@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/motion/route-transitions";
 export function PageHeading({
   label,
   title,
