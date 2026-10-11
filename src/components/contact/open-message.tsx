@@ -1,15 +1,25 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
-export function OpenMessage() {
+export function OpenMessage({
+  label = site.contact.action,
+  message,
+}: {
+  label?: string;
+  message?: string;
+}) {
   return (
     <button
       type="button"
       className="text-link"
       aria-haspopup="dialog"
-      onClick={() => window.dispatchEvent(new Event("portfolio:open-contact"))}
+      onClick={() =>
+        window.dispatchEvent(
+          new CustomEvent("portfolio:open-contact", { detail: { message } }),
+        )
+      }
     >
-      {site.contact.action} <ArrowUpRight size={18} aria-hidden="true" />
+      {label} <ArrowUpRight size={18} aria-hidden="true" />
     </button>
   );
 }

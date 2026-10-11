@@ -1,11 +1,19 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { featuredWorkIds, getWork } from "@/data/universe";
+import { WorkActions } from "@/components/universe/work-actions";
 import { Section } from "@/components/ui/section";
 import { projects } from "@/data/portfolio";
 import { ProjectArt } from "@/components/visuals/project-art";
 import { ProjectDiscussion } from "@/components/community/comments";
 import { VaultMotion } from "@/components/motion/vault-motion";
-export function ProjectIndex() {
+export function ProjectIndex({ featured = false }: { featured?: boolean }) {
+  const collection = featured
+    ? projects.filter((project) =>
+        featuredWorkIds.some((id) => id === project.id),
+      )
+    : projects;
   return (
     <Section id="work" label="02 / SELECTED WORK" className="vault-section">
       <div className="vault-heading">
@@ -13,7 +21,9 @@ export function ProjectIndex() {
           The
           <br />
           <span>Vault</span>
-          <span className="vault-count">(05)</span>
+          <span className="vault-count">
+            ({String(collection.length).padStart(2, "0")})
+          </span>
         </h2>
         <div className="vault-intro">
           <p>Selected software, each built around a different question.</p>
@@ -24,9 +34,9 @@ export function ProjectIndex() {
         <span>EXPLORE THE COLLECTION</span>
         <span>2026 / PORTFOLIO EDITION</span>
       </div>
-      <VaultMotion chapters={projects.map(({ id, name }) => ({ id, name }))}>
+      <VaultMotion chapters={collection.map(({ id, name }) => ({ id, name }))}>
         <div className="project-exhibition">
-          {projects.map((project, i) => (
+          {collection.map((project, i) => (
             <article
               className={`project project-${project.id}`}
               id={project.id}
@@ -89,19 +99,28 @@ export function ProjectIndex() {
                   </p>
                 )}
               </div>
-              <ProjectDiscussion
-                id={`${project.id}-comment`}
-                target={{ kind: "project", projectId: project.id }}
-              />
+              {featured ? (
+                <div className="project-page-actions">
+                  <Link href={`/work/${project.id}`} className="text-link">
+                    Open project ↗
+                  </Link>
+                  <WorkActions work={getWork(project.id)!} />
+                </div>
+              ) : (
+                <ProjectDiscussion
+                  id={`${project.id}-comment`}
+                  target={{ kind: "project", projectId: project.id }}
+                />
+              )}
             </article>
           ))}
         </div>
       </VaultMotion>
       <div className="vault-end">
-        <span className="eyebrow">END OF COLLECTION</span>
-        <span className="serif-word">
-          From things that work to things worth keeping.
-        </span>
+        <span className="eyebrow">SELECTED / NOT THE WHOLE COLLECTION</span>
+        <Link className="serif-word" href="/work">
+          Explore all work ↗
+        </Link>
         <span aria-hidden="true">↓</span>
       </div>
     </Section>

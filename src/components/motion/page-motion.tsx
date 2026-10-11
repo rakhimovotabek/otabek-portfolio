@@ -27,6 +27,16 @@ export function PageMotion({ children }: { children: ReactNode }) {
           },
           (context) => {
             if (!context.conditions?.motion || !root.current) return;
+            const title = root.current.querySelector(
+              "[data-page-title] > span",
+            );
+            if (title)
+              gsap.from(title, {
+                yPercent: 105,
+                duration: 0.85,
+                ease: "power3.out",
+                clearProps: "transform",
+              });
             const heroCleanup = heroTimeline(
               gsap,
               root.current,

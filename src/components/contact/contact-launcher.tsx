@@ -8,8 +8,19 @@ export function ContactLauncher() {
   const reduced = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [activated, setActivated] = useState(false);
+  const [prefill, setPrefill] = useState<{
+    message: string;
+    revision: number;
+  }>();
   useEffect(() => {
-    const show = () => {
+    const show = (event: Event) => {
+      const message = (event as CustomEvent<{ message?: string }>).detail
+        ?.message;
+      if (typeof message === "string" && message.length <= 4000)
+        setPrefill((previous) => ({
+          message,
+          revision: (previous?.revision ?? 0) + 1,
+        }));
       if (!dialog.current || dialog.current.open) return;
       dialog.current.showModal();
       setActivated(true);
@@ -117,7 +128,13 @@ export function ContactLauncher() {
             A private note about the work, an idea, or a question. No account is
             needed.
           </p>
-          {activated && <SubmissionForm id="private-contact" kind="contact" />}
+          {activated && (
+            <SubmissionForm
+              id="private-contact"
+              kind="contact"
+              prefill={prefill}
+            />
+          )}
         </motion.div>
       </dialog>
     </MotionConfig>

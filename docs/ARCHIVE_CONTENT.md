@@ -1,5 +1,7 @@
 # Editing the personal archive
 
+For the current multi-page site, see `ROUTES_AND_CONTENT.md`. Published journal entries, albums, collaboration settings, public links and Now / Lately are configured in `src/data/universe.ts`. The earlier sample writing and reserved archive entries below are retained source material, not published personal journal entries. Existing portraits and visual studies still supply the new routes.
+
 Phase 5 treats the site as a collection of a person, selected software, words and images. It uses repository data, not a CMS. Existing project IDs and Supabase comment targets are unchanged.
 
 ## Content map

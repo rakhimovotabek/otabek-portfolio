@@ -1,6 +1,7 @@
 import { OpenMessage } from "@/components/contact/open-message";
 import { site } from "@/data/site";
 import { profile } from "@/data/portfolio";
+import Link from "next/link";
 export function Footer() {
   return (
     <footer
@@ -18,7 +19,7 @@ export function Footer() {
         <p>{site.contact.description}</p>
         <div className="contact-actions">
           <OpenMessage />
-          <a href="#guestbook">{site.contact.guestbook} ↗</a>
+          <Link href="/guestbook">{site.contact.guestbook} ↗</Link>
           {profile.socialLinks.map((link) => (
             <a
               key={link.url}

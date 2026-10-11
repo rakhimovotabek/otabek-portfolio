@@ -1,8 +1,8 @@
 # default — Otabek Rakhimov’s portfolio
 
-A personal archive of a person, selected software, words and images. The opening now adapts Otabek’s working HTML prototype directly: four colored worlds, a massive overlapping name, an expanding SAT’chi focus scene and a diagonal paper transition. The existing biography, Vault, collection, reading room and visual notebook follow it. Original site studies and unpublished personal works are clearly distinguished.
+A multi-page personal archive. The cinematic homepage preserves the four-world prototype: a massive overlapping name, layered SAT’chi focus and diagonal paper transition, followed by a brief introduction, two selected works and Now / Lately. About, Work, Journal, Gallery, Links and Guestbook each have their own page. Original site studies and unpublished personal works are clearly distinguished.
 
-Private messaging, moderated project comments, the guestbook and the MFA owner dashboard remain connected to the existing protected backend. No database/security model was redesigned. Connection requirements and previous hosted checks are recorded in [Supabase setup](docs/SUPABASE_SETUP.md) and [Phase 4B validation](docs/PHASE_4B_VALIDATION.md); production Turnstile/proxy configuration and owner acceptance must not be inferred from mock tests. See [reference rebuild validation](docs/REFERENCE_HERO_VALIDATION.md) for current checks and [Phase 5 validation](docs/PHASE_5_VALIDATION.md) for the earlier archive work.
+Private messaging, moderated project comments, the guestbook and the MFA owner dashboard remain connected to the existing protected backend. No database/security model was redesigned. Connection requirements and previous hosted checks are recorded in [Supabase setup](docs/SUPABASE_SETUP.md) and [Phase 4B validation](docs/PHASE_4B_VALIDATION.md); production Turnstile/proxy configuration and owner acceptance must not be inferred from mock tests. See [organization validation](docs/ORGANIZATION_VALIDATION.md) for current checks, [reference rebuild validation](docs/REFERENCE_HERO_VALIDATION.md) for the preserved cinematic opening, and [Phase 5 validation](docs/PHASE_5_VALIDATION.md) for the earlier archive work.
 
 ## Run locally
 
@@ -24,10 +24,11 @@ npm run build
 
 ## Source map
 
-- `src/app/`: App Router layout, homepage, global design tokens.
+- `src/app/(public)/`: shared public shell and homepage, About, Work/detail, Journal/detail, Gallery/album, Links and Guestbook routes. Admin and API routes remain outside this group.
 - `src/data/site.ts`: change the public nickname once here to update navigation, hero, biography, footer and metadata.
 - `src/data/portfolio.ts`: editable profile, five projects, eight achievement/experience entries. `null` means unverified; do not invent details.
 - `src/data/archive.ts`: typed portraits, archive entries, writing and visual studies. See [content editing](docs/ARCHIVE_CONTENT.md).
+- `src/data/universe.ts`: work/collaboration settings, journal and gallery contracts, verified identities and curated Now / Lately entries.
 - `src/data/hero.ts`: four-world labels/links, featured-project reference and first editorial spread. The name and nickname still come from the existing profile/site configuration.
 - `src/components/archive/`: image frames and the accessible filter/disclosure index.
 - `src/components/sections/`: opening, personal presence, Vault, archive, reading room, visual notebook, parallel interests, milestones and guestbook.
@@ -47,6 +48,8 @@ npm run build
 
 ## Documentation
 
+- [Routes, content and future CMS boundaries](docs/ROUTES_AND_CONTENT.md)
+- [Organization validation](docs/ORGANIZATION_VALIDATION.md)
 - [Prototype comparison and rebuild verification](docs/REFERENCE_HERO_VALIDATION.md)
 - [Phase 5 verification](docs/PHASE_5_VALIDATION.md)
 - [Editing photographs and personal works](docs/ARCHIVE_CONTENT.md)
@@ -63,6 +66,6 @@ npm run build
 - [Phase 3 verification](docs/PHASE_3_VALIDATION.md)
 - [Font sources and licenses](docs/FONTS.md)
 
-Keep content readable without animation. Reduced-motion preferences restore the original exhibition and disable pinning, parallax, smooth scrolling and button transforms. Mobile uses natural scrolling. The desktop Vault provides chapter links and a “Read as list” escape; opening project notes also restores the reading layout. Mobile navigation works without JavaScript. Visitor forms need JavaScript and display accurate availability/errors. No JavaScript animation is required to read the portfolio.
+Keep content readable without animation. Reduced-motion preferences restore the exhibition and disable pinning, parallax, smooth scrolling and button transforms. Mobile uses natural scrolling. The selected desktop Vault preserves its chapter links and “Read as list” escape; full comments live on work detail pages. Public navigation and server-rendered category links work without JavaScript. Visitor forms need JavaScript and display accurate availability/errors. No JavaScript animation is required to read the portfolio.
 
 No private personal information or unverified social accounts are included. Never commit secret environment files or credentials; `.env.example` contains setup placeholders only. Downloaded reference ZIPs remain outside this repository and are unchanged.

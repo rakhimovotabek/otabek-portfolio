@@ -23,7 +23,7 @@ export const heroWorlds: readonly HeroWorld[] = [
     category: "Writings",
     title: "Writings.",
     description: "Poems, essays, notes — space to fill.",
-    href: "#writing",
+    href: "/journal",
   },
   {
     id: "visual",
@@ -31,7 +31,7 @@ export const heroWorlds: readonly HeroWorld[] = [
     category: "Visual archive",
     title: "Visual archive.",
     description: "Drawings, photographs, experiments.",
-    href: "#sketchbook",
+    href: "/gallery",
   },
   {
     id: "about",
@@ -39,7 +39,7 @@ export const heroWorlds: readonly HeroWorld[] = [
     category: "About me",
     title: `${profile.name.split(" ")[0]}.`,
     description: "A person, beyond the projects.",
-    href: "#about",
+    href: "/about",
   },
 ];
 export const heroCopy = {
@@ -72,21 +72,21 @@ export const heroCopy = {
         color: "yellow",
         label: "01 / THE PERSON",
         title: profile.name.replace(" ", "\n"),
-        href: "#personal-story",
+        href: "/about",
         status: "PORTRAIT TO BE ADDED",
       },
       {
         color: "blue",
         label: "02 / WORDS",
         title: "Notes &\nfragments",
-        href: "#writing",
+        href: "/journal",
         status: "PERSONAL WRITING TO COME",
       },
       {
         color: "green",
         label: "03 / VISUAL",
         title: "Photography\n& sketches",
-        href: "#sketchbook",
+        href: "/gallery",
         status: "PERSONAL WORK TO COME",
       },
     ],

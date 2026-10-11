@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CommentTarget } from "@/types/community";
 import { commentSchema, contactSchema } from "@/lib/backend/validation";
 import {
@@ -13,10 +13,12 @@ export function SubmissionForm({
   id,
   kind,
   target,
+  prefill,
 }: {
   id: string;
   kind: "contact" | "comment";
   target?: CommentTarget;
+  prefill?: { message: string; revision: number };
 }) {
   const features = useCommunity();
   const contact = kind === "contact";
@@ -30,6 +32,15 @@ export function SubmissionForm({
   const [errors, setErrors] = useState<Record<string, string>>({});
   const available = features.submissions && !!features.siteKey;
   const nameField = contact ? "name" : "displayName";
+  useEffect(() => {
+    if (!contact || !prefill) return;
+    const field = form.current?.elements.namedItem("message");
+    if (!(field instanceof HTMLTextAreaElement)) return;
+    // Preserve an existing visitor draft instead of silently overwriting it.
+    if (!field.value.includes(prefill.message))
+      field.value = prefill.message + (field.value ? `\n\n${field.value}` : "");
+    field.dispatchEvent(new Event("input", { bubbles: true }));
+  }, [contact, prefill]);
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (busy.current || !available) return;
@@ -80,6 +91,12 @@ export function SubmissionForm({
           : "Your comment has been submitted and is awaiting approval.",
       );
       form.current?.reset();
+      // A submit control becomes disabled during verification reset. Keep
+      // keyboard focus in the native modal after a confirmed receipt.
+      form.current
+        ?.closest("dialog")
+        ?.querySelector<HTMLButtonElement>(".close-button")
+        ?.focus({ preventScroll: true });
     } catch (error) {
       setNotice(errorMessage(error));
     } finally {

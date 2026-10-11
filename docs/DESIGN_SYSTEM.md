@@ -4,6 +4,8 @@ The site is an editorial collection: presence, selected software, an archive ind
 
 The current opening supersedes the Phase 5 paper-volume cover. It is adapted from Otabek’s supplied working HTML, not copied from the saved Strade page. The four narrow colored worlds, huge overlapping full name, original illustrated SAT’chi focus and diagonal striped paper wipe are preserved as the visual starting point. The rebuild stops after the first editorial handoff; later archive rooms retain their compositions.
 
+Current organization adds dedicated About, Work, Journal, Gallery, Links and Guestbook routes without changing that opening. The homepage retains its first paper composition as a short introduction, then two selected Vault chapters, Now / Lately and the closing. Inner pages use a warm paper shell, readable editorial headlines, unequal image mounts and divided indexes rather than a repeated card grid. `universe.css` supplies public-only route integration; `/admin` retains its styles. See `ROUTES_AND_CONTENT.md` for the content contracts and route map.
+
 ## Type and surfaces
 
 Self-hosted Newsreader supplies a lighter, optically sized display/reading face with a true italic. DM Sans provides navigation, readable biography, controls and technical context. Small monospace labels are subordinate. The previous wide, heavy Syne display treatment is no longer loaded. Original font notices remain; see `FONTS.md`.

@@ -1,57 +1,35 @@
 "use client";
 import { ArrowUpRight, Menu } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
 const links = site.navigation;
 export function Navigation() {
   const menu = useRef<HTMLDetailsElement>(null);
-  const header = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const anchors = header.current?.querySelectorAll<HTMLAnchorElement>(
-            `a[href="#${entry.target.id}"]`,
-          );
-          if (entry.isIntersecting) {
-            header.current
-              ?.querySelectorAll("[aria-current]")
-              .forEach((anchor) => anchor.removeAttribute("aria-current"));
-            anchors?.forEach((anchor) =>
-              anchor.setAttribute("aria-current", "location"),
-            );
-          } else
-            anchors?.forEach((anchor) =>
-              anchor.removeAttribute("aria-current"),
-            );
-        }
-      },
-      { rootMargin: "-15% 0px -60% 0px" },
-    );
-    links.forEach(({ href }) => {
-      const section = document.querySelector(href);
-      if (section) observer.observe(section);
-    });
-    return () => observer.disconnect();
-  }, []);
+  const pathname = usePathname();
   return (
-    <header className="site-header reference-navigation" ref={header}>
-      <a
+    <header className="site-header reference-navigation">
+      <Link
         className="wordmark"
-        href="#top"
+        href="/"
         aria-label={`${site.brand}, back to top`}
       >
         {site.brand}
         <span className="brand-dot">.</span>
-      </a>
+      </Link>
       <nav className="desktop-nav" aria-label="Main navigation">
         {links.map((link) => (
-          <a key={link.href} href={link.href}>
+          <Link
+            key={link.href}
+            href={link.href}
+            aria-current={pathname.startsWith(link.href) ? "page" : undefined}
+          >
             {link.label}
-            {link.href === "#contact" && (
+            {link.href === "/guestbook" && (
               <ArrowUpRight size={15} aria-hidden="true" />
             )}
-          </a>
+          </Link>
         ))}
       </nav>
       <span className="header-location">UZBEKISTAN / UZT</span>
@@ -61,15 +39,16 @@ export function Navigation() {
         </summary>
         <nav aria-label="Mobile navigation">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
+              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
               onClick={() => {
                 if (menu.current) menu.current.open = false;
               }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </details>

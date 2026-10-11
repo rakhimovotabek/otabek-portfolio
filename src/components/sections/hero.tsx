@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { heroCopy, heroWorlds } from "@/data/hero";
 import { site } from "@/data/site";
 import { profile } from "@/data/portfolio";
@@ -143,7 +144,7 @@ export function Hero() {
         </div>
         <div className={styles.worlds} data-hero-worlds>
           {heroWorlds.map((world) => (
-            <a
+            <Link
               key={world.id}
               href={world.href}
               className={`${styles.world} ${styles[`world--${worldStyle[world.id]}`]}`}
@@ -161,7 +162,7 @@ export function Hero() {
                 <strong className={styles["world-title"]}>{world.title}</strong>
                 <span className={styles["world-sub"]}>{world.description}</span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
         <div className={styles["hero-head"]} data-hero-head>
@@ -196,13 +197,13 @@ export function Hero() {
               <span>.</span>
             </h2>
             <p>{heroCopy.focus.project.description}</p>
-            <a
+            <Link
               className={styles["focus-link"]}
-              href={`#${heroCopy.focus.project.id}`}
+              href={`/work/${heroCopy.focus.project.id}`}
             >
               {heroCopy.focus.link}
               <ArrowUpRight size={17} aria-hidden="true" />
-            </a>
+            </Link>
           </div>
           <div
             className={styles["focus-art"]}

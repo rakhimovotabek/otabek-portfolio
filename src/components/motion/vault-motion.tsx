@@ -115,7 +115,7 @@ export function VaultMotion({
                 id: "vault-exhibition",
                 trigger: element,
                 start: "top 9%",
-                end: () => `+=${window.innerHeight * 4.5}`,
+                end: () => `+=${window.innerHeight * panels.length * 0.9}`,
                 pin: true,
                 scrub: true,
                 anticipatePin: 1,
@@ -176,7 +176,7 @@ export function VaultMotion({
                   i + 0.64,
                 );
             });
-            // Duration is precisely five chapters, including the last reading hold.
+            // Preserve each chapter's reading hold and handoff for any collection size.
             timeline.to({}, { duration: 0.36 });
             timeline.eventCallback("onUpdate", () => {
               element.style.setProperty(

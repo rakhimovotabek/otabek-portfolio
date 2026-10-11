@@ -3,10 +3,12 @@ export const site = {
   brand: "default",
   title: "A personal archive",
   navigation: [
-    { href: "#about", label: "Presence" },
-    { href: "#work", label: "The Vault" },
-    { href: "#archive", label: "Archive" },
-    { href: "#contact", label: "Contact" },
+    { href: "/about", label: "About" },
+    { href: "/work", label: "Work" },
+    { href: "/journal", label: "Journal" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/links", label: "Links" },
+    { href: "/guestbook", label: "Guestbook" },
   ],
   opening: {
     label: "A PERSONAL ARCHIVE",
