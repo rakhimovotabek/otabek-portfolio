@@ -1,4 +1,6 @@
-# Future backend plan — Phase 4 only
+# Original backend plan — Phase 4
+
+Historical Phase 1–2 proposal. Phase 4A implementation and current table names/access contracts are documented in [Supabase setup](SUPABASE_SETUP.md) and [API documentation](BACKEND_API.md). The text below preserves the earlier proposal.
 
 This is a design proposal, not a database migration or an implemented feature. No Supabase project, SDK, credentials, routes, forms, or endpoints exist in Phase 2. Disabled visual field previews exist, without submission or persistence.
 

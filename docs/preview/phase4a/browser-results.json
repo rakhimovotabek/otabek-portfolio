@@ -1,0 +1,77 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "pinning": "passed",
+    "scrolling": "slow/fast/reverse passed",
+    "anchors": "passed",
+    "dialog": "passed",
+    "notes": "disabled",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "laptop",
+    "width": 1366,
+    "height": 900,
+    "pinning": "passed",
+    "scrolling": "slow/fast/reverse passed",
+    "anchors": "passed",
+    "dialog": "passed",
+    "notes": "disabled",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "pinning": "absent as intended",
+    "scrolling": "slow/fast/reverse passed",
+    "anchors": "passed",
+    "dialog": "passed",
+    "notes": "disabled",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "name": "narrow-mobile",
+    "width": 360,
+    "height": 800,
+    "pinning": "absent as intended",
+    "scrolling": "slow/fast/reverse passed",
+    "anchors": "passed",
+    "dialog": "passed",
+    "notes": "disabled",
+    "reducedMotion": "passed",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "lifecycle": "5 resize/preference cycles passed, exactly one pin",
+    "heapBytes": {
+      "before": 4181468,
+      "after": 5626784
+    },
+    "nodes": {
+      "before": 1228,
+      "after": 1228
+    },
+    "listeners": {
+      "before": 372,
+      "after": 385
+    },
+    "performance": {
+      "sampledFrames": 179,
+      "medianFrameMs": 16.69999999999891,
+      "p95FrameMs": 16.700000000000728,
+      "longTasksOver50ms": 0,
+      "maxLongTaskMs": 0
+    },
+    "errors": []
+  }
+]

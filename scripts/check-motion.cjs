@@ -6,7 +6,9 @@ const { chromium } = require("playwright");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
-const output = path.resolve("docs/preview/phase3");
+const output = path.resolve(
+  process.env.PORTFOLIO_QA_OUTPUT || "docs/preview/phase3",
+);
 const url = process.env.PORTFOLIO_URL || "http://127.0.0.1:3001";
 const ids = [
   "sat-chi",
