@@ -1,6 +1,8 @@
-# Supabase setup — Phase 4A
+# Supabase setup — Phase 4B
 
-The backend is implemented locally. **No hosted Supabase project has been linked, created or migrated.** The homepage builds and renders with no backend environment variables. Public forms remain disabled until Phase 4B. The endpoints return safe errors when configuration is missing; they never pretend to store a submission.
+Visitor forms and a private owner dashboard are implemented. This guide covers setup; configuration alone does not prove that migrations, RLS, MFA or a production widget work. The homepage renders without backend variables and displays safe unavailable states. Never paste credentials into chat, commit them, or include them in screenshots.
+
+Current local checkpoint: supplied project keys are in ignored `.env.local` (mode 0600). Its Auth endpoint is reachable, but the initial schema was absent when checked. The CLI account did not list the supplied project. Until migration/owner/widget setup is completed and verified, **do not describe hosted messaging as operational**. Rotate a secret key shared in chat and update `.env.local` privately.
 
 ## 1. Create and identify your project
 
@@ -11,7 +13,7 @@ The backend is implemented locally. **No hosted Supabase project has been linked
 
 The repository contains `supabase/config.toml` for optional local Supabase development. Docker is required by the full local stack and was unavailable during this phase. The installed CLI alone is not a running database.
 
-## 2. Apply the migration
+## 2. Apply the migrations
 
 From the project directory:
 
@@ -25,7 +27,7 @@ supabase db push
 
 Review the dry run and project identity first. Enter database credentials only through the CLI's private prompt or your secret manager. Never commit them. Do not run a linked database reset.
 
-Alternatively, execute the entire `supabase/migrations/202610110001_portfolio_backend.sql` in the verified project's SQL Editor as the database administrator. That migration is transactional and expects its table/function names to be unused. If using the SQL Editor, reconcile the CLI migration history before subsequently using `db push`; do not apply it twice. CLI application is preferred.
+Alternatively, execute each unapplied SQL file from `supabase/migrations/`, in filename order, in the verified project's SQL Editor as the database administrator. The Phase 4B file adds only the pre-MFA identity RPC. That migration is transactional and expects its table/function names to be unused. If using the SQL Editor, reconcile the CLI migration history before subsequently using `db push`; do not apply it twice. CLI application is preferred.
 
 The migration creates:
 
@@ -39,7 +41,7 @@ RLS is enabled on every table. `anon` receives only the approved comment project
 
 ## 3. Provision the owner
 
-1. Create your owner user manually in the project's Auth Users dashboard. Choose your own email and strong password; no application signup route exists.
+1. Create your owner user manually in the project's Auth Users dashboard. This application account is separate from your Supabase dashboard login. Choose your own email and strong password; no application signup route exists.
 2. Copy that user's actual UUID from Auth Users. In the trusted SQL Editor, allowlist it:
 
 ```sql
@@ -71,7 +73,7 @@ Edit `.env.local` privately. It is ignored by Git; only the blank example is tra
 | `TURNSTILE_HOSTNAME`             | Submissions                             | Exact hostname matching `SITE_ORIGIN`, without scheme/port                                             |
 | `TURNSTILE_SECRET_KEY`           | Submissions                             | Secret Siteverify credential, server only                                                              |
 | `TURNSTILE_MODE`                 | Submissions                             | `real` normally; explicit `test` only outside production                                               |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Phase 4B widget                         | Public site key; unused by current disabled previews                                                   |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Phase 4B widget                         | Public site key used by the visitor widget                                                             |
 | `RATE_LIMIT_HMAC_SECRET`         | Submissions                             | Independent random secret, at least 32 characters; use a secret manager to generate it                 |
 | `TRUSTED_IP_HEADER`              | Production submissions                  | `x-nf-client-connection-ip` or `cf-connecting-ip`, only after verifying the hosting edge overwrites it |
 | `BACKEND_LOCAL_IP`               | Optional local development              | `true` shares a loopback quota locally; ignored in production                                          |
@@ -80,11 +82,11 @@ Public-key configuration accepts only `sb_publishable_` keys or legacy JWTs decl
 
 ### Production Turnstile
 
-Create a [Cloudflare Turnstile widget](https://developers.cloudflare.com/turnstile/get-started/) for the exact production hostname, copy its secret into the host's secret manager and use `TURNSTILE_MODE=real`. Phase 4B must supply a fresh token with widget action `contact` or `comment` respectively. The server checks Siteverify success, hostname and action. It sends no raw IP to Siteverify. Failed/replayed tokens are rejected; outages fail closed. No widget or public form is activated yet. [Server verification](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/).
+Create a [Cloudflare Turnstile widget](https://developers.cloudflare.com/turnstile/get-started/) for the exact production hostname, copy its secret into the host's secret manager and use `TURNSTILE_MODE=real`. The browser supplies a fresh token with widget action `contact` or `comment` respectively. The server checks Siteverify success, hostname and action. It sends no raw IP to Siteverify. Failed/replayed tokens are rejected; outages fail closed. The browser widget is mounted only for available visitor forms; its expired/error callbacks clear the token and offer retry. [Server verification](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/).
 
 ### Explicit local CAPTCHA test mode
 
-Use your local or isolated staging Supabase project with `npm run dev -- --hostname 127.0.0.1 --port 3001`. Configure `SITE_ORIGIN=http://localhost:3001`, `TURNSTILE_HOSTNAME=localhost`, `BACKEND_LOCAL_IP=true`, `TURNSTILE_MODE=test` and an actual database URL/keys. Set the secret to Cloudflare's **published dummy pass key**, `1x0000000000000000000000000000000AA`. The future widget's dummy site key is `1x00000000000000000000AA`; manual API tests can use `XXXX.DUMMY.TOKEN.XXXX`.
+Use your local or isolated staging Supabase project with `npm run dev -- --hostname 127.0.0.1 --port 3001`. Configure `SITE_ORIGIN=http://localhost:3001`, `TURNSTILE_HOSTNAME=localhost`, `BACKEND_LOCAL_IP=true`, `TURNSTILE_MODE=test` and an actual database URL/keys. Set the secret to Cloudflare's **published dummy pass key**, `1x0000000000000000000000000000000AA`. The widget's dummy site key is `1x00000000000000000000AA`; manual API tests can use `XXXX.DUMMY.TOKEN.XXXX`.
 
 These are public test credentials, not portfolio secrets. Test mode still calls Cloudflare Siteverify and writes to the configured real database; it does not fake persistence or success. Hostname/action matching is relaxed only for this explicit mode because dummy responses differ from a real widget. Production rejects test mode and all three documented dummy secrets. [Cloudflare test credentials](https://developers.cloudflare.com/turnstile/troubleshooting/testing/).
 
@@ -139,3 +141,29 @@ See [Phase 4A validation](PHASE_4A_VALIDATION.md) for which checks actually ran.
 No deployment was created. A future deployment needs Node **22+** (the installed Supabase SDK requires it), normal Next.js server/route support rather than a static export, server-scoped environment secrets, production HTTPS origin, matching Turnstile hostname/site key, the reviewed database migration, allowlisted MFA owner and working scheduled quota cleanup. Keep preview/staging data separate and disable submissions until the preview's origin/CAPTCHA/trusted proxy configuration is verified. Prove Netlify's client-IP header handling before selecting it. Do not put keys in `netlify.toml`, Git, build output, frontend config or shared logs.
 
 Phase 4B owns usable forms, token-refresh/submission states, escaped comment rendering, owner sign-in/MFA flows, a private inbox/moderation interface and retention/privacy presentation. This phase supplies the protected endpoints only.
+
+## Phase 4B owner login and visitor workflow
+
+Apply **both** versioned migrations in order. Existing Phase 4A databases need only `202610110002_owner_login_identity.sql`. New databases need `202610110001_portfolio_backend.sql` first. The second adds an authenticated-only UID membership check for the pre-MFA login/enrollment step. It grants no table access and leaves the original AAL2 owner policies unchanged. Never re-run the initial migration over existing tables. Use `supabase db push` with the correct linked project, or paste each unapplied migration into its SQL Editor as an administrator. If applying manually, keep a private record of applied versions rather than later blindly mixing CLI and manual migration histories.
+
+A publishable/secret API key is not a project management access token or a database password. It cannot apply DDL or change Auth settings. `supabase projects list` must list the intended project before CLI setup; authenticate privately with `supabase login` if necessary. Never apply configuration to a different project just because it is already accessible.
+
+1. Disable new user signups in Auth settings. Provision your chosen owner email/password in Authentication → Users; do not add public registration. Add the **Auth user UUID** to `private.portfolio_owners` using the allowlist SQL above. An email string is never authorization.
+2. Set the URL, publishable key and exact `SITE_ORIGIN` privately. For local development use `http://localhost:3001`; production requires HTTPS. The owner login does not need the service secret or Turnstile credentials.
+3. Visit `/admin/login`. Enter the provisioned owner credentials. Non-owners are rejected before MFA enrollment or any inbox access.
+4. On first login, choose **Set up authenticator**, scan the protected TOTP QR with your authenticator app, and enter its six-digit code. Keep the manual setup key private. An already verified factor must be used; this application cannot replace or disable it using a password-only session. Recover a lost factor through your trusted Supabase administration account.
+5. MFA verification upgrades the session to AAL2. `/admin` is checked on the server, and every API read/mutation repeats network identity verification and the UID allowlist/AAL2 check. Overview uses real counts; Recent moderation is the latest `updated_at` for currently approved/rejected comments, **not** an immutable audit trail.
+6. Inbox supports unread/read/archived filters and cursor pagination. Reply contact is plain text; it is never executed as HTML or a URI. Archiving asks for confirmation. Comments supports pending/approved/rejected filters and confirms approval/rejection. Approval publishes; rejection keeps the record private. Refresh public comments to see changes.
+7. Sign out revokes the current refresh session and clears HttpOnly cookies. If Supabase cannot confirm revocation, cookies are still cleared and the API reports that fact. Supabase access JWTs can remain valid until their normal expiry; configure an appropriate JWT/session lifetime in the dashboard. Do not claim instantaneous revocation of a copied JWT.
+
+Access/refresh tokens remain in HttpOnly, SameSite Strict, path `/` cookies, Secure in production, with an eight-hour cookie lifetime renewed by session operations. They are never put in browser storage, URLs or API response bodies. Auth and cookie-based owner mutations require the exact origin, including logout/refresh. The original network-verified Bearer API remains available for trusted CLI use. Owner pages/API responses are dynamic/no-store and noindex. Expired access sessions refresh through the server once, then retry an owner request; expired/revoked refresh sessions return to sign-in. Supabase's Auth rate limits also apply to password login; monitor/configure them for server-side requests. [Supabase session guidance](https://supabase.com/docs/guides/auth/server-side/advanced-guide), [TOTP MFA](https://supabase.com/docs/guides/auth/auth-mfa/totp).
+
+Visitor messages never require login. Success is shown only for the expected `201` persistence acknowledgement. Pending comments are not optimistically added to the public list. Lists use UTC dates and load five approved entries at a time. A failed or ambiguous network request preserves the draft; check connectivity before retrying, since a lost response could follow a successful insert. The busy lock prevents simultaneous submissions in one mounted form, but this phase adds no cross-tab/idempotency-key deduplication.
+
+Turnstile is rendered explicitly, removed on unmount, and refreshed after every attempted submission. Expiry, errors and timeout remove stale tokens. Production never accepts the published test credentials or missing protection. Local test mode uses the documented dummy keys while still calling real Siteverify. Restart after changing configuration; rebuild production bundles after changing `NEXT_PUBLIC_TURNSTILE_SITE_KEY`. the feature endpoint reports safe configuration availability, not hosted health. [Widget lifecycle](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/).
+
+### Isolated UI test environment
+
+The browser fixture is outside the application and binds only to loopback. It mocks Supabase Auth/PostgREST; it does not claim hosted JWT verification or RLS. No mock submissions are used in the production app. Tests use the public dummy Turnstile verification endpoint and an explicitly simulated browser widget. See `scripts/check-community.cjs` and `tests/fixtures/supabase.cjs`; reproducible commands are in [Phase 4B validation](PHASE_4B_VALIDATION.md). `npm run test:backend` additionally executes all migrations and permission tests in real embedded PostgreSQL and exercises the Auth SDK against the test gateway.
+
+Live acceptance still requires your hosted project: visitor → private unread inbox, pending project/guestbook comment → owner approval → public visibility, rejection privacy, non-owner and AAL1 rejection, MFA login, refresh/logout and production rate-limit/widget/proxy checks. Do this with labeled test entries and trusted owner access, never publish the private inbox or real MFA QR.

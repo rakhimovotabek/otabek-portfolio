@@ -1,5 +1,5 @@
 import { Section } from "@/components/ui/section";
-import { FormPreview } from "@/components/community/form-preview";
+import { Comments } from "@/components/community/comments";
 export function Guestbook() {
   return (
     <Section
@@ -20,18 +20,14 @@ export function Guestbook() {
             and the occasional hello.
           </p>
           <p className="guestbook-empty">
-            <span aria-hidden="true">↳</span> The first page is still unwritten.
+            <span aria-hidden="true">↳</span> A few words leave a trace.
             <br />
-            <span>Public comments will open in a later phase.</span>
+            <span>A moderated record of the people passing through.</span>
           </p>
         </div>
         <div className="guestbook-sheet">
-          <span className="eyebrow">THE GUESTBOOK / PREVIEW</span>
-          <FormPreview
-            id="guestbook-comment"
-            kind="comment"
-            target={{ kind: "guestbook" }}
-          />
+          <span className="eyebrow">THE GUESTBOOK</span>
+          <Comments id="guestbook-comment" target={{ kind: "guestbook" }} />
         </div>
       </div>
     </Section>

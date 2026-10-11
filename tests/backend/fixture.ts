@@ -1,5 +1,5 @@
 import { PGlite } from "@electric-sql/pglite";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { createHandlers } from "../../src/lib/backend/handlers";
 import { authorizeOwner } from "../../src/lib/backend/auth";
 import {
@@ -56,15 +56,11 @@ export async function setupDatabase() {
     -- Model Supabase's broad table defaults so the migration must revoke them.
     alter default privileges grant all on tables to anon, authenticated, service_role;
   `);
-  await db.exec(
-    await readFile(
-      new URL(
-        "../../supabase/migrations/202610110001_portfolio_backend.sql",
-        import.meta.url,
-      ),
-      "utf8",
-    ),
-  );
+  const migrations = new URL("../../supabase/migrations/", import.meta.url);
+  for (const name of (await readdir(migrations))
+    .filter((name) => name.endsWith(".sql"))
+    .sort())
+    await db.exec(await readFile(new URL(name, migrations), "utf8"));
   await db.query("insert into private.portfolio_owners(user_id) values ($1)", [
     OWNER,
   ]);
@@ -146,14 +142,43 @@ export function databaseHandlers(db: PGlite) {
       );
     },
     async pending(page) {
-      const values: unknown[] = [];
+      return this.comments(page, "pending");
+    },
+    async comments(page, status) {
+      const values: unknown[] = [status];
       return roleQuery<CommentRow>(
         db,
         "authenticated",
-        `select * from public.comments where status='pending'${ordering(page, values)}`,
+        `select * from public.comments where status=$1${ordering(page, values)}`,
         values,
         claims,
       );
+    },
+    async overview() {
+      const messages = await roleQuery<MessageRow>(
+        db,
+        "authenticated",
+        "select * from public.contact_messages",
+        [],
+        claims,
+      );
+      const comments = await roleQuery<CommentRow>(
+        db,
+        "authenticated",
+        "select * from public.comments",
+        [],
+        claims,
+      );
+      return {
+        unread: messages.filter((r) => r.status === "unread").length,
+        pending: comments.filter((r) => r.status === "pending").length,
+        approved: comments.filter((r) => r.status === "approved").length,
+        rejected: comments.filter((r) => r.status === "rejected").length,
+        recent: comments
+          .filter((r) => r.status !== "pending")
+          .sort((a, b) => b.updated_at.localeCompare(a.updated_at))
+          .slice(0, 8),
+      };
     },
     async moderate(id, status) {
       const rows = await roleQuery<CommentRow>(

@@ -1,8 +1,8 @@
-import { ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { projects } from "@/data/portfolio";
 import { ProjectArt } from "@/components/visuals/project-art";
-import { FormPreview } from "@/components/community/form-preview";
+import { ProjectDiscussion } from "@/components/community/comments";
 import { VaultMotion } from "@/components/motion/vault-motion";
 export function ProjectIndex() {
   return (
@@ -76,20 +76,10 @@ export function ProjectIndex() {
                   </p>
                 )}
               </div>
-              <details className="project-comments">
-                <summary>
-                  <span>
-                    Project notes{" "}
-                    <span className="muted">/ Comments coming later</span>
-                  </span>
-                  <Plus size={18} aria-hidden="true" />
-                </summary>
-                <FormPreview
-                  id={`${project.id}-comment`}
-                  kind="comment"
-                  target={{ kind: "project", projectId: project.id }}
-                />
-              </details>
+              <ProjectDiscussion
+                id={`${project.id}-comment`}
+                target={{ kind: "project", projectId: project.id }}
+              />
             </article>
           ))}
         </div>

@@ -16,6 +16,16 @@ import type {
 } from "./validation";
 import { ApiError, unavailable } from "./errors";
 
+export type OwnerOverview = {
+  unread: number;
+  pending: number;
+  approved: number;
+  rejected: number;
+  recent: Pick<
+    CommentRow,
+    "id" | "status" | "author_name" | "target_type" | "target_id" | "updated_at"
+  >[];
+};
 export type Page = { limit: number; cursor?: Cursor; descending: boolean };
 export interface SubmissionRepository {
   contact(input: ContactInput): Promise<void>;
@@ -28,6 +38,8 @@ export interface PublicRepository {
 export interface OwnerRepository {
   inbox(page: Page, status?: MessageStatus): Promise<MessageRow[]>;
   pending(page: Page): Promise<CommentRow[]>;
+  comments(page: Page, status: CommentRow["status"]): Promise<CommentRow[]>;
+  overview(): Promise<OwnerOverview>;
   moderate(
     id: string,
     status: Moderation,
@@ -71,26 +83,22 @@ export function submissionRepository(client: Client): SubmissionRepository {
   return {
     async contact(input) {
       ensure(
-        await client
-          .from("contact_messages")
-          .insert({
-            name: input.name,
-            reply_contact: input.replyContact || null,
-            message: input.message,
-          }),
+        await client.from("contact_messages").insert({
+          name: input.name,
+          reply_contact: input.replyContact || null,
+          message: input.message,
+        }),
       );
     },
     async comment(input) {
       ensure(
-        await client
-          .from("comments")
-          .insert({
-            target_type: input.target.kind,
-            target_id:
-              input.target.kind === "project" ? input.target.projectId : null,
-            author_name: input.displayName,
-            content: input.message,
-          }),
+        await client.from("comments").insert({
+          target_type: input.target.kind,
+          target_id:
+            input.target.kind === "project" ? input.target.projectId : null,
+          author_name: input.displayName,
+          content: input.message,
+        }),
       );
     },
     async consumeLimit(hash) {
@@ -146,12 +154,15 @@ export function ownerRepository(client: Client): OwnerRepository {
       );
     },
     async pending(page) {
+      return this.comments(page, "pending");
+    },
+    async comments(page, status) {
       let query = client
         .from("comments")
         .select(
           "id,target_type,target_id,author_name,content,status,created_at,updated_at",
         )
-        .eq("status", "pending");
+        .eq("status", status);
       const filter = cursorFilter(page);
       if (filter) query = query.or(filter);
       return (
@@ -162,6 +173,39 @@ export function ownerRepository(client: Client): OwnerRepository {
             .limit(page.limit + 1),
         ) ?? []
       );
+    },
+    async overview() {
+      const results = await Promise.all([
+        client
+          .from("contact_messages")
+          .select("id", { count: "exact", head: true })
+          .eq("status", "unread"),
+        ...(["pending", "approved", "rejected"] as const).map((status) =>
+          client
+            .from("comments")
+            .select("id", { count: "exact", head: true })
+            .eq("status", status),
+        ),
+      ]);
+      for (const result of results)
+        if (result.error || result.count === null) throw unavailable();
+      const recent =
+        ensure(
+          await client
+            .from("comments")
+            .select("id,status,author_name,target_type,target_id,updated_at")
+            .neq("status", "pending")
+            .order("updated_at", { ascending: false })
+            .order("id", { ascending: false })
+            .limit(8),
+        ) ?? [];
+      return {
+        unread: results[0].count!,
+        pending: results[1].count!,
+        approved: results[2].count!,
+        rejected: results[3].count!,
+        recent,
+      };
     },
     async moderate(id, status) {
       const row = ensure(

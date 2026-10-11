@@ -1045,3 +1045,62 @@ test("public configuration rejects owner/user JWTs and accepts only supported pu
   );
   assert.equal(publicConfig(localEnv).key, localEnv.SUPABASE_PUBLISHABLE_KEY);
 });
+
+test("pre-MFA identity RPC grants no private access and remains unavailable to anon", async () => {
+  const owner = await roleQuery<{ identity: boolean; private_access: boolean }>(
+    db,
+    "authenticated",
+    "select public.is_portfolio_owner_identity() as identity, public.is_portfolio_owner() as private_access",
+    [],
+    { sub: OWNER, aal: "aal1" },
+  );
+  assert.equal(owner[0].identity, true);
+  assert.equal(owner[0].private_access, false);
+  const other = await roleQuery<{ identity: boolean }>(
+    db,
+    "authenticated",
+    "select public.is_portfolio_owner_identity() as identity",
+    [],
+    { sub: OTHER, aal: "aal2" },
+  );
+  assert.equal(other[0].identity, false);
+  await assert.rejects(
+    roleQuery(db, "anon", "select public.is_portfolio_owner_identity()"),
+  );
+});
+test("owner overview and status-filtered lists require MFA authorization", async () => {
+  for (const token of [undefined, "nonowner", "owner-aal1"]) {
+    const headers = new Headers(
+      token ? { Authorization: `Bearer ${token}` } : {},
+    );
+    const response = await app.handlers.overview(
+      new Request(ORIGIN + "/api/owner/overview", { headers }),
+    );
+    assert.equal(response.status, token ? 403 : 401);
+  }
+  const headers = { Authorization: "Bearer owner" };
+  const response = await app.handlers.overview(
+    new Request(ORIGIN + "/api/owner/overview", { headers }),
+  );
+  assert.equal(response.status, 200);
+  const summary = await response.json();
+  assert.equal(typeof summary.unread, "number");
+  assert.ok(Array.isArray(summary.recent));
+  const approved = await app.handlers.pendingComments(
+    new Request(ORIGIN + "/api/owner/comments?status=approved", { headers }),
+  );
+  assert.equal(approved.status, 200);
+  assert.ok(
+    (await approved.json()).items.every(
+      (row: { status: string }) => row.status === "approved",
+    ),
+  );
+  assert.equal(
+    (
+      await app.handlers.pendingComments(
+        new Request(ORIGIN + "/api/owner/comments?status=invalid", { headers }),
+      )
+    ).status,
+    400,
+  );
+});

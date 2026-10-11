@@ -1,3 +1,4 @@
+import { ownerRequest } from "@/lib/auth/owner-request";
 import { handlers } from "@/lib/backend/runtime";
 export const runtime = "nodejs";
 export async function PATCH(
@@ -5,5 +6,7 @@ export async function PATCH(
   context: { params: Promise<{ id: string }> },
 ) {
   const { id } = await context.params;
-  return handlers.moderateComment(request, id);
+  return ownerRequest(request, (request) =>
+    handlers.moderateComment(request, id),
+  );
 }

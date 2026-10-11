@@ -1,4 +1,4 @@
-# Backend API — Phase 4A
+# Backend API — Phase 4B
 
 All routes use the Node runtime and JSON responses with `Cache-Control: no-store` and `X-Content-Type-Options: nosniff`. Backend configuration is lazy; the portfolio is usable without it. See [setup](SUPABASE_SETUP.md) before connecting an external project.
 
@@ -32,7 +32,7 @@ For projects use `"target": { "kind": "project", "projectId": "sat-chi" }`. Vali
 
 Both endpoints require `Content-Type: application/json` and an exact `Origin` matching `SITE_ORIGIN`. No registration, cookies, bearer token or Supabase Auth account is required. Zod rejects unknown fields, including client-supplied status/IDs/timestamps. `website` is an optional honeypot, empty by default; any nonempty value is rejected. Blank required fields and prohibited control characters fail validation. Names are trimmed and limited to 2–80 characters, reply contact to 254, contact message to 10–4000, comment text to 3–2000. Blank optional reply contact becomes SQL NULL. JSON bodies are capped at 24 KiB while streaming, even without Content-Length; stalled reads time out after 5 seconds. Platform ingress limits are an additional boundary.
 
-Success is returned only after persistence: contact `201 { "status": "received" }`; comment `201 { "status": "pending" }`. No message identifier, inbox details, visitor contact or moderation metadata is returned publicly. Database defaults set unread/pending. Text is stored as plain text. JSON output escapes HTML-sensitive characters; Phase 4B must render through text nodes/React children and never raw HTML or unsanitized Markdown. Approval does not make HTML trustworthy.
+Success is returned only after persistence: contact `201 { "status": "received" }`; comment `201 { "status": "pending" }`. No message identifier, inbox details, visitor contact or moderation metadata is returned publicly. Database defaults set unread/pending. Text is stored as plain text. JSON output escapes HTML-sensitive characters; The frontend renders through text nodes/React children and never raw HTML or unsanitized Markdown. Approval does not make HTML trustworthy.
 
 ## Public comment retrieval
 
@@ -61,16 +61,35 @@ Pagination is keyset-based: stable ascending `(created_at,id)` order, a default 
 
 ## Owner requests
 
-Every owner route requires `Authorization: Bearer <verified owner access token>` and the database allowlist plus MFA (`aal2`). There is no public signup/login route, cookie session or admin frontend in this phase. Authorization is checked before retrieving private content or validating a mutation. Browser mutations additionally require a matching Origin when an Origin header is present; bearer-authenticated CLI requests can omit it. No cross-origin CORS permission is granted.
+Every owner route verifies Supabase identity plus the database UID allowlist and MFA (`aal2`). The browser uses HttpOnly session cookies; it never sends/stores a bearer token in JavaScript. Cookie-based mutations require an exact Origin. The original `Authorization: Bearer <verified owner access token>` path remains available to CLI clients, which can omit Origin. No cross-origin CORS permission is granted. Authorization precedes private access; the server-rendered `/admin` page also gates access.
 
 | Method and route                              | Operation                                                                                    |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `GET /api/owner/inbox?limit=20&status=unread` | Private inbox; optional unread/read/archived filter; descending `(created_at,id)` pagination |
-| `GET /api/owner/comments?limit=20`            | Pending moderation queue; ascending `(created_at,id)` pagination                             |
+| `GET /api/owner/comments?limit=20`            | Optional `status=pending                                                                     | approved | rejected`(default pending); ascending`(created_at,id)` pagination |
 | `PATCH /api/owner/inbox/UUID`                 | JSON `{ "status": "unread" }`, `read` or `archived`                                          |
 | `PATCH /api/owner/comments/UUID`              | JSON `{ "status": "approved" }` or `rejected`                                                |
 
 Owner lists return `items` and `nextCursor` using private database field names. Inbox fields: `id,name,reply_contact,message,status,created_at`. Moderation fields: `id,target_type,target_id,author_name,content,status,created_at,updated_at`. The timestamp trigger updates `updated_at` on moderation. Message PATCH returns `id,status`; comment PATCH returns `id,status,updated_at`. Owner grants allow status changes only, with no visitor-content editing, new-row insertion or deletion. Re-moderation by ID is allowed. A missing row returns 404 to an authorized owner.
+
+## Browser session and overview endpoints
+
+`GET /api/community/config` returns `{reads,submissions,siteKey}`: configuration availability only, no secrets or fake persistence. The site key is public; unavailable submission configuration yields null. Backend outages are still reported by the actual request.
+
+`GET /api/owner/overview` returns `{unread,pending,approved,rejected,recent}` after AAL2 authorization. Counts are exact database values. Recent entries are up to eight currently approved/rejected records in descending `(updated_at,id)` order, projected to ID, author, target, status and timestamp. This is not an append-only audit log.
+
+All Auth routes are POST, require JSON and exact Origin, reject unknown fields, and return no access/refresh tokens:
+
+| Route               | Body               | Response                                                                                        |
+| ------------------- | ------------------ | ----------------------------------------------------------------------------------------------- |
+| `/api/auth/login`   | `{email,password}` | `{state:"mfa",factorId?,needsEnrollment?}` or `{state:"owner"}`                                 |
+| `/api/auth/session` | `{}`               | Verified owner/MFA stage; can refresh expired cookies                                           |
+| `/api/auth/enroll`  | `{}`               | Protected `{factorId,qr,secret}` for first-time TOTP setup only                                 |
+| `/api/auth/verify`  | `{factorId,code}`  | `{state:"owner"}` only after valid TOTP and full AAL2 authorization                             |
+| `/api/auth/refresh` | `{}`               | Verified owner/MFA stage with renewed HttpOnly cookies                                          |
+| `/api/auth/logout`  | `{}`               | `{state:"signed_out",revoked:boolean}`; browser cookies always cleared after an allowed request |
+
+Login/enrollment require the UID membership RPC, which is separate from private-data authorization. Owner APIs never use this weaker pre-MFA check. Invalid credentials are generic 401, invalid codes 400, existing verified factor enrollment 409 (`mfa_already_enrolled`), provider throttling 429, and unavailable configuration/provider 503. Password length is bounded to 256, email to 254, factor IDs UUID and TOTP exactly six digits. There is no signup or password-recovery API; provisioning/recovery remains trusted project administration.
 
 ## Error contract
 

@@ -1,16 +1,27 @@
 "use client";
-import { useRef, useState } from "react";
-import { FormPreview } from "@/components/community/form-preview";
+import { useEffect, useRef, useState } from "react";
+import { SubmissionForm } from "@/components/community/submission-form";
 import { MessageSquare, ArrowUpRight, X } from "lucide-react";
 import { motion, MotionConfig, useReducedMotion } from "motion/react";
 export function ContactLauncher() {
   const dialog = useRef<HTMLDialogElement>(null);
   const reduced = useReducedMotion();
   const [open, setOpen] = useState(false);
+  const [activated, setActivated] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const html = document.documentElement;
+    const previous = html.style.overflow;
+    html.style.overflow = "hidden";
+    return () => {
+      html.style.overflow = previous;
+    };
+  }, [open]);
   return (
     <MotionConfig reducedMotion="user">
       <motion.button
         type="button"
+        tabIndex={0}
         className="message-button"
         initial={{ y: 8 }}
         animate={{ y: 0 }}
@@ -19,6 +30,7 @@ export function ContactLauncher() {
         transition={{ type: "spring", stiffness: 360, damping: 28 }}
         onClick={() => {
           dialog.current?.showModal();
+          setActivated(true);
           setOpen(true);
         }}
         aria-haspopup="dialog"
@@ -32,8 +44,39 @@ export function ContactLauncher() {
         ref={dialog}
         className="contact-dialog"
         aria-labelledby="dialog-title"
-        aria-describedby="dialog-description private-contact-status"
+        aria-describedby="dialog-description"
         onClose={() => setOpen(false)}
+        onKeyDown={(event) => {
+          if (event.key !== "Tab") return;
+          const controls = Array.from(
+            event.currentTarget.querySelectorAll<HTMLElement>(
+              "button,input,textarea,select,a[href],iframe,[tabindex]",
+            ),
+          ).filter(
+            (el) =>
+              el.tabIndex >= 0 &&
+              !el.matches(":disabled") &&
+              el.getClientRects().length > 0,
+          );
+          const first = controls[0],
+            last = controls[controls.length - 1];
+          if (!first) return;
+          if (
+            event.shiftKey &&
+            (document.activeElement === first ||
+              document.activeElement === document.body)
+          ) {
+            event.preventDefault();
+            last.focus();
+          } else if (
+            !event.shiftKey &&
+            (document.activeElement === last ||
+              document.activeElement === document.body)
+          ) {
+            event.preventDefault();
+            first.focus();
+          }
+        }}
         onClick={(event) => {
           if (event.target === event.currentTarget) dialog.current?.close();
         }}
@@ -41,7 +84,7 @@ export function ContactLauncher() {
         <motion.div
           className="dialog-content"
           initial={false}
-          animate={{ y: open || reduced ? 0 : 12 }}
+          animate={{ y: open ? 0 : 12 }}
           transition={{
             duration: reduced ? 0 : 0.25,
             ease: [0.22, 1, 0.36, 1],
@@ -56,15 +99,15 @@ export function ContactLauncher() {
           >
             <X size={23} aria-hidden="true" />
           </button>
-          <span className="eyebrow">PRIVATE CORRESPONDENCE / PREVIEW</span>
+          <span className="eyebrow">PRIVATE CORRESPONDENCE</span>
           <h2 id="dialog-title">
             Leave a thought<span className="cyan-period">.</span>
           </h2>
           <p id="dialog-description">
-            A private note about the work, an idea, or a question. No account
-            will be needed.
+            A private note about the work, an idea, or a question. No account is
+            needed.
           </p>
-          <FormPreview id="private-contact" kind="contact" />
+          {activated && <SubmissionForm id="private-contact" kind="contact" />}
         </motion.div>
       </dialog>
     </MotionConfig>

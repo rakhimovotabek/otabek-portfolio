@@ -21,13 +21,7 @@ export const handlers = createHandlers({
     return publicRepository(databaseClient(config.url, config.key));
   },
   async owner(token) {
-    const config = publicConfig();
-    const client = databaseClient(config.url, config.key, token);
-    await authorizeOwner(token, {
-      getUser: (token) => client.auth.getUser(token),
-      isOwner: async () => client.rpc("is_portfolio_owner"),
-    });
-    return ownerRepository(client);
+    return ownerRepository(await ownerClient(token));
   },
   origin: checkOrigin,
   async protect(request, token, action) {
@@ -40,3 +34,13 @@ export const handlers = createHandlers({
     );
   },
 });
+
+export async function ownerClient(token: string) {
+  const config = publicConfig();
+  const client = databaseClient(config.url, config.key, token);
+  await authorizeOwner(token, {
+    getUser: (token) => client.auth.getUser(token),
+    isOwner: async () => client.rpc("is_portfolio_owner"),
+  });
+  return client;
+}

@@ -4,6 +4,7 @@ import type {
   PublicRepository,
   SubmissionRepository,
 } from "./repository";
+import { z } from "zod";
 import { ApiError } from "./errors";
 import {
   bearerToken,
@@ -101,8 +102,21 @@ export function createHandlers(deps: BackendDependencies) {
       endpoint(async () => {
         const owner = await deps.owner(bearerToken(request)),
           page = pageQuery(request);
-        return pageResponse(await owner.pending(page), page.limit);
+        const status = z
+          .enum(["pending", "approved", "rejected"])
+          .safeParse(
+            new URL(request.url).searchParams.get("status") ?? "pending",
+          );
+        if (!status.success) throw new ApiError(400, "invalid_input");
+        return pageResponse(
+          await owner.comments(page, status.data),
+          page.limit,
+        );
       }),
+    overview: (request: Request) =>
+      endpoint(async () =>
+        jsonResponse(await (await deps.owner(bearerToken(request))).overview()),
+      ),
     moderateComment: (request: Request, id: string) =>
       endpoint(async () => {
         const owner = await deps.owner(bearerToken(request));

@@ -8,25 +8,28 @@ import { Achievements } from "@/components/sections/achievements";
 import { Guestbook } from "@/components/sections/guestbook";
 import { ContactLauncher } from "@/components/contact/contact-launcher";
 import { PageMotion } from "@/components/motion/page-motion";
+import { CommunityProvider } from "@/components/community/community-provider";
 export default function Home() {
   return (
     <>
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <PageMotion>
-        <Navigation />
-        <main id="main" tabIndex={-1}>
-          <Hero />
-          <About />
-          <ProjectIndex />
-          <SideQuests />
-          <Achievements />
-          <Guestbook />
-        </main>
-        <Footer />
-        <ContactLauncher />
-      </PageMotion>
+      <CommunityProvider>
+        <PageMotion>
+          <Navigation />
+          <main id="main" tabIndex={-1}>
+            <Hero />
+            <About />
+            <ProjectIndex />
+            <SideQuests />
+            <Achievements />
+            <Guestbook />
+          </main>
+          <Footer />
+          <ContactLauncher />
+        </PageMotion>
+      </CommunityProvider>
     </>
   );
 }

@@ -52,6 +52,10 @@ export type Database = {
     };
     Views: Record<string, never>;
     Functions: {
+      is_portfolio_owner_identity: {
+        Args: Record<string, never>;
+        Returns: boolean;
+      };
       is_portfolio_owner: { Args: Record<string, never>; Returns: boolean };
       consume_submission_limit: {
         Args: { p_subject_hash: string };

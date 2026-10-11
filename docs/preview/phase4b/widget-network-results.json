@@ -1,0 +1,4 @@
+{
+  "status": "incomplete",
+  "note": "Real third-party dummy-widget Chromium inspection timed out; not counted as a passing widget test. Mock lifecycle and real dummy Siteverify tests ran separately."
+}
