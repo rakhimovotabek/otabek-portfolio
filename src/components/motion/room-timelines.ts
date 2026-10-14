@@ -67,7 +67,7 @@ export function roomTimelines(
   } else enter();
 
   select<HTMLElement>(".media-window")
-    .filter((frame) => !frame.closest("dialog, .filter-scene"))
+    .filter((frame) => !frame.closest("dialog, .filter-scene, [data-signature]"))
     .forEach((frame, index) => {
       gsap.from(frame, {
         clipPath: page.classList.contains("gallery-page")

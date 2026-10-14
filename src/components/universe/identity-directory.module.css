@@ -1,0 +1,129 @@
+.directory section {
+  grid-template-columns: 0.5fr 1.5fr;
+  gap: 7%;
+}
+.directory h2 {
+  font-size: 18px;
+  padding-top: 25px;
+}
+.record {
+  border-top: 1px solid #0b1015;
+}
+.directory :global(.identity-link) {
+  padding: 45px 0;
+  grid-template-columns: 24px 1fr 0.65fr 50px;
+  border: 0;
+}
+.directory :global(.identity-platform) {
+  font-size: clamp(54px, 6vw, 90px);
+}
+.directory :global(.identity-platform) small {
+  font-size: 15px;
+}
+.directory :global(.identity-description) {
+  font-size: 17px;
+}
+.directory .arrow {
+  font-size: 40px;
+}
+.address {
+  border-top: 1px solid #0b101526;
+}
+.address summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+}
+.address summary::-webkit-details-marker {
+  display: none;
+}
+.address summary > span {
+  font-size: 24px;
+  transition: transform 180ms var(--ease);
+}
+.address[open] summary > span {
+  transform: rotate(45deg);
+}
+.addressBody {
+  background: #d7d9cd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 28px;
+  transition:
+    opacity 200ms,
+    transform 200ms var(--ease);
+}
+.addressBody > a {
+  overflow-wrap: anywhere;
+  font-size: 17px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.copy {
+  min-width: 160px;
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid #0b1015;
+  background: transparent;
+  color: #0b1015;
+  cursor: pointer;
+  font-size: 14px;
+  touch-action: manipulation;
+}
+.copy:active {
+  transform: scale(0.98);
+}
+@starting-style {
+  .address[open] .addressBody {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+@media (max-width: 799px) {
+  .directory section {
+    display: block;
+  }
+  .directory h2 {
+    padding: 0 0 20px;
+  }
+  .directory :global(.identity-link) {
+    grid-template-columns: 24px 1fr 32px;
+    gap: 16px;
+    padding: 30px 0;
+  }
+  .directory :global(.identity-description) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .directory .arrow {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 30px;
+  }
+  .directory :global(.identity-platform) {
+    font-size: 58px;
+  }
+  .addressBody {
+    padding: 20px;
+  }
+  .addressBody > a {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .address summary > span,
+  .addressBody {
+    transition: opacity 100ms;
+  }
+}

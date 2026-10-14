@@ -34,3 +34,9 @@ At 800px the four opening worlds become a two-by-two composition and the feature
 ## Room motion and the shared grid
 
 Public navigation and inner content share `--public-gutter`; the header keeps identical desktop brand/location slots across rooms. Intentional internal editorial offsets remain. `room-motion.css` layers folio transitions, framed biography images, ruled literary margins, exhibition responses, a native gallery viewer and directory highlights after existing public styles. Dark/paper focus colors remain visible. The footer’s “One last detail” reveals the centrally configured `Simply Lovely` Easter egg. See `CREATIVE_MOTION_VALIDATION.md` for measurements and actual browser evidence.
+
+## Signature inner scenes
+
+Work, Gallery and About now open with compact editorial mastheads so their actual media composition appears in the first viewport. `signature.module.css` owns the new scoped exhibition, collage and biography frames. Work uses a localized cobalt stage with lime/charcoal concept art, Gallery develops from dark stone to a paper contact sheet, and About combines reserved violet/sage/ochre frames before its milestone handoff. These surfaces extend the existing four-world identity; homepage source remains unchanged.
+
+Each signature sequence has one GSAP progress clock inside native sticky layout, with a 300ms scrub settle for wheel input and independently transformed media/typography. Below 800px, below 600px height, reduced motion and no-JavaScript render normal responsive compositions. Long reading sections and forms remain in document flow. Neutral Gallery reservations live alongside the existing media data in `src/data/archive.ts`; real album images replace them without changing animation code. See `SIGNATURE_MOTION.md`, `SIGNATURE_REFERENCES.md` and `SIGNATURE_VALIDATION.md` for ownership, licensing and measured evidence.

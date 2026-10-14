@@ -1,0 +1,739 @@
+.scene {
+  position: relative;
+  margin: 0 calc(-1 * var(--public-gutter));
+}
+.sceneIntro {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+  font-size: 13px;
+  border-top: 1px solid #0b101529;
+}
+.sceneIntro a {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.stage {
+  position: relative;
+}
+.exhibit {
+  position: relative;
+  padding: 30px var(--public-gutter) 80px;
+  min-height: 850px;
+  overflow: clip;
+}
+.learning {
+  background: #263bce;
+  color: #f0eee8;
+}
+.law {
+  background: #c9cbbd;
+  color: #161d22;
+}
+.exhibitHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.exhibitTitle {
+  font-family: var(--font-reading), Georgia, serif;
+  font-size: clamp(68px, 8.5vw, 150px);
+  font-weight: 430;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  margin: 45px 0 30px;
+}
+.exhibitArt {
+  display: block;
+  position: relative;
+  width: 55%;
+  margin-left: auto;
+  transform-origin: center;
+}
+.exhibitArt > :global(.artwork) {
+  width: 100%;
+  height: 480px;
+  min-height: 0;
+}
+.exhibitArt :global(.sat-art) {
+  background: #112256;
+  color: #d3ff8b;
+}
+.exhibitArt :global(.huquq-art) {
+  background: #272f30;
+  color: #e9dfc6;
+}
+.artCaption {
+  display: block;
+  padding: 12px 0;
+  font-size: 11px;
+}
+.exhibitCopy {
+  position: relative;
+  z-index: 3;
+  max-width: 390px;
+  margin-top: -240px;
+  padding: 24px 0;
+}
+.exhibitCopy > p {
+  font-size: 19px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.explore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 18px 0;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  font-size: 17px;
+}
+.explore span {
+  font-size: 28px;
+}
+.exhibitCopy :global(.work-actions) {
+  margin-top: 20px;
+}
+.exhibitCopy :global(button) {
+  color: inherit;
+  border-color: currentColor;
+}
+.stageFooter {
+  display: none;
+}
+.enhanced.work {
+  height: 340svh;
+}
+.enhanced .stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+}
+.enhanced .exhibit {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  padding-top: 32px;
+}
+.enhanced .exhibitTitle {
+  position: absolute;
+  top: 23%;
+  left: var(--public-gutter);
+  margin: 0;
+  z-index: 2;
+  transform-origin: left top;
+  max-width: 50%;
+}
+.enhanced .exhibitArt {
+  position: absolute;
+  width: 52%;
+  height: 64%;
+  left: 45%;
+  top: 17%;
+  margin: 0;
+}
+.enhanced .exhibitArt > :global(.artwork) {
+  height: 100%;
+}
+.enhanced .exhibitArt > :global(.media-frame) {
+  height: 100%;
+}
+.enhanced .exhibitArt :global(.media-window) {
+  height: 100%;
+  aspect-ratio: auto;
+}
+.enhanced .exhibitCopy {
+  position: absolute;
+  left: 53%;
+  top: 37%;
+  max-width: min(31vw, 440px);
+  margin: 0;
+}
+.enhanced .stageFooter {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--public-gutter);
+  z-index: 5;
+  color: #f0eee8;
+  background: #0b1015;
+  font-size: 13px;
+}
+.exhibitNav {
+  display: flex;
+  gap: 24px;
+}
+.exhibitNav button {
+  min-height: 48px;
+  padding: 0 8px;
+  opacity: 0.6;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+}
+.exhibitNav button[aria-pressed="true"] {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.stageRule {
+  position: absolute;
+  height: 3px;
+  background: #c5fb57;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.scene a:focus-visible,
+.scene button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+@media (max-width: 799px), (max-height: 599px) {
+  .sceneIntro {
+    font-size: 12px;
+  }
+  .exhibit {
+    min-height: 0;
+    padding-bottom: 70px;
+  }
+  .exhibitTitle {
+    font-size: clamp(64px, 14vw, 110px);
+  }
+  .exhibitArt {
+    width: 100%;
+  }
+  .exhibitArt > :global(.artwork) {
+    height: 410px;
+  }
+  .exhibitCopy {
+    margin: 20px 0 0;
+    max-width: 100%;
+  }
+  .exhibitCopy > p {
+    font-size: 17px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .exhibitCopy {
+    margin-top: 24px;
+    max-width: 560px;
+  }
+  .exhibitArt {
+    width: 70%;
+    margin: 0;
+  }
+}
+.exhibitArt {
+  z-index: 1;
+}
+.enhanced.gallery {
+  height: 300svh;
+}
+.galleryStage {
+  background: #1a211e;
+  color: #f0eee8;
+  min-height: 900px;
+  overflow: clip;
+}
+.collage {
+  position: absolute;
+  inset: 0;
+}
+.collageTitle {
+  position: absolute;
+  left: 4%;
+  top: 27%;
+  font-family: var(--font-reading), Georgia, serif;
+  font-size: clamp(75px, 8.5vw, 132px);
+  font-weight: 430;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  z-index: 4;
+  pointer-events: none;
+}
+.collageTitle em {
+  font-weight: 430;
+}
+.collageFrame {
+  position: absolute;
+  width: 24%;
+  height: 46%;
+  display: block;
+  transform-origin: center;
+}
+.frame0 {
+  left: 38%;
+  top: 25%;
+  z-index: 3;
+}
+.frame1 {
+  left: 7%;
+  top: 8%;
+}
+.frame2 {
+  left: 70%;
+  top: 7%;
+}
+.frame3 {
+  left: 16%;
+  top: 52%;
+}
+.frame4 {
+  left: 67%;
+  top: 53%;
+}
+.collageFrame > :global(.media-frame),
+.collageFrame :global(.media-window),
+.collageFrame :global(.media-image) {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: auto;
+}
+.collageFrame :global(figcaption) {
+  display: none;
+}
+.collageFrame :global(.media-window) {
+  border: 0;
+  padding: 0;
+}
+.collageFrame :global(.photo-reservation) {
+  background: #c7c7bc;
+}
+.collageFrame :global(.reservation-type) {
+  font-size: 3vw;
+}
+.collageFrame :global(.reservation-status) {
+  font-size: 9px;
+}
+.frame4 :global(.photo-reservation) {
+  background: #a3b4a9;
+}
+.frameLabel {
+  display: block;
+  font-size: 12px;
+  padding: 10px 0;
+}
+.featureCaption {
+  display: none;
+}
+.enhanced .featureCaption {
+  display: block;
+  position: absolute;
+  left: 4%;
+  bottom: 14%;
+  z-index: 5;
+  padding: 22px 28px;
+  background: #f0eee8;
+  color: #0b1015;
+}
+.featureCaption > span {
+  font-size: 12px;
+}
+.featureCaption h3 {
+  font-family: var(--font-reading), Georgia, serif;
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 430;
+  margin-top: 10px;
+  letter-spacing: -0.04em;
+}
+.contactTitle {
+  display: none;
+}
+.enhanced .contactTitle {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  position: absolute;
+  top: 9%;
+  left: 5%;
+  right: 5%;
+}
+.contactTitle h3 {
+  font-family: var(--font-reading), Georgia, serif;
+  font-size: clamp(48px, 5.8vw, 88px);
+  font-weight: 430;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+.contactTitle p {
+  max-width: 280px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.galleryFooter {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 30px;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  font-size: 13px;
+  padding-top: 20px;
+  border-top: 1px solid currentColor;
+  z-index: 5;
+}
+.galleryFooter a {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  min-height: 44px;
+}
+@media (min-width: 800px) {
+  .gallery:not(.enhanced) .frame1 {
+    transform: scale(0.72) rotate(-8deg);
+  }
+  .gallery:not(.enhanced) .frame2 {
+    transform: scale(0.78) rotate(6deg);
+  }
+  .gallery:not(.enhanced) .frame3 {
+    transform: scale(0.64) rotate(9deg);
+  }
+  .gallery:not(.enhanced) .frame4 {
+    transform: scale(0.6) rotate(-7deg);
+  }
+}
+@media (max-width: 799px) {
+  .galleryStage {
+    min-height: 1060px;
+  }
+  .collageTitle {
+    top: 35px;
+    left: var(--public-gutter);
+    font-size: 72px;
+  }
+  .collageFrame {
+    width: 45%;
+    height: 260px;
+  }
+  .frame0 {
+    left: 28%;
+    top: 245px;
+  }
+  .frame1 {
+    left: 3%;
+    top: 205px;
+    transform: scale(0.75) rotate(-8deg);
+  }
+  .frame2 {
+    left: 51%;
+    top: 480px;
+    transform: scale(0.9) rotate(5deg);
+  }
+  .frame3 {
+    left: 4%;
+    top: 625px;
+    transform: scale(0.85) rotate(-4deg);
+  }
+  .frame4 {
+    left: 51%;
+    top: 750px;
+    transform: scale(0.75) rotate(6deg);
+  }
+  .collageFrame :global(.reservation-type) {
+    font-size: 28px;
+  }
+  .galleryFooter {
+    bottom: 12px;
+    font-size: 12px;
+  }
+  .galleryFooter > span {
+    max-width: 140px;
+  }
+}
+.enhanced .stageFooter {
+  padding-right: max(240px, var(--public-gutter));
+}
+.galleryFooter {
+  right: 240px;
+}
+.frameLabel {
+  font-size: 20px;
+}
+.enhanced.about {
+  height: 280svh;
+}
+.aboutStage {
+  background: #ddd8cc;
+  color: #0b1015;
+  padding: 60px var(--public-gutter);
+}
+.storyFrames {
+  position: relative;
+  height: 730px;
+}
+.storyFrame {
+  position: absolute;
+  width: 32%;
+  height: 63%;
+}
+.portrait0 {
+  left: 55%;
+  top: 15%;
+  z-index: 3;
+}
+.portrait1 {
+  left: 66%;
+  top: 24%;
+  z-index: 1;
+  transform: rotate(8deg);
+}
+.portrait2 {
+  left: 48%;
+  top: 38%;
+  z-index: 2;
+  transform: rotate(-9deg);
+}
+.storyFrame > :global(.media-frame),
+.storyFrame :global(.media-window),
+.storyFrame :global(.media-image) {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: auto;
+}
+.storyFrame :global(.media-window) {
+  border: 0;
+  padding: 0;
+}
+.storyFrame :global(figcaption) {
+  display: none;
+}
+.storyFrame :global(.photo-reservation) {
+  background: #aaa7be;
+}
+.portrait1 :global(.photo-reservation) {
+  background: #738d83;
+}
+.portrait2 :global(.photo-reservation) {
+  background: #bca183;
+}
+.storyFrame :global(.reservation-type) {
+  font-size: clamp(24px, 3.3vw, 58px);
+}
+.storyFrame :global(.reservation-status) {
+  font-size: 10px;
+}
+.storyChapter {
+  padding: 45px 0;
+  position: relative;
+}
+.storyChapter h2 {
+  font-family: var(--font-reading), Georgia, serif;
+  font-weight: 430;
+  font-size: clamp(64px, 8vw, 128px);
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  margin: 0 0 30px;
+}
+.storyChapter h2 em {
+  font-weight: 430;
+}
+.storyChapter p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 390px;
+  margin-bottom: 32px;
+}
+.storyNote {
+  font-size: 13px;
+  line-height: 1.6;
+  display: block;
+}
+.chapter2 > .storyNote {
+  margin-bottom: 24px;
+}
+.chapter2 .explore {
+  max-width: 440px;
+}
+.enhanced .aboutStage {
+  padding: 0;
+}
+.enhanced .storyFrames {
+  position: absolute;
+  inset: 0;
+  height: auto;
+}
+.enhanced .storyChapter {
+  position: absolute;
+  padding: 0;
+  z-index: 4;
+}
+.enhanced .chapter0 {
+  top: 18%;
+  left: 4%;
+}
+.enhanced .chapter1 {
+  top: 21%;
+  left: 56%;
+}
+.enhanced .chapter1 h2 {
+  font-size: clamp(58px, 6.5vw, 100px);
+}
+.enhanced .chapter2 {
+  top: 25%;
+  left: 48%;
+}
+.storyFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  position: relative;
+  padding-top: 25px;
+}
+.enhanced .storyFooter {
+  position: absolute;
+  left: 4%;
+  right: 240px;
+  bottom: 35px;
+}
+.storyRule {
+  height: 1px;
+  background: currentColor;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform-origin: left;
+}
+@media (max-width: 1099px) and (min-width: 800px) {
+  .enhanced .chapter0 h2 {
+    font-size: 9vw;
+  }
+  .enhanced .chapter1 h2 {
+    font-size: 7vw;
+  }
+  .enhanced .chapter1 p {
+    font-size: 17px;
+    max-width: 34vw;
+  }
+  .enhanced .chapter2 h2 {
+    font-size: 8vw;
+  }
+  .enhanced .exhibitCopy > p {
+    font-size: 17px;
+  }
+  .contactTitle p {
+    font-size: 16px;
+    max-width: 240px;
+  }
+}
+@media (max-width: 799px), (max-height: 599px) {
+  .frameLabel {
+    font-size: 12px;
+  }
+  .galleryFooter {
+    right: 80px;
+  }
+  .aboutStage {
+    padding: 40px var(--public-gutter);
+  }
+  .storyFrames {
+    height: 570px;
+  }
+  .storyFrame {
+    width: 70%;
+    height: 70%;
+  }
+  .portrait0 {
+    left: 0;
+    top: 0;
+  }
+  .portrait1 {
+    left: 27%;
+    top: 12%;
+    width: 66%;
+    height: 55%;
+  }
+  .portrait2 {
+    left: 16%;
+    top: 38%;
+    width: 70%;
+    height: 55%;
+  }
+  .storyFrame :global(.reservation-type) {
+    font-size: 38px;
+  }
+  .storyChapter {
+    padding: 28px 0;
+  }
+  .storyChapter h2 {
+    font-size: clamp(56px, 13.5vw, 88px);
+  }
+  .storyChapter p {
+    font-size: 18px;
+  }
+  .storyFooter {
+    margin-top: 30px;
+  }
+}
+.about :global(.media-frame) {
+  max-width: none;
+}
+.enhanced .galleryStage {
+  min-height: 0;
+}
+.scene :global(.reservation-type) {
+  color: #0b1015;
+}
+.scene :global(.reservation-status) {
+  color: #0b1015;
+}
+.enhanced .chapter1 {
+  left: 58%;
+}
+/* Reserve the same scroll geometry synchronously during client navigation.
+   This is never applied by server HTML or without JavaScript. */
+@media (min-width: 800px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) {
+  .reserved.work {
+    min-height: 340svh;
+  }
+  .reserved.gallery {
+    min-height: 300svh;
+  }
+  .reserved.about {
+    min-height: 280svh;
+  }
+}
+/* Keep the overprinted headline clear of image captions, and keep the gallery
+   navigation readable through the changing background, including paused scroll. */
+.collageTitle {
+  top: 6%;
+}
+.sceneIntro {
+  padding: 8px 0;
+  align-items: center;
+}
+.sceneIntro > a,
+.stageFooter > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+}
+.galleryFooter {
+  padding: 12px 16px;
+  color: #f0eee8;
+  background: #0b1015;
+  border-color: #f0eee84d;
+}
+@media (max-width: 799px) {
+  .collageTitle {
+    top: 35px;
+  }
+  .galleryStage {
+    min-height: 1100px;
+  }
+}

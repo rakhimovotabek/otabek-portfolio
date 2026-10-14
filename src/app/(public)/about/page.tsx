@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { profile } from "@/data/portfolio";
 import { presence } from "@/data/archive";
 import { aboutDetails } from "@/data/universe";
-import { MediaFrame } from "@/components/archive/media-frame";
 import { PageHeading } from "@/components/universe/page-heading";
 import { Achievements } from "@/components/sections/achievements";
 import { site } from "@/data/site";
+import { AboutStory } from "@/components/signature/about-story";
 export const metadata: Metadata = { title: `About — ${site.brand}` };
 export default function AboutPage() {
   return (
@@ -15,8 +15,12 @@ export default function AboutPage() {
         title={profile.name}
         description={`${profile.role} from ${profile.country}. Online as ${site.brand}.`}
       />
-      <section className="portrait-story" aria-labelledby="biography-heading">
-        <MediaFrame media={presence.portraits[0]} />
+      <AboutStory />
+      <Achievements />
+      <section
+        className="portrait-story signature-biography"
+        aria-labelledby="biography-heading"
+      >
         <div className="about-story">
           <span className="eyebrow">BIOGRAPHY</span>
           <h2 id="biography-heading">
@@ -56,12 +60,7 @@ export default function AboutPage() {
             )}
           </div>
         </div>
-        <div className="secondary-portraits">
-          <MediaFrame media={presence.portraits[1]} />
-          <MediaFrame media={presence.portraits[2]} />
-        </div>
       </section>
-      <Achievements />
       <section className="page-afterword">
         <span className="eyebrow">EXPERIENCE / BEYOND THE SCREEN</span>
         <p>

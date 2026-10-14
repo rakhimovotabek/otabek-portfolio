@@ -433,3 +433,221 @@
     display: none;
   }
 }
+/* The cinematic frames now precede the milestones. Long biography remains in
+   normal document flow, with no moving prose or duplicated portrait mounts. */
+.about-page .signature-biography {
+  display: block;
+  padding-top: 100px;
+  border-top: 1px solid #0b101529;
+}
+.about-page .signature-biography .about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 8%;
+}
+.about-page .signature-biography .about-story > .eyebrow {
+  grid-column: 1 / -1;
+}
+.about-page .signature-biography h2 {
+  grid-row: 2 / 5;
+}
+.about-page .signature-biography .about-story > p {
+  grid-column: 2;
+  max-width: 620px;
+  margin: 0;
+}
+@media (max-width: 799px) {
+  .about-page .signature-biography .about-story {
+    display: block;
+  }
+  .about-page .signature-biography .about-story > p {
+    margin-top: 24px;
+  }
+}
+/* Journal: a native folding folio. The empty state remains truthful and visible
+   on first load; no fictional article is needed to demonstrate the interaction. */
+.journal-page .journal-folio {
+  padding: 42px clamp(24px, 5vw, 80px);
+  margin: 0 0 80px 10%;
+  color: #f0eee8;
+  background: #392c2c;
+}
+.journal-folio summary {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+.journal-folio summary::-webkit-details-marker {
+  display: none;
+}
+.journal-folio summary > span:first-child {
+  font-size: 16px;
+}
+.folio-toggle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 48px;
+  font-size: 13px;
+}
+.folio-toggle i {
+  font-style: normal;
+  font-size: 30px;
+  transition: transform 200ms var(--ease);
+}
+.journal-folio[open] .folio-toggle i {
+  transform: rotate(45deg);
+}
+.journal-folio .folio-close,
+.journal-folio[open] .folio-open {
+  display: none;
+}
+.journal-folio[open] .folio-close {
+  display: inline;
+}
+.journal-folio .folio-body {
+  transition:
+    transform 250ms var(--ease),
+    opacity 250ms;
+}
+.journal-folio .folio-body p {
+  margin: 50px 0 60px;
+  max-width: 900px;
+  font-weight: 430;
+}
+.journal-folio .unwritten-rule {
+  background: #f0eee870;
+}
+@starting-style {
+  .journal-folio[open] .folio-body {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+/* Guestbook: open correspondence, with a margin that draws as an approved note
+   arrives. Form styles and submission logic are untouched. */
+.guestbook-page .guestbook-sheet {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.guestbook-page .visitor-entry {
+  padding: 30px 32px 38px;
+  margin: 28px 0;
+  position: relative;
+  background: #e6e7dc;
+  border: 0;
+}
+.guestbook-page .visitor-entry:nth-child(even) {
+  margin-left: 5%;
+  background: #edebe0;
+}
+.guestbook-page .visitor-entry::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #738d83;
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: transform 500ms var(--ease);
+}
+.guestbook-page .visitor-entry header {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  font-size: 14px;
+}
+.guestbook-page .visitor-entry time {
+  opacity: 1;
+  color: #4b554b;
+  font-size: 12px;
+}
+.guestbook-page .visitor-entry > p {
+  margin-top: 24px;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.5;
+  color: #0b1015;
+}
+.guestbook-page .visitor-entry p::selection {
+  background: #c5fb57;
+  color: #0b1015;
+}
+@starting-style {
+  .guestbook-page .visitor-entry::after {
+    transform: scaleY(0);
+  }
+}
+@media (max-width: 799px) {
+  .journal-page .journal-folio {
+    margin-left: 0;
+    padding: 24px;
+  }
+  .journal-folio .folio-body p {
+    font-size: 34px;
+  }
+  .folio-toggle {
+    font-size: 12px;
+    gap: 12px;
+  }
+  .guestbook-page .visitor-entry {
+    padding: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journal-folio .folio-body {
+    transition: opacity 100ms;
+  }
+  .folio-toggle i,
+  .guestbook-page .visitor-entry::after {
+    transition: none;
+  }
+}
+/* Signature rooms open on their artwork. The masthead is a compact editorial
+   byline instead of spending almost the entire first screen on a generic title. */
+:is(.work-page, .gallery-page, .about-page) > .page-heading {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12px 40px;
+  padding: 24px 0 28px;
+}
+:is(.work-page, .gallery-page, .about-page) > .page-heading .page-label {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+:is(.work-page, .gallery-page, .about-page) > .page-heading h1 {
+  font-size: clamp(42px, 4.6vw, 68px);
+  padding-bottom: 5px;
+}
+:is(.work-page, .gallery-page, .about-page) > .page-heading > p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 440px;
+  margin: 0;
+  align-self: center;
+}
+.work-page .category-navigation {
+  margin-top: 0;
+  padding: 12px 0;
+}
+.gallery-page > .collection-note {
+  margin: 40px 0 0;
+  font-family: var(--font-body), sans-serif;
+  font-size: 16px;
+  max-width: 720px;
+}
+@media (max-width: 799px) {
+  :is(.work-page, .gallery-page, .about-page) > .page-heading {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+  :is(.work-page, .gallery-page, .about-page) > .page-heading h1 {
+    font-size: clamp(40px, 9vw, 64px);
+  }
+}

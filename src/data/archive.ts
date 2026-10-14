@@ -225,3 +225,27 @@ export const categoryLabels: Record<ArchiveCategory, string> = {
   talk: "Talk",
   other: "Other",
 };
+
+/** Neutral media reservations; published album images replace these frames. */
+export const galleryReservations: readonly ArchiveMedia[] = [
+  {
+    id: "gallery-light-reservation",
+    src: null,
+    alt: "Empty frame reserved for a future photograph",
+    caption: "A photograph to come",
+    width: 1000,
+    height: 1200,
+    placeholderLabel: "Light,\nin time.",
+    credit: null,
+  },
+  {
+    id: "gallery-place-reservation",
+    src: null,
+    alt: "Empty frame reserved for a future photograph",
+    caption: "A photograph to come",
+    width: 1000,
+    height: 1200,
+    placeholderLabel: "Somewhere,\nin time.",
+    credit: null,
+  },
+];

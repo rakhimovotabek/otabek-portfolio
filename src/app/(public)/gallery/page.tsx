@@ -4,6 +4,7 @@ import { publishedGallery, universeCopy } from "@/data/universe";
 import { site } from "@/data/site";
 import { MediaFrame } from "@/components/archive/media-frame";
 import { PageHeading } from "@/components/universe/page-heading";
+import { GalleryCollage } from "@/components/signature/gallery-collage";
 export const metadata: Metadata = { title: `Gallery — ${site.brand}` };
 export default function GalleryPage() {
   const albums = publishedGallery();
@@ -14,10 +15,11 @@ export default function GalleryPage() {
         title={universeCopy.gallery.title}
         description={universeCopy.gallery.description}
       />
+      <GalleryCollage albums={albums} />
       {!albums.some((album) => !album.siteArtwork) && (
         <p className="collection-note">{universeCopy.gallery.empty}</p>
       )}
-      <div className="gallery-albums">
+      <div className="gallery-albums" id="gallery-collections" tabIndex={-1}>
         {albums.map((album, i) => (
           <article key={album.slug} className="gallery-album-entry">
             <Link

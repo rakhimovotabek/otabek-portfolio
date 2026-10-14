@@ -23,7 +23,7 @@ export default function JournalPage() {
               </div>
               <div>
                 <h2>
-                  <Link href={`/journal/${entry.slug}`}>{entry.title} ↗</Link>
+                  <Link href={`/journal/${entry.slug}`}>{entry.title} →</Link>
                 </h2>
                 <p>{entry.excerpt}</p>
               </div>
@@ -31,11 +31,20 @@ export default function JournalPage() {
           ))}
         </div>
       ) : (
-        <div className="journal-unwritten">
-          <span className="eyebrow">THE FIRST PAGE</span>
-          <p>{universeCopy.journal.empty}</p>
-          <span className="unwritten-rule" aria-hidden="true" />
-        </div>
+        <details className="journal-unwritten journal-folio" open>
+          <summary>
+            <span>The first page.</span>
+            <span className="folio-toggle">
+              <span className="folio-close">Fold the page</span>
+              <span className="folio-open">Open the page</span>
+              <i aria-hidden="true">+</i>
+            </span>
+          </summary>
+          <div className="folio-body">
+            <p>{universeCopy.journal.empty}</p>
+            <span className="unwritten-rule" aria-hidden="true" />
+          </div>
+        </details>
       )}
       <nav className="related-pages" aria-label="Connected collection">
         <span className="eyebrow">SOME STORIES WILL BE TOLD IN IMAGES</span>
