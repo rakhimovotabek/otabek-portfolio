@@ -3,7 +3,8 @@ import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { publishedGallery, publishedJournal } from "@/data/universe";
 import { site } from "@/data/site";
 import { AlbumViewer } from "@/components/universe/album-viewer";
-import { PageHeading } from "@/components/universe/page-heading";
+import styles from "../gallery.module.css";
+import art from "@/components/signature/gallery-art.module.css";
 export function generateStaticParams() {
   return publishedGallery().map((album) => ({ slug: album.slug }));
 }
@@ -31,17 +32,16 @@ export default async function GalleryDetail({
       entry.gallerySlugs.includes(album.slug),
   );
   return (
-    <div className="inner-page gallery-page gallery-detail">
-      <PageHeading
-        label={
-          album.siteArtwork
-            ? "ORIGINAL SITE ARTWORK / NOT PERSONAL DRAWINGS"
-            : album.category.toUpperCase()
-        }
-        title={album.title}
-        description={album.description}
-        back={{ href: "/gallery", label: "Gallery" }}
-      />
+    <div className={`inner-page gallery-page gallery-detail ${styles.detail} ${art.art}`}>
+      <header className={styles.albumHeading}>
+        <Link href="/gallery" className={styles.back}>← Gallery</Link>
+        <span className={styles.albumKind}>{album.siteArtwork ? "Original site artwork" : album.category}</span>
+        <h1 data-page-title><span>{album.title}</span></h1>
+        <details className={styles.albumNotes}>
+          <summary>About the collection <span aria-hidden>+</span></summary>
+          <p>{album.description}</p>
+        </details>
+      </header>
       {album.date && (
         <time className="entry-date" dateTime={album.date}>
           {album.date}

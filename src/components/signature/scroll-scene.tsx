@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef, type ReactNode } from "react";
 import type { MotionEngine } from "@/components/motion/tokens";
 import styles from "./signature.module.css";
+import { galleryMotion } from "./gallery-motion";
 
 export type SceneKind = "work" | "gallery" | "about";
 
@@ -174,90 +175,7 @@ function createTimeline(
       listeners.push(() => button.removeEventListener("click", jump));
     });
   } else if (kind === "gallery") {
-    const frames = Array.from(q("[data-collage-frame]"));
-    const initialLeft = [38, 7, 70, 16, 67];
-    const initialTop = [25, 8, 7, 52, 53];
-    gsap.set(frames, {
-      scale: (i) => [1, 0.72, 0.78, 0.64, 0.6][i],
-      rotation: (i) => [0, -8, 6, 9, -7][i],
-    });
-    timeline.to(
-      q("[data-collage-title]"),
-      { yPercent: -80, autoAlpha: 0, duration: 0.2 },
-      0.06,
-    );
-    timeline.to(
-      q("[data-collage-frame] > span"),
-      { opacity: 0, duration: 0.08 },
-      0.12,
-    );
-    timeline.to(frames[0], { scale: 2.5, rotation: 0, duration: 0.3 }, 0.12);
-    frames.slice(1).forEach((frame, i) =>
-      timeline.to(
-        frame,
-        {
-          x: () => (i % 2 ? 1 : -1) * stage.clientWidth * 0.2,
-          y: () => (i < 2 ? -1 : 1) * stage.clientHeight * 0.16,
-          scale: 0.5,
-          opacity: 0.3,
-          rotation: i % 2 ? 13 : -12,
-          duration: 0.3,
-        },
-        0.12,
-      ),
-    );
-    timeline.fromTo(
-      q("[data-feature-caption]"),
-      { autoAlpha: 0, y: 20 },
-      { autoAlpha: 1, y: 0, duration: 0.12 },
-      0.3,
-    );
-    timeline.to(
-      q("[data-feature-caption]"),
-      { autoAlpha: 0, duration: 0.08 },
-      0.58,
-    );
-    timeline.to(
-      frames,
-      {
-        x: (i) =>
-          stage.clientWidth * ((5 + i * 19 - initialLeft[i] - 4.32) / 100),
-        y: (i) => stage.clientHeight * ((34 - initialTop[i] - 8.28) / 100),
-        scale: 0.64,
-        rotation: 0,
-        opacity: 1,
-        duration: 0.28,
-      },
-      0.62,
-    );
-    timeline.fromTo(
-      q("[data-contact-title]"),
-      { autoAlpha: 0, y: 30 },
-      { autoAlpha: 1, y: 0, duration: 0.16 },
-      0.72,
-    );
-    timeline.to(
-      q("[data-collage-frame] > span"),
-      { opacity: 1, duration: 0.08 },
-      0.86,
-    );
-    timeline.to(
-      stage,
-      { backgroundColor: "#deddd5", color: "#0b1015", duration: 0.24 },
-      0.64,
-    );
-    const update = () => {
-      const progress = timeline.progress();
-      frames.forEach((frame, i) => {
-        frame.inert = i > 0 && progress > 0.25 && progress < 0.88;
-      });
-    };
-    timeline.eventCallback("onUpdate", update);
-    listeners.push(() =>
-      frames.forEach((frame) => {
-        frame.inert = false;
-      }),
-    );
+    galleryMotion(gsap, timeline, host, stage);
   } else if (kind === "about") {
     const frames = Array.from(q("[data-story-frame]"));
     const chapters = Array.from(q("[data-story-chapter]"));

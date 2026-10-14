@@ -1,0 +1,15 @@
+/* Gallery-only palette for existing original SVG shapes. Photos are untouched. */
+.art [data-media-id="study-volume"] svg > rect { fill: #284bff; }
+.art [data-media-id="study-volume"] stop { stop-color: #f2efe7; }
+.art [data-media-id="study-volume"] stop[offset="1"] { stop-color: #d3d0c9; }
+.art [data-media-id="study-volume"] :global(.volume-page) { stroke: #111114; }
+.art [data-media-id="study-volume"] path[fill="#747866"] { fill: #b8b6b0; }
+.art [data-media-id="study-contour"] svg > rect { fill: #111114; }
+.art [data-media-id="study-contour"] path[fill="#19252e"] { fill: #284bff; }
+.art [data-media-id="study-contour"] path[stroke="#bba382"] { stroke: #f2efe7; }
+.art [data-media-id="study-balance"] svg > rect { fill: #f2efe7; }
+.art [data-media-id="study-balance"] :global(.study-plane) { fill: #284bff; }
+.art [data-media-id="study-balance"] :global(.study-orbit) { fill: #111114; }
+.art [data-media-id="study-balance"] :global(.media-window) { background: #f2efe7; }
+.art [data-media-id="study-volume"] :global(.media-window) { background: #284bff; }
+.art [data-media-id="study-contour"] :global(.media-window) { background: #111114; }

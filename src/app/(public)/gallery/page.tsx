@@ -2,58 +2,38 @@ import type { Metadata } from "next";
 import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { publishedGallery, universeCopy } from "@/data/universe";
 import { site } from "@/data/site";
-import { MediaFrame } from "@/components/archive/media-frame";
-import { PageHeading } from "@/components/universe/page-heading";
 import { GalleryCollage } from "@/components/signature/gallery-collage";
+import styles from "./gallery.module.css";
 export const metadata: Metadata = { title: `Gallery — ${site.brand}` };
 export default function GalleryPage() {
   const albums = publishedGallery();
   return (
-    <div className="inner-page gallery-page">
-      <PageHeading
-        label="04 / IMAGES & COLLECTIONS"
-        title={universeCopy.gallery.title}
-        description={universeCopy.gallery.description}
-      />
+    <div className={`inner-page gallery-page ${styles.page}`}>
+      <header className={styles.opening}>
+        <h1 data-page-title><span>Gallery<em>.</em></span></h1>
+        <span>{albums.every(album => album.siteArtwork) ? "Original site artwork" : "Images & collections"}</span>
+      </header>
       <GalleryCollage albums={albums} />
-      {!albums.some((album) => !album.siteArtwork) && (
-        <p className="collection-note">{universeCopy.gallery.empty}</p>
-      )}
-      <div className="gallery-albums" id="gallery-collections" tabIndex={-1}>
+      <section className={styles.collections} id="gallery-collections" tabIndex={-1} aria-labelledby="collections-title">
+        <header className={styles.collectionHeading}>
+          <h2 id="collections-title">Collections.</h2>
+          <span>{String(albums.length).padStart(2, "0")} published</span>
+        </header>
         {albums.map((album, i) => (
-          <article key={album.slug} className="gallery-album-entry">
-            <Link
-              href={`/gallery/${album.slug}`}
-              aria-label={`Open ${album.title}`}
-              className="album-preview"
-            >
-              {album.images[0] && <MediaFrame media={album.images[0]} />}
-            </Link>
-            <div>
-              <span className="eyebrow">
-                {String(i + 1).padStart(2, "0")} /{" "}
-                {album.siteArtwork ? "ORIGINAL SITE ARTWORK" : album.category}
-              </span>
-              <h2>
-                <Link href={`/gallery/${album.slug}`}>{album.title}</Link>
-              </h2>
-              <p>{album.description}</p>
-              <Link className="text-link" href={`/gallery/${album.slug}`}>
-                Enter the collection ↗
-              </Link>
-            </div>
+          <article key={album.slug} className={styles.collectionEntry}>
+            <span>{String(i + 1).padStart(2, "0")}</span>
+            <h3><Link href={`/gallery/${album.slug}`}>{album.title}<span aria-hidden>→</span></Link></h3>
+            <span>{album.images.length} images<br />{album.siteArtwork ? "Site studies" : album.category}</span>
           </article>
         ))}
-      </div>
-      {albums.length === 0 && (
-        <div className="quiet-empty">
-          <p>No collections published yet.</p>
+        {!albums.length && <p>No collections published yet.</p>}
+        <div className={styles.afterword}>
+          {!albums.some(album => !album.siteArtwork) && (
+            <details><summary>About these images <span aria-hidden>+</span></summary><p>{universeCopy.gallery.empty}</p></details>
+          )}
+          <Link href="/journal">The journal →</Link>
         </div>
-      )}
-      <nav className="related-pages" aria-label="Connected collection">
-        <span className="eyebrow">WORDS & IMAGES, SIDE BY SIDE</span>
-        <Link href="/journal">The journal ↗</Link>
-      </nav>
+      </section>
     </div>
   );
 }
