@@ -1,0 +1,560 @@
+{
+  "build": "production",
+  "viewport": "1440 × 900",
+  "samples": [
+    {
+      "kind": "work",
+      "cpuThrottle": 1,
+      "initialLoad": {
+        "shifts": [
+          {
+            "value": 0.02738635223765432,
+            "at": 877.7999999970198,
+            "sources": [
+              {
+                "tag": "DIV",
+                "className": "artwork sat-art",
+                "from": {
+                  "x": 645,
+                  "y": 614.78125,
+                  "width": 742.5625,
+                  "height": 285.21875,
+                  "top": 614.78125,
+                  "right": 1387.5625,
+                  "bottom": 900,
+                  "left": 645
+                },
+                "to": {
+                  "x": 641.25,
+                  "y": 522.375,
+                  "width": 741,
+                  "height": 377.625,
+                  "top": 522.375,
+                  "right": 1382.25,
+                  "bottom": 900,
+                  "left": 641.25
+                }
+              },
+              {
+                "tag": "H2",
+                "className": "signature_exhibitTitle__u_au_",
+                "from": {
+                  "x": 37.4375,
+                  "y": 459.375,
+                  "width": 1350.125,
+                  "height": 125.40625,
+                  "top": 459.375,
+                  "right": 1387.5625,
+                  "bottom": 584.78125,
+                  "left": 37.4375
+                },
+                "to": {
+                  "x": 37.4375,
+                  "y": 573.375,
+                  "width": 377,
+                  "height": 125.40625,
+                  "top": 573.375,
+                  "right": 414.4375,
+                  "bottom": 698.78125,
+                  "left": 37.4375
+                }
+              },
+              {
+                "tag": "svg",
+                "className": {},
+                "from": {
+                  "x": 919.75,
+                  "y": 522.375,
+                  "width": 462.5,
+                  "height": 377.625,
+                  "top": 522.375,
+                  "right": 1382.25,
+                  "bottom": 900,
+                  "left": 919.75
+                },
+                "to": {
+                  "x": 915.421875,
+                  "y": 536.78125,
+                  "width": 466.828125,
+                  "height": 363.21875,
+                  "top": 536.78125,
+                  "right": 1382.25,
+                  "bottom": 900,
+                  "left": 915.421875
+                }
+              }
+            ]
+          }
+        ],
+        "tasks": [
+          {
+            "ms": 370,
+            "at": 195.19999999552965
+          },
+          {
+            "ms": 89,
+            "at": 626.6000000014901
+          }
+        ],
+        "paints": [
+          {
+            "ms": 656,
+            "element": "DIV",
+            "text": "SAT’chi"
+          }
+        ]
+      },
+      "scrolling": {
+        "p50Ms": 16.699999999999818,
+        "p95Ms": 16.800000000000182,
+        "maxMs": 33.40000000000009,
+        "longTasks": [],
+        "overflow": false
+      }
+    },
+    {
+      "kind": "gallery",
+      "cpuThrottle": 1,
+      "initialLoad": {
+        "shifts": [],
+        "tasks": [
+          {
+            "ms": 50,
+            "at": 103.10000000149012
+          },
+          {
+            "ms": 90,
+            "at": 429.5
+          }
+        ],
+        "paints": [
+          {
+            "ms": 320,
+            "element": "H2",
+            "text": "Lookcloser."
+          }
+        ]
+      },
+      "scrolling": {
+        "p50Ms": 16.699999999999818,
+        "p95Ms": 16.700000000000273,
+        "maxMs": 16.800000000000182,
+        "longTasks": [],
+        "overflow": false
+      }
+    },
+    {
+      "kind": "about",
+      "cpuThrottle": 1,
+      "initialLoad": {
+        "shifts": [
+          {
+            "value": 0.01869667649759677,
+            "at": 466.3999999985099,
+            "sources": [
+              {
+                "tag": "DIV",
+                "className": "signature_storyFrame__90TF0 signature_portrait1__KHeJK",
+                "from": {
+                  "x": 904.1425170898438,
+                  "y": 510.17254638671875,
+                  "width": 491.83123779296875,
+                  "height": 389.82745361328125,
+                  "top": 510.17254638671875,
+                  "right": 1395.9737548828125,
+                  "bottom": 900,
+                  "left": 904.1425170898438
+                },
+                "to": {
+                  "x": 903.7633056640625,
+                  "y": 493.02752685546875,
+                  "width": 521.2366943359375,
+                  "height": 406.97247314453125,
+                  "top": 493.02752685546875,
+                  "right": 1425,
+                  "bottom": 900,
+                  "left": 903.7633056640625
+                }
+              },
+              {
+                "tag": "DIV",
+                "className": "media-window is-photo",
+                "from": {
+                  "x": 780,
+                  "y": 475.375,
+                  "width": 432.03125,
+                  "height": 424.625,
+                  "top": 475.375,
+                  "right": 1212.03125,
+                  "bottom": 900,
+                  "left": 780
+                },
+                "to": {
+                  "x": 783.75,
+                  "y": 440.875,
+                  "width": 456,
+                  "height": 459.125,
+                  "top": 440.875,
+                  "right": 1239.75,
+                  "bottom": 900,
+                  "left": 783.75
+                }
+              },
+              {
+                "tag": "DIV",
+                "className": "signature_storyFrame__90TF0 signature_portrait2__2Zp_V",
+                "from": {
+                  "x": 642.6633911132812,
+                  "y": 614.4779663085938,
+                  "width": 498.65496826171875,
+                  "height": 285.52203369140625,
+                  "top": 614.4779663085938,
+                  "right": 1141.318359375,
+                  "bottom": 900,
+                  "left": 642.6633911132812
+                },
+                "to": {
+                  "x": 642.4578857421875,
+                  "y": 615.8233032226562,
+                  "width": 539.084228515625,
+                  "height": 284.17669677734375,
+                  "top": 615.8233032226562,
+                  "right": 1181.5421142578125,
+                  "bottom": 900,
+                  "left": 642.4578857421875
+                }
+              },
+              {
+                "tag": "SPAN",
+                "className": "reservation-status",
+                "from": {
+                  "x": 938.953125,
+                  "y": 847.375,
+                  "width": 121.625,
+                  "height": 15,
+                  "top": 847.375,
+                  "right": 1060.578125,
+                  "bottom": 862.375,
+                  "left": 938.953125
+                },
+                "to": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 0,
+                  "height": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                }
+              }
+            ]
+          }
+        ],
+        "tasks": [],
+        "paints": [
+          {
+            "ms": 296,
+            "element": "SPAN",
+            "text": "Otabek Rakhimov"
+          }
+        ]
+      },
+      "scrolling": {
+        "p50Ms": 16.699999999999818,
+        "p95Ms": 16.700000000000273,
+        "maxMs": 16.799999999999955,
+        "longTasks": [],
+        "overflow": false
+      }
+    },
+    {
+      "kind": "work",
+      "cpuThrottle": 4,
+      "initialLoad": {
+        "shifts": [
+          {
+            "value": 0.02738635223765432,
+            "at": 859.3999999985099,
+            "sources": [
+              {
+                "tag": "DIV",
+                "className": "artwork sat-art",
+                "from": {
+                  "x": 645,
+                  "y": 614.78125,
+                  "width": 742.5625,
+                  "height": 285.21875,
+                  "top": 614.78125,
+                  "right": 1387.5625,
+                  "bottom": 900,
+                  "left": 645
+                },
+                "to": {
+                  "x": 641.25,
+                  "y": 522.375,
+                  "width": 741,
+                  "height": 377.625,
+                  "top": 522.375,
+                  "right": 1382.25,
+                  "bottom": 900,
+                  "left": 641.25
+                }
+              },
+              {
+                "tag": "H2",
+                "className": "signature_exhibitTitle__u_au_",
+                "from": {
+                  "x": 37.4375,
+                  "y": 459.375,
+                  "width": 1350.125,
+                  "height": 125.40625,
+                  "top": 459.375,
+                  "right": 1387.5625,
+                  "bottom": 584.78125,
+                  "left": 37.4375
+                },
+                "to": {
+                  "x": 37.4375,
+                  "y": 573.375,
+                  "width": 377,
+                  "height": 125.40625,
+                  "top": 573.375,
+                  "right": 414.4375,
+                  "bottom": 698.78125,
+                  "left": 37.4375
+                }
+              },
+              {
+                "tag": "svg",
+                "className": {},
+                "from": {
+                  "x": 919.75,
+                  "y": 522.375,
+                  "width": 462.5,
+                  "height": 377.625,
+                  "top": 522.375,
+                  "right": 1382.25,
+                  "bottom": 900,
+                  "left": 919.75
+                },
+                "to": {
+                  "x": 915.421875,
+                  "y": 536.78125,
+                  "width": 466.828125,
+                  "height": 363.21875,
+                  "top": 536.78125,
+                  "right": 1382.25,
+                  "bottom": 900,
+                  "left": 915.421875
+                }
+              }
+            ]
+          }
+        ],
+        "tasks": [
+          {
+            "ms": 87,
+            "at": 765.5
+          },
+          {
+            "ms": 70,
+            "at": 866.3999999985099
+          }
+        ],
+        "paints": [
+          {
+            "ms": 484,
+            "element": "DIV",
+            "text": "SAT’chi"
+          }
+        ]
+      },
+      "scrolling": {
+        "p50Ms": 16.699999999999818,
+        "p95Ms": 16.800000000000182,
+        "maxMs": 33.40000000000009,
+        "longTasks": [],
+        "overflow": false
+      }
+    },
+    {
+      "kind": "gallery",
+      "cpuThrottle": 4,
+      "initialLoad": {
+        "shifts": [],
+        "tasks": [
+          {
+            "ms": 99,
+            "at": 187.80000000447035
+          },
+          {
+            "ms": 103,
+            "at": 769.7000000029802
+          }
+        ],
+        "paints": [
+          {
+            "ms": 424,
+            "element": "H2",
+            "text": "Lookcloser."
+          }
+        ]
+      },
+      "scrolling": {
+        "p50Ms": 16.699999999999818,
+        "p95Ms": 33.30000000000018,
+        "maxMs": 33.40000000000009,
+        "longTasks": [],
+        "overflow": false
+      }
+    },
+    {
+      "kind": "about",
+      "cpuThrottle": 4,
+      "initialLoad": {
+        "shifts": [
+          {
+            "value": 0.01869667649759677,
+            "at": 874.2999999970198,
+            "sources": [
+              {
+                "tag": "DIV",
+                "className": "signature_storyFrame__90TF0 signature_portrait1__KHeJK",
+                "from": {
+                  "x": 904.1425170898438,
+                  "y": 510.17254638671875,
+                  "width": 491.83123779296875,
+                  "height": 389.82745361328125,
+                  "top": 510.17254638671875,
+                  "right": 1395.9737548828125,
+                  "bottom": 900,
+                  "left": 904.1425170898438
+                },
+                "to": {
+                  "x": 903.7633056640625,
+                  "y": 493.02752685546875,
+                  "width": 521.2366943359375,
+                  "height": 406.97247314453125,
+                  "top": 493.02752685546875,
+                  "right": 1425,
+                  "bottom": 900,
+                  "left": 903.7633056640625
+                }
+              },
+              {
+                "tag": "DIV",
+                "className": "media-window is-photo",
+                "from": {
+                  "x": 780,
+                  "y": 475.375,
+                  "width": 432.03125,
+                  "height": 424.625,
+                  "top": 475.375,
+                  "right": 1212.03125,
+                  "bottom": 900,
+                  "left": 780
+                },
+                "to": {
+                  "x": 783.75,
+                  "y": 440.875,
+                  "width": 456,
+                  "height": 459.125,
+                  "top": 440.875,
+                  "right": 1239.75,
+                  "bottom": 900,
+                  "left": 783.75
+                }
+              },
+              {
+                "tag": "DIV",
+                "className": "signature_storyFrame__90TF0 signature_portrait2__2Zp_V",
+                "from": {
+                  "x": 642.6633911132812,
+                  "y": 614.4779663085938,
+                  "width": 498.65496826171875,
+                  "height": 285.52203369140625,
+                  "top": 614.4779663085938,
+                  "right": 1141.318359375,
+                  "bottom": 900,
+                  "left": 642.6633911132812
+                },
+                "to": {
+                  "x": 642.4578857421875,
+                  "y": 615.8233032226562,
+                  "width": 539.084228515625,
+                  "height": 284.17669677734375,
+                  "top": 615.8233032226562,
+                  "right": 1181.5421142578125,
+                  "bottom": 900,
+                  "left": 642.4578857421875
+                }
+              },
+              {
+                "tag": "SPAN",
+                "className": "reservation-status",
+                "from": {
+                  "x": 938.953125,
+                  "y": 847.375,
+                  "width": 121.625,
+                  "height": 15,
+                  "top": 847.375,
+                  "right": 1060.578125,
+                  "bottom": 862.375,
+                  "left": 938.953125
+                },
+                "to": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 0,
+                  "height": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                }
+              }
+            ]
+          }
+        ],
+        "tasks": [
+          {
+            "ms": 123,
+            "at": 737.6000000014901
+          }
+        ],
+        "paints": [
+          {
+            "ms": 412,
+            "element": "SPAN",
+            "text": "Otabek Rakhimov"
+          }
+        ]
+      },
+      "scrolling": {
+        "p50Ms": 16.699999999999818,
+        "p95Ms": 16.700000000000273,
+        "maxMs": 16.800000000000182,
+        "longTasks": [],
+        "overflow": false
+      }
+    }
+  ],
+  "repeatNavigation": {
+    "before": {
+      "nodes": 290,
+      "heapBytes": 6501382,
+      "signatures": 1,
+      "pins": 0
+    },
+    "after": {
+      "nodes": 290,
+      "heapBytes": 8855225,
+      "signatures": 1,
+      "pins": 0
+    },
+    "navigations": 8,
+    "sameDOMCount": true
+  },
+  "limitations": "One headless Chromium tab on this laptop. RAF scheduling is not a GPU FPS measurement. Cold hydration and warm scroll tasks are separated. CPU throttling approximates main-thread load, not a real low-end phone. No authenticated MFA session or field Web Vitals measurement."
+}

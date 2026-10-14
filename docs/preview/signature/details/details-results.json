@@ -1,0 +1,59 @@
+{
+  "secondary": [
+    {
+      "route": "journal",
+      "keyboardFolio": true,
+      "actualClipboard": false,
+      "approvedFixture": false,
+      "overflow": false
+    },
+    {
+      "route": "links",
+      "keyboardFolio": false,
+      "actualClipboard": true,
+      "approvedFixture": false,
+      "overflow": false
+    },
+    {
+      "route": "guestbook",
+      "keyboardFolio": false,
+      "actualClipboard": false,
+      "approvedFixture": true,
+      "overflow": false
+    }
+  ],
+  "community": [
+    {
+      "moderation": "201 fixture pending; no optimistic approved entry",
+      "canonicalTarget": {
+        "kind": "guestbook"
+      }
+    },
+    {
+      "mode": "server",
+      "requests": 2,
+      "retryRecovered": true
+    },
+    {
+      "mode": "malformed",
+      "requests": 2,
+      "retryRecovered": true
+    },
+    {
+      "mode": "offline",
+      "requests": 2,
+      "retryRecovered": true
+    },
+    {
+      "mode": "empty",
+      "requests": 1,
+      "retryRecovered": false
+    }
+  ],
+  "actualAvailability": {
+    "reads": true,
+    "submissions": false,
+    "challengeConfigured": false
+  },
+  "errors": []
+}
