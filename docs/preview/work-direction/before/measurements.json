@@ -1,0 +1,84 @@
+[
+  {
+    "width": 1366,
+    "copy": [
+      "Digital, tangible and creative work. Different forms, one collection.",
+      "A learning platform centered on SAT preparation. An exploration of how software can support studying.",
+      "An online examination platform. A project at the intersection of education, assessment, and software.",
+      "A learning platform centered on SAT preparation. An exploration of how software can support studying.",
+      "An online examination platform. A project at the intersection of education, assessment, and software.",
+      "A hackathon project focused on financial planning and business support for small and medium-sized enterprises.",
+      "A Python Telegram bot for downloading media. A practical exploration of bots and everyday automation.",
+      "A learning progress project centered on IELTS preparation. Exploring how to make a learning journey easier to follow."
+    ],
+    "states": [
+      {
+        "name": "scroll-600",
+        "y": 600
+      },
+      {
+        "name": "start",
+        "y": 366.09375
+      },
+      {
+        "name": "featured",
+        "y": 949.29375
+      },
+      {
+        "name": "transition",
+        "y": 1381.2937499999998
+      },
+      {
+        "name": "second",
+        "y": 2029.29375
+      },
+      {
+        "name": "final",
+        "y": 2526.09375
+      },
+      {
+        "name": "archive",
+        "y": 3426.09375
+      },
+      {
+        "name": "ending",
+        "y": 6072.03125
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "copy": [
+      "Digital, tangible and creative work. Different forms, one collection.",
+      "A learning platform centered on SAT preparation. An exploration of how software can support studying.",
+      "An online examination platform. A project at the intersection of education, assessment, and software.",
+      "A learning platform centered on SAT preparation. An exploration of how software can support studying.",
+      "An online examination platform. A project at the intersection of education, assessment, and software.",
+      "A hackathon project focused on financial planning and business support for small and medium-sized enterprises.",
+      "A Python Telegram bot for downloading media. A practical exploration of bots and everyday automation.",
+      "A learning progress project centered on IELTS preparation. Exploring how to make a learning journey easier to follow."
+    ],
+    "states": [
+      {
+        "name": "scroll-600",
+        "y": 600
+      },
+      {
+        "name": "featured",
+        "y": 457.4375
+      },
+      {
+        "name": "second",
+        "y": 1494.0625
+      },
+      {
+        "name": "archive",
+        "y": 2481.703125
+      },
+      {
+        "name": "ending",
+        "y": 6654.546875
+      }
+    ]
+  }
+]

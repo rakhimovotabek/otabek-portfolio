@@ -2,19 +2,15 @@ import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import type { WorkEntry } from "@/data/universe";
 import { MediaFrame } from "@/components/archive/media-frame";
 import { ProjectArt } from "@/components/visuals/project-art";
-import { WorkActions } from "@/components/universe/work-actions";
 import { ScrollScene } from "./scroll-scene";
 import styles from "./signature.module.css";
+import artDirection from "./work-exhibition.module.css";
 
 export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
   if (works.length < 2) return null;
   return (
     <>
-      <div className={styles.sceneIntro}>
-        <span>Selected work / two exhibits</span>
-        <a href="#work-directory">Skip to all projects ↓</a>
-      </div>
-      <ScrollScene kind="work">
+      <ScrollScene kind="work" className={artDirection.exhibition}>
         <div className={styles.stage} data-stage>
           {works.slice(0, 2).map((work, i) => (
             <article
@@ -23,11 +19,17 @@ export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
               data-exhibit
             >
               <div className={styles.exhibitHeader}>
-                <span>{work.discipline}</span>
-                <span>Exhibit {String(i + 1).padStart(2, "0")} / 02</span>
+                <span>
+                  {String(i + 1).padStart(2, "0")} / {work.discipline}
+                </span>
+                <a href="#work-directory">Index ↓</a>
               </div>
               <h2 className={styles.exhibitTitle} data-exhibit-title>
-                {work.title}
+                {work.id === "sat-chi" ? (
+                  <>SAT<em>’chi</em></>
+                ) : work.id === "huquq-test" ? (
+                  <>Huquq<em>Test</em></>
+                ) : work.title}
               </h2>
               <Link
                 href={`/work/${work.slug}`}
@@ -45,15 +47,14 @@ export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
                 <span className={styles.artCaption}>
                   {work.images.length
                     ? "Selected project image"
-                    : "Original concept art / not an app screenshot"}
+                    : "Concept artwork · not an application screenshot"}
                 </span>
               </Link>
               <div className={styles.exhibitCopy} data-exhibit-copy>
-                <p>{work.description}</p>
+                <p>{work.description.split(/(?<=\.)\s/)[0]}</p>
                 <Link href={`/work/${work.slug}`} className={styles.explore}>
-                  Explore the project <span aria-hidden>→</span>
+                  View project <span aria-hidden>↗</span>
                 </Link>
-                <WorkActions work={work} />
               </div>
             </article>
           ))}
@@ -66,11 +67,11 @@ export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
                   data-jump
                   aria-pressed={i === 0}
                 >
-                  {work.title}
+                  {String(i + 1).padStart(2, "0")} <span>{work.title}</span>
                 </button>
               ))}
             </div>
-            <a href="#work-directory">All projects ↓</a>
+            <span>Scroll to explore</span>
             <span className={styles.stageRule} data-stage-rule />
           </div>
         </div>

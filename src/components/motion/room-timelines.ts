@@ -30,8 +30,9 @@ export function roomTimelines(
         },
         0,
       );
-    timeline.from(
-      select(".page-label > *"),
+    const labels = select(".page-label > *");
+    if (labels.length) timeline.from(
+      labels,
       {
         opacity: 0,
         y: 7,
@@ -42,8 +43,9 @@ export function roomTimelines(
       0.12,
     );
     // Supporting copy stays in place; no animated text while reading.
-    timeline.from(
-      select(".page-heading > p"),
+    const descriptions = select(".page-heading > p");
+    if (descriptions.length) timeline.from(
+      descriptions,
       { opacity: 0, duration: 0.55, clearProps: "opacity" },
       0.27,
     );
