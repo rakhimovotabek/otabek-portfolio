@@ -1,0 +1,13 @@
+/home/otabek/Desktop/project/otabek-portfolio/docs/design-reset/motion/home.webm
+/home/otabek/Desktop/project/otabek-portfolio/docs/design-reset/motion/work.webm
+/home/otabek/Desktop/project/otabek-portfolio/docs/design-reset/motion/gallery.webm
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3010/gallery
+Call log:
+[2m  - navigating to "http://127.0.0.1:3010/gallery", waiting until "load"[22m
+
+    at /home/otabek/Desktop/project/otabek-portfolio/scripts/record-other-side.cjs:80:13 {
+  log: [
+    '  - navigating to "http://127.0.0.1:3010/gallery", waiting until "load"'
+  ],
+  name: 'Error'
+}

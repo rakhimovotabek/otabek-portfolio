@@ -7,49 +7,38 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="site-footer"
+      className="od-footer"
       aria-labelledby="contact-heading"
     >
-      <div className="section-label">
-        <span aria-hidden="true">—</span>09 / CORRESPONDENCE
-      </div>
-      <div className="contact-heading">
-        <h2 id="contact-heading">{site.contact.heading}</h2>
-      </div>
-      <div className="contact-bottom">
-        <p>{site.contact.description}</p>
-        <div className="contact-actions">
+      <div className="od-footer-top">
+        <div>
+          <span className="od-kicker">YOU’VE REACHED THE OTHER SIDE.</span>
+          <h2 id="contact-heading">
+            A little
+            <br />
+            <em>correspondence?</em>
+          </h2>
           <OpenMessage />
-          <Link href="/guestbook">{site.contact.guestbook} ↗</Link>
-          {profile.socialLinks.map((link) => (
-            <a
-              key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.label} ↗
-            </a>
-          ))}
+        </div>
+        <div className="od-footer-side">
+          <p>A question, a thought about the work, or simply a hello.</p>
+          <Link href="/guestbook">Leave a public trace →</Link>
+          <Link href="/links">Find me elsewhere →</Link>
         </div>
       </div>
       <noscript>
-        <p className="archive-notice">
-          Enable JavaScript to send a private message. The archive remains
-          readable without it.
+        <p>
+          Enable JavaScript to send a private note. All archive pages remain
+          readable.
         </p>
       </noscript>
-      <div className="footer-wordmark" aria-hidden="true">
-        {site.brand}
-        <span>.</span>
-      </div>
-      <div className="footer-bottom">
+      <div className="od-footer-bottom">
         <QuietDiscovery />
         <span>
-          © {new Date().getFullYear()} {site.brand} / {profile.name}
+          © {new Date().getFullYear()} {profile.name} / {site.brand}
         </span>
-        <span>{profile.country.toUpperCase()} · A PERSONAL ARCHIVE</span>
-        <a href="#top">Back to top ↑</a>
+        <span>{profile.country} · A personal archive</span>
+        <a href="#top">Back to the beginning ↑</a>
       </div>
     </footer>
   );

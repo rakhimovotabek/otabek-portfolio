@@ -1,0 +1,26 @@
+[
+  {
+    "route": "home",
+    "file": "/home/otabek/Desktop/project/otabek-portfolio/docs/design-reset/motion/home.webm",
+    "viewport": "1280x720",
+    "includesReverse": true
+  },
+  {
+    "route": "work",
+    "file": "/home/otabek/Desktop/project/otabek-portfolio/docs/design-reset/motion/work.webm",
+    "viewport": "1280x720",
+    "includesReverse": true
+  },
+  {
+    "route": "gallery",
+    "file": "/home/otabek/Desktop/project/otabek-portfolio/docs/design-reset/motion/gallery.webm",
+    "viewport": "1280x720",
+    "includesReverse": true
+  },
+  {
+    "route": "gallery",
+    "file": "mobile-gallery.webm",
+    "viewport": "390x844",
+    "simulatedTouch": true
+  }
+]

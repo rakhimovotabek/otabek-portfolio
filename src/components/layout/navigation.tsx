@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useRef } from "react";
 import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { usePathname } from "next/navigation";
@@ -27,14 +27,22 @@ export function Navigation() {
             aria-current={pathname.startsWith(link.href) ? "page" : undefined}
           >
             {link.label}
-            {link.href === "/guestbook" && (
-              <ArrowUpRight size={15} aria-hidden="true" />
-            )}
           </Link>
         ))}
       </nav>
-      <div className="nav-correspondence"><OpenMessage label="Message me" /></div>
-      <details ref={menu} className="mobile-menu">
+      <div className="nav-correspondence">
+        <OpenMessage label="Message me" />
+      </div>
+      <details
+        ref={menu}
+        className="mobile-menu"
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && menu.current?.open) {
+            menu.current.open = false;
+            menu.current.querySelector("summary")?.focus();
+          }
+        }}
+      >
         <summary aria-label="Toggle navigation">
           <Menu size={23} aria-hidden="true" />
         </summary>

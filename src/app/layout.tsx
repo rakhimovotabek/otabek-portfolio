@@ -7,6 +7,14 @@ import "./archive.css";
 import "./worlds-theme.css";
 import "./universe.css";
 import "./room-motion.css";
+import "./other-side.css";
+const display = localFont({
+  src: "./fonts/Anton-Regular.ttf",
+  variable: "--font-aperture",
+  weight: "400",
+  display: "swap",
+  preload: false,
+});
 const body = localFont({
   src: "./fonts/DMSans.ttf",
   variable: "--font-body",
@@ -37,7 +45,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${editorial.variable} ${body.variable}`}
+      className={`${editorial.variable} ${body.variable} ${display.variable}`}
     >
       <body>{children}</body>
     </html>

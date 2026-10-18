@@ -1,0 +1,46 @@
+{
+  "method": "Read the installed ScrollTrigger registry from this local webpack preview; no app instrumentation or backend access.",
+  "states": [
+    {
+      "route": "/work",
+      "triggers": null
+    },
+    {
+      "route": "/gallery",
+      "triggers": null
+    },
+    {
+      "route": "/about",
+      "triggers": null
+    },
+    {
+      "route": "/journal",
+      "triggers": null
+    },
+    {
+      "route": "/work",
+      "triggers": null
+    },
+    {
+      "route": "/gallery",
+      "triggers": null
+    },
+    {
+      "route": "/about",
+      "triggers": null
+    },
+    {
+      "route": "/journal",
+      "triggers": null
+    },
+    {
+      "route": "/work",
+      "triggers": null
+    }
+  ],
+  "registryStatus": "unknown: compiled registry not exposed",
+  "rapidNavigation": {
+    "landed": "/about",
+    "triggers": null
+  }
+}

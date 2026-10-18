@@ -1,57 +1,45 @@
-# Personal archive design system
+# The Other Side of Default
 
-The site is an editorial collection: presence, selected software, an archive index, a reading room, a visual notebook, parallel interests, milestones, visitors and correspondence. Earlier forms and security behavior are preserved. There are no fabricated personal artworks, photographs, project screenshots, metrics or social profiles.
+The combined brief of 18 October 2026 supersedes the former four-world hero and blue/paper Work compositions. The public visual system is now **Typographic Aperture**, selected after two browser-rendered experiments. See `design-reset/DIRECTION.md`, `ARCHITECTURE.md` and `ASSETS.md` for decisions and boundaries. Previous visual implementations remain in git history and some unused components; they are not the design template.
 
-The current opening supersedes the Phase 5 paper-volume cover. It is adapted from Otabek’s supplied working HTML, not copied from the saved Strade page. The four narrow colored worlds, huge overlapping full name, original illustrated SAT’chi focus and diagonal striped paper wipe are preserved as the visual starting point. The rebuild stops after the first editorial handoff; later archive rooms retain their compositions.
+## Foundations
 
-Current organization adds dedicated About, Work, Journal, Gallery, Links and Guestbook routes without changing that opening. The homepage retains its first paper composition as a short introduction, then two selected Vault chapters, Now / Lately and the closing. Inner pages use a warm paper shell, readable editorial headlines, unequal image mounts and divided indexes rather than a repeated card grid. `universe.css` supplies public-only route integration; `/admin` retains its styles. See `ROUTES_AND_CONTENT.md` for the content contracts and route map.
+`src/app/other-side.css` is the controlling, public-only layer after the existing base styles. `.other-side` scopes the new tokens so private admin styling is independent. Legacy CSS still supports forms, detail reading and viewer behavior.
 
-## Type and surfaces
+| Role | Value |
+| --- | --- |
+| Ink | `#101114` |
+| Paper | `#f4f0e8` |
+| Portal / print accent | `#a7ddd4` |
+| Learning | `#d6ef66` |
+| Law folio | `#493447` |
+| Print mat | `#252927` |
+| Shared gutter | `clamp(20px, 3.5vw, 56px)`, 22px on phones |
+| Display | Anton, self-hosted SIL OFL; `--font-aperture` |
+| Body / controls | Existing DM Sans |
+| Literary / quiet phrases | Existing Newsreader + true italic |
 
-Self-hosted Newsreader supplies a lighter, optically sized display/reading face with a true italic. DM Sans provides navigation, readable biography, controls and technical context. Small monospace labels are subordinate. The previous wide, heavy Syne display treatment is no longer loaded. Original font notices remain; see `FONTS.md`.
+Each scene has one principal accent. No glow, WebGL, third-party imagery or background rendering loop. Titles use explicit responsive sizes and compact leading; paragraphs retain 16–18px mobile/desktop reading size. Small uppercase labels are metadata only. Typeface novelty does not enter form controls.
 
-Charcoal has a muted olive cast (`#141711`), warm paper (`#efede5`) carries the personal spread/index, and sage paper (`#d7d9cd`) marks visitor correspondence. Writing has a restrained oxblood surface (`#392c2c`); the gallery uses soft stone. Project accents are localized to original artwork. Large serif type and carefully set smaller sans text replace the repetition of uniformly enormous technical headings. No full-screen glowing gradients, glass panels or repeated pill system is used.
+## Page compositions
 
-`globals.css` retains shared base, form, admin, exhibition and accessibility rules. `archive.css` supplies public archive compositions; `worlds-theme.css` follows it with narrowly scoped `.reference-home` integration. `hero-worlds.module.css` contains the prototype-derived opening and first editorial geometry. Preserve import order and verify production CSS when changing it. Private dashboard layouts retain their existing controls.
+- Home: three-line condensed title, tilted arched portal, honest personal statement and a direct Work action. An optional native-scroll sequence expands the portal and admits the citrus learning exhibit as the first room recedes. A dossier, folded note and print provide three different entrances to the archive. Now/Lately remains an honest empty space.
+- Work: giant ink catalog cover with project-specific print silhouettes. SAT’chi is a loose question/answer-sheet object; Huquq Test is a hinged plum examination folio. Artwork is conceptual and labeled. All five canonical projects remain in a URL-filtered index. Details retain genuine product screenshots and project comments. Only existing verified public repositories receive contribution actions.
+- Gallery: rectangular crop aperture, opposite print rails and a conventional filtered collection table. Three original vector studies demonstrate the system, explicitly separate from personal photographs. Native modal semantics, keyboard arrows, Escape, focus return and touch swipe remain in the existing viewer. Real photos/portraits still await owner assets.
+- About: factual name behind an honest portrait reservation; readable biography and semantic milestone list with a small progressive vector path. No invented dates or portrait.
+- Journal: expressive serif masthead and a single native folded-leaf disclosure. No fictional personal posts. Existing detail routes remain readable.
+- Links: spatial address tabs and public identity rows; only verified URLs. Focus/hover nudges the selected title without moving document layout.
+- Guestbook: correspondence cover, unanimated inputs and existing approved-comment/moderation behavior. Empty/offline states never masquerade as testimonials or submission success.
+- Footer: quiet correspondence invitation and the centrally configured discovery text.
 
-The opening deliberately retains the prototype’s Arial/Helvetica display typography and Georgia paper typography, with blue-black `#0b1015`, bone `#f0eee8`, acid lime `#c5fb57` and cyan `#42e7e1`. No additional font download is needed. Software is blue, writing bone, the visual world green and the portrait reservation violet. The large name is the real person; the smaller navigation/footer brand remains the centrally configured `default`. Newsreader and DM Sans remain in the later archive rooms.
+## Motion and accessibility
 
-## Composition
+`components/default/public-motion.tsx` owns the new scroll scenes. One timeline per scene; no competing scroll library or React updates per frame. GSAP matchMedia/context cleanup restores all transforms, crop masks and `inert` flags on resize, preference change and unmount. Sticky motion requires fine pointer, 1024px width, 650px height and no reduced-motion preference. All other configurations use ordinary document flow. Each large sequence has an ordinary anchor to later content.
 
-- Opening: four colored worlds under the full name, spreading into one large blue SAT’chi scene before the diagonal paper wipe. Every world links into the actual archive. Concept previews are explicitly labeled; no app statistics or fabricated screenshots are shown.
-- Presence: a large “More / than code.” heading and the prototype’s overlapping yellow/blue/green editorial tiles introduce the retained biography and three honest photo reservations. Tile links lead to the personal story, writing and sketchbook. No fake likeness is supplied.
-- Vault: a dark exhibition with a refined title, original concept artwork, close descriptions and stable project disclosures. SAT’chi gets a new geometric learning study; the old opening/fold motif is removed. Unknown links/stacks/statuses remain honest.
-- Archive: a chronological-label index with unequal text columns, native expanded entries, category filters and visibly reserved pages. This is a collection browser, not another grid of cards.
-- Writing: a quiet oxblood reading room, margin metadata and expressive but readable lines. The specimen is clearly identified as a replaceable sample rather than the owner's published writing.
-- Visual notebook: three uneven original studies, large editorial mounts and museum-like captions. It supports real drawings, photos and sketches through the same image model.
-- Parallel interests and milestones: subdued paper/ink compositions and truthful records; numbers never act as invented counters.
-- Guestbook and ending: an open correspondence spread, approved visitor entries, and a direct private-note action in the closing section. The floating trigger and secure forms remain available.
+The header stays on the shared gutter and uses native mobile details navigation, including Escape and focus return. Header contact replaces the obstructing floating trigger. Public navigation uses native Next Link behavior with no covering route overlay; changing routes restores main focus without overriding scroll restoration. Detail pages and forms do not require cinematic scrolling.
 
-## Responsive/accessibility boundaries
+One H1 per page. Decorative artwork uses hidden or grouped descriptions, no duplicated letter-by-letter accessible text. Keyboard controls have visible current-color outlines; large dialog controls preserve existing semantics. No JavaScript leaves the server-rendered content, native filters, index links, disclosures and album routes available; forms explain that JavaScript is needed.
 
-At 800px the four opening worlds become a two-by-two composition and the featured project separates copy from artwork vertically. The following editorial spread stacks while retaining its rotated tile composition. Existing 700px archive/biography/gallery layouts remain in place. Focus, skip link, native disclosures, textual image labels and reduced motion remain supported. Covered opening and desktop exhibition controls remain inert and aria-hidden. Reduced motion and failed/no JavaScript enhancement leave a single readable opening without a long empty scroll range. See `MOTION_ARCHITECTURE.md` for animation ownership and `ARCHIVE_CONTENT.md` for content editing.
+## Content and security
 
-## Room motion and the shared grid
-
-Public navigation and inner content share `--public-gutter`; the header keeps identical desktop brand/location slots across rooms. Intentional internal editorial offsets remain. `room-motion.css` layers folio transitions, framed biography images, ruled literary margins, exhibition responses, a native gallery viewer and directory highlights after existing public styles. Dark/paper focus colors remain visible. The footer’s “One last detail” reveals the centrally configured `Simply Lovely` Easter egg. See `CREATIVE_MOTION_VALIDATION.md` for measurements and actual browser evidence.
-
-## Signature inner scenes
-
-Work, Gallery and About now open with compact editorial mastheads so their actual media composition appears in the first viewport. `signature.module.css` owns the new scoped exhibition, collage and biography frames. Work uses a localized cobalt stage with lime/charcoal concept art, Gallery develops from dark stone to a paper contact sheet, and About combines reserved violet/sage/ochre frames before its milestone handoff. These surfaces extend the existing four-world identity; homepage source remains unchanged.
-
-Each signature sequence has one GSAP progress clock inside native sticky layout, with a 300ms scrub settle for wheel input and independently transformed media/typography. Below 800px, below 600px height, reduced motion and no-JavaScript render normal responsive compositions. Long reading sections and forms remain in document flow. Neutral Gallery reservations live alongside the existing media data in `src/data/archive.ts`; real album images replace them without changing animation code. See `SIGNATURE_MOTION.md`, `SIGNATURE_REFERENCES.md` and `SIGNATURE_VALIDATION.md` for ownership, licensing and measured evidence.
-
-## Work / Gallery proof — 18 October 2026
-
-This scoped proof supersedes earlier Work/Gallery palette and timing descriptions above; it does not restyle the homepage or admin. `editorial-system.module.css` owns role tokens (`--bg`, `--fg`, `--accent`, `--muted`, `--line`), the existing shared gutter alias, a 65ch measure, fluid display scale, editorial/energetic easing, and 12/8/4 column counts. DM Sans remains the structural face, Newsreader italic the single expressive counterpoint. No additional font is loaded. Ink and Paper are applied on the two routes; Ultramarine is a named available variant, used as localized artwork colour rather than another full scene.
-
-Work: a smaller route masthead gives the project poster priority. Its native sticky sequence is 280svh (previously 340); original SAT’chi and Huquq geometry and two-exhibit navigation remain. The title and art exchange sides, with plain case-study links visible from the start. Provenance has its own unscaled 14px layer. Mobile moves description/action ahead of the 4:3 project artwork so the first viewport gives both orientation and an action. Complete Notes, project identifiers and collaboration data are retained.
-
-Gallery: when every published album is marked `siteArtwork`, render `StudyPlate`, a still paper composition: one 4:5 lead study, two unequal previews, explicit provenance, and a collection link. It uses natural media ratios; all three mounts link to the existing album. No 300svh stage for an archive without photographs. `room-timelines.ts` excludes this plate from generic media masks/parallax, keeping mobile and first-view art visible. The existing photo-capable Gallery scene and native album viewer remain for future personal media. No pinch/zoom support is claimed.
-
-See `design-research/DISCOVERY.md`, `REFERENCE_LEDGER.md`, and `CHECKPOINT.md` for direction comparisons, measured bounds, recordings, regression results and missing owner assets. The previous font/colour material for other rooms remains unchanged pending review.
-
-
-## Hard reset — Work / Gallery, after f5dac8b
-
-The controlling user direction now permits clearly labeled, art-directed project interpretations. Work replaces the former screenshot/copy exchange with a full-width SAT poster/study-desk sequence and an independent Huquq examination folio. Gallery replaces the forest print fan with a centered aperture, full-width typographic overprint, new original site-art prints and direct aperture-to-viewer opening. Its standalone album route remains. The archive uses a dark cabinet with typographic project prints and the ending uses paper. Shared fonts, homepage scenes and backend contracts remain. See [reset art direction and source mapping](design-research/reset/ART_DIRECTION.md) and the browser evidence alongside it. Historical descriptions above document earlier checkpoints.
+Nickname changes only in `src/data/site.ts`. Facts remain in `portfolio.ts`; media and writing in `archive.ts`; public adapters preserve canonical IDs in `universe.ts`. Unknown facts remain null. Supabase configuration, APIs, validation, MFA, owner sessions, moderation, RLS and migrations are unchanged. Preview runs with backend access disabled. No CMS, chat, migration or production deployment belongs to this iteration.

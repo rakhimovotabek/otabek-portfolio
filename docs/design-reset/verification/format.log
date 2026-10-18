@@ -1,0 +1,17 @@
+npm notice run otabek-portfolio@0.1.0 npx
+npm notice run 'prettier' --write src/components/default/*.{tsx,ts} src/app/other-side.css src/app/(public)/{page.tsx,about/page.tsx,work/page.tsx,gallery/page.tsx,journal/page.tsx,links/page.tsx,guestbook/page.tsx} src/components/layout/navigation.tsx src/components/layout/footer.tsx src/components/layout/public-shell.tsx src/app/layout.tsx scripts/review-other-side.cjs scripts/profile-other-side.cjs scripts/record-other-side.cjs
+src/components/default/artwork.tsx 397ms
+src/components/default/gallery.tsx 59ms
+src/components/default/home.tsx 33ms
+src/components/default/public-motion.tsx 71ms
+src/components/default/rooms.tsx 35ms
+src/components/default/work.tsx 52ms
+src/app/other-side.css 432ms
+[error] No files matching the pattern were found: "src/app/(public)/{page.tsx,about/page.tsx,work/page.tsx,gallery/page.tsx,journal/page.tsx,links/page.tsx,guestbook/page.tsx}".
+src/components/layout/navigation.tsx 12ms
+src/components/layout/footer.tsx 5ms
+src/components/layout/public-shell.tsx 4ms
+src/app/layout.tsx 6ms
+scripts/review-other-side.cjs 132ms
+scripts/profile-other-side.cjs 18ms
+scripts/record-other-side.cjs 12ms

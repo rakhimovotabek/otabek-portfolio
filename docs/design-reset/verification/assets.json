@@ -1,0 +1,9 @@
+{
+  "baselineChunksDiskKiB": 1352,
+  "baselineProvenance": "Observed before starting the redesign preview; approximate all-route build footprint, not a controlled route-transfer comparison.",
+  "newFontBytes": 170812,
+  "authoredSvgBytes": 6248,
+  "runtimeDependenciesAdded": 0,
+  "newChunksDiskKiB": 1492,
+  "newChunkFileBytes": 1408958
+}

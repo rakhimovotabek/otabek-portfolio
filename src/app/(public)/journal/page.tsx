@@ -1,55 +1,5 @@
 import type { Metadata } from "next";
-import { TransitionLink as Link } from "@/components/motion/route-transitions";
-import { publishedJournal, universeCopy } from "@/data/universe";
 import { site } from "@/data/site";
-import { PageHeading } from "@/components/universe/page-heading";
+import { JournalRoom } from "@/components/default/rooms";
 export const metadata: Metadata = { title: `Journal — ${site.brand}` };
-export default function JournalPage() {
-  const entries = publishedJournal();
-  return (
-    <div className="inner-page journal-page">
-      <PageHeading
-        label="03 / WORDS & EXPERIENCES"
-        title={universeCopy.journal.title}
-        description={universeCopy.journal.description}
-      />
-      {entries.length ? (
-        <div className="journal-index">
-          {entries.map((entry) => (
-            <article key={entry.slug}>
-              <div>
-                <span className="eyebrow">{entry.category}</span>
-                {entry.date && <time dateTime={entry.date}>{entry.date}</time>}
-              </div>
-              <div>
-                <h2>
-                  <Link href={`/journal/${entry.slug}`}>{entry.title} →</Link>
-                </h2>
-                <p>{entry.excerpt}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <details className="journal-unwritten journal-folio" open>
-          <summary>
-            <span>The first page.</span>
-            <span className="folio-toggle">
-              <span className="folio-close">Fold the page</span>
-              <span className="folio-open">Open the page</span>
-              <i aria-hidden="true">+</i>
-            </span>
-          </summary>
-          <div className="folio-body">
-            <p>{universeCopy.journal.empty}</p>
-            <span className="unwritten-rule" aria-hidden="true" />
-          </div>
-        </details>
-      )}
-      <nav className="related-pages" aria-label="Connected collection">
-        <span className="eyebrow">SOME STORIES WILL BE TOLD IN IMAGES</span>
-        <Link href="/gallery">The visual archive ↗</Link>
-      </nav>
-    </div>
-  );
-}
+export default function Page() { return <JournalRoom />; }

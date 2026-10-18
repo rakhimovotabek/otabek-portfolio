@@ -262,7 +262,7 @@ export const projectCaptures: Record<string, readonly ArchiveMedia[]> = {
 
 /** Original demonstration prints made for the Gallery reset, not personal photographs. */
 export const exhibitionStudies: readonly ArchiveMedia[] = [
-  { id: "study-volume", src: "/images/studies/interval.svg", alt: "Original vermilion graphic study of interwoven dark ribbons and fine contour lines", caption: "Study 01 / Interval", width: 1200, height: 1500, placeholderLabel: "", credit: "Original site artwork · vector study" },
-  { id: "study-contour", src: "/images/studies/counterform.svg", alt: "Original oversized cream italic letter g with a vermilion counterpoint on an ink field", caption: "Study 02 / Counterform", width: 1200, height: 1500, placeholderLabel: "", credit: "Original site artwork · vector study" },
-  { id: "study-balance", src: "/images/studies/intersection.svg", alt: "Original striped vermilion diamond interrupted by concentric circles on warm paper", caption: "Study 03 / Intersection", width: 1200, height: 1500, placeholderLabel: "", credit: "Original site artwork · vector study" },
+  { id: "study-volume", src: "/images/other-side/aperture.svg", alt: "Original mint and ink vector study: nested arches surrounding a rectangular opening", caption: "Study 01 / Aperture", width: 1000, height: 1300, placeholderLabel: "", credit: "Original site artwork · vector study" },
+  { id: "study-contour", src: "/images/other-side/fold.svg", alt: "Original triangular paper fold with a mint inner face on an ink ground", caption: "Study 02 / Fold", width: 1000, height: 1300, placeholderLabel: "", credit: "Original site artwork · vector study" },
+  { id: "study-balance", src: "/images/other-side/counterpoint.svg", alt: "Original striped mint field interrupted by a paper diamond and a black cross", caption: "Study 03 / Counterpoint", width: 1000, height: 1300, placeholderLabel: "", credit: "Original site artwork · vector study" },
 ];

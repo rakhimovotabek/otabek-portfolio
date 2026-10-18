@@ -1,0 +1,26 @@
+PASS Work URL filter 1366
+PASS viewer keyboard, Escape, focus return 1366
+PASS Gallery empty category 1366
+PASS Work URL filter 390
+PASS viewer keyboard, Escape, focus return 390
+PASS Gallery empty category 390
+PASS canonical project comment sat-chi
+PASS canonical project comment huquq-test
+PASS canonical project comment sme-financial-assistant
+PASS canonical project comment telegram-media-downloader
+PASS canonical project comment ielts-progress-tracker
+PASS Unauthenticated admin redirects to login
+PASS Editable SAT collaboration context
+PASS Failed comments show retry
+PASS Empty comments and unavailable submissions
+PASS Native route changes, Back and scoped cleanup
+PASS Live reduced-motion switch restores ordinary flow and focusable content
+PASS Desktop to mobile resize tears down pinning and inert state
+PASS Delayed gallery images preserve intrinsic frame dimensions
+PASS Direct album deep link
+PASS reduced readable /
+PASS reduced readable /work
+PASS reduced readable /gallery
+PASS nojs readable /
+PASS nojs readable /work
+PASS nojs readable /gallery

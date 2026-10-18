@@ -1,0 +1,871 @@
+{
+  "build": "production",
+  "recording": false,
+  "samples": [
+    {
+      "device": {
+        "name": "desktop",
+        "width": 1366,
+        "height": 768,
+        "cpu": 1
+      },
+      "route": "/",
+      "scene": "home",
+      "loading": {
+        "tasks": [],
+        "lcp": [
+          {
+            "ms": 348,
+            "element": "SPAN",
+            "text": "default."
+          }
+        ],
+        "cls": [],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/about/page-eee8cd4e0bf111ad.js",
+            "bytes": 1607
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/journal/page-eee8cd4e0bf111ad.js",
+            "bytes": 1607
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/links/page-eee8cd4e0bf111ad.js",
+            "bytes": 1607
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 144,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.799999999999955,
+        "maxMs": 16.800000000000182,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0
+      }
+    },
+    {
+      "device": {
+        "name": "desktop",
+        "width": 1366,
+        "height": 768,
+        "cpu": 1
+      },
+      "route": "/work",
+      "scene": "sat",
+      "loading": {
+        "tasks": [],
+        "lcp": [
+          {
+            "ms": 116,
+            "element": "H1",
+            "text": "WORK."
+          }
+        ],
+        "cls": [],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/work/page-4781d135949a33bc.js",
+            "bytes": 4055
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/about/page-eee8cd4e0bf111ad.js",
+            "bytes": 1607
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 144,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.700000000000273,
+        "maxMs": 16.800000000000182,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0
+      }
+    },
+    {
+      "device": {
+        "name": "desktop",
+        "width": 1366,
+        "height": 768,
+        "cpu": 1
+      },
+      "route": "/work",
+      "scene": "law",
+      "loading": {
+        "tasks": [],
+        "lcp": [
+          {
+            "ms": 116,
+            "element": "H1",
+            "text": "WORK."
+          }
+        ],
+        "cls": [],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/work/page-4781d135949a33bc.js",
+            "bytes": 4055
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/about/page-eee8cd4e0bf111ad.js",
+            "bytes": 1607
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 144,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.800000000000182,
+        "maxMs": 16.800000000000182,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0
+      }
+    },
+    {
+      "device": {
+        "name": "desktop",
+        "width": 1366,
+        "height": 768,
+        "cpu": 1
+      },
+      "route": "/gallery",
+      "scene": "gallery",
+      "loading": {
+        "tasks": [],
+        "lcp": [
+          {
+            "ms": 120,
+            "element": "H1",
+            "text": "THEPRINTROOM."
+          }
+        ],
+        "cls": [
+          0.05318270556308223
+        ],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/437-df77b441101c1a02.js",
+            "bytes": 5540
+          },
+          {
+            "url": "/_next/static/chunks/118-4535044987c4349d.js",
+            "bytes": 5709
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/gallery/page-c72e833df6818d81.js",
+            "bytes": 663
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/about/page-eee8cd4e0bf111ad.js",
+            "bytes": 1607
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 143,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.700000000000273,
+        "maxMs": 33.40000000000009,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0.05318270556308223
+      }
+    },
+    {
+      "device": {
+        "name": "mobile-simulation",
+        "width": 390,
+        "height": 844,
+        "cpu": 4
+      },
+      "route": "/",
+      "scene": "home",
+      "loading": {
+        "tasks": [
+          {
+            "at": 112.89999999850988,
+            "ms": 94
+          },
+          {
+            "at": 240.89999999850988,
+            "ms": 187
+          },
+          {
+            "at": 521.8999999985099,
+            "ms": 98
+          }
+        ],
+        "lcp": [
+          {
+            "ms": 220,
+            "element": "SPAN",
+            "text": "THE OTHER"
+          }
+        ],
+        "cls": [
+          0.05418106033061178
+        ],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 145,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.700000000000273,
+        "maxMs": 16.800000000000182,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0.05418106033061178
+      }
+    },
+    {
+      "device": {
+        "name": "mobile-simulation",
+        "width": 390,
+        "height": 844,
+        "cpu": 4
+      },
+      "route": "/work",
+      "scene": "sat",
+      "loading": {
+        "tasks": [
+          {
+            "at": 192.10000000149012,
+            "ms": 56
+          }
+        ],
+        "lcp": [
+          {
+            "ms": 196,
+            "element": "H1",
+            "text": "WORK."
+          }
+        ],
+        "cls": [],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/work/page-4781d135949a33bc.js",
+            "bytes": 4055
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 145,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.799999999999955,
+        "maxMs": 16.800000000000182,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0
+      }
+    },
+    {
+      "device": {
+        "name": "mobile-simulation",
+        "width": 390,
+        "height": 844,
+        "cpu": 4
+      },
+      "route": "/work",
+      "scene": "law",
+      "loading": {
+        "tasks": [
+          {
+            "at": 192.10000000149012,
+            "ms": 56
+          }
+        ],
+        "lcp": [
+          {
+            "ms": 196,
+            "element": "H1",
+            "text": "WORK."
+          }
+        ],
+        "cls": [],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/work/page-4781d135949a33bc.js",
+            "bytes": 4055
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 145,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.799999999999272,
+        "maxMs": 16.800000000000182,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0
+      }
+    },
+    {
+      "device": {
+        "name": "mobile-simulation",
+        "width": 390,
+        "height": 844,
+        "cpu": 4
+      },
+      "route": "/gallery",
+      "scene": "gallery",
+      "loading": {
+        "tasks": [
+          {
+            "at": 137.20000000298023,
+            "ms": 54
+          }
+        ],
+        "lcp": [
+          {
+            "ms": 204,
+            "element": "IMG",
+            "text": ""
+          }
+        ],
+        "cls": [],
+        "resources": [
+          {
+            "url": "/_next/static/media/4f1407106ea7a025-s.p.woff2",
+            "bytes": 132000
+          },
+          {
+            "url": "/_next/static/media/65458149c0216615-s.p.ttf",
+            "bytes": 110899
+          },
+          {
+            "url": "/_next/static/media/c8b9005a9bec18f4-s.p.woff2",
+            "bytes": 146872
+          },
+          {
+            "url": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+            "bytes": 64780
+          },
+          {
+            "url": "/_next/static/chunks/794-0ac5e2f0e81d2e0d.js",
+            "bytes": 67895
+          },
+          {
+            "url": "/_next/static/chunks/main-app-2e613a1fedba5173.js",
+            "bytes": 513
+          },
+          {
+            "url": "/_next/static/chunks/c15bf2b0-95e6cd6aeea1ed88.js",
+            "bytes": 20111
+          },
+          {
+            "url": "/_next/static/chunks/756-f86b7b50a7be2a5f.js",
+            "bytes": 3331
+          },
+          {
+            "url": "/_next/static/chunks/911-3f3c12bdca9e18cf.js",
+            "bytes": 8186
+          },
+          {
+            "url": "/_next/static/chunks/326-5e3d888087b76fb8.js",
+            "bytes": 34988
+          },
+          {
+            "url": "/_next/static/chunks/855-2a62e0c877c5852d.js",
+            "bytes": 40634
+          },
+          {
+            "url": "/_next/static/chunks/293-d47b8c3b7992d86b.js",
+            "bytes": 7306
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/layout-e84d7c4e6294e7a3.js",
+            "bytes": 3424
+          },
+          {
+            "url": "/_next/static/chunks/437-df77b441101c1a02.js",
+            "bytes": 5540
+          },
+          {
+            "url": "/_next/static/chunks/118-4535044987c4349d.js",
+            "bytes": 5709
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/gallery/page-c72e833df6818d81.js",
+            "bytes": 663
+          },
+          {
+            "url": "/_next/static/media/ac69aabf73cc02d0-s.ttf",
+            "bytes": 80301
+          },
+          {
+            "url": "/_next/static/chunks/18.f08ccba3ed6bc63c.js",
+            "bytes": 17595
+          },
+          {
+            "url": "/_next/static/chunks/app/(public)/page-f013470886b6cbd7.js",
+            "bytes": 2110
+          }
+        ]
+      },
+      "scroll": {
+        "frames": 144,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.799999999999727,
+        "maxMs": 16.800000000000182,
+        "over34ms": 0,
+        "longTasks": [],
+        "cls": 0
+      }
+    }
+  ],
+  "limitations": "One headless Chromium tab on this laptop. RAF scheduling is not physical FPS. Local network; CPU throttle and touch are simulations. No field Web Vitals or real phone."
+}

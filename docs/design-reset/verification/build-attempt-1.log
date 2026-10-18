@@ -1,0 +1,12 @@
+npm notice run otabek-portfolio@0.1.0 build
+npm notice run next build --webpack
+▲ Next.js 16.4.0 (webpack)
+- Environments: .env.local
+✓ Running next.config.ts took 273ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 50s
+  Running TypeScript ...
+.next/dev/types/validator.ts(5,79): error TS2306: File '/home/otabek/Desktop/project/otabek-portfolio/.next/dev/types/routes.d.ts' is not a module.
+Failed to type check.
+

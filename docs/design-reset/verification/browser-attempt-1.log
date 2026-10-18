@@ -1,0 +1,14 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'matrix(0.978148, 0.20791, -0.20791, 0.978148, 0, 0)'
+- 'matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)'
+
+    at /home/otabek/Desktop/project/otabek-portfolio/scripts/review-other-side.cjs:156:20 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'matrix(0.978148, 0.20791, -0.20791, 0.978148, 0, 0)',
+  expected: 'matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)',
+  operator: 'strictEqual',
+  diff: 'simple'
+}

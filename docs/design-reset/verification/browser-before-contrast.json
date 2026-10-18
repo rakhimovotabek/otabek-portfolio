@@ -1,0 +1,733 @@
+{
+  "build": "production",
+  "base": "http://127.0.0.1:3010",
+  "checks": [
+    {
+      "name": "Work URL filter 1366",
+      "passed": true
+    },
+    {
+      "name": "viewer keyboard, Escape, focus return 1366",
+      "details": {
+        "touchSwipe": false
+      },
+      "passed": true
+    },
+    {
+      "name": "Gallery empty category 1366",
+      "passed": true
+    },
+    {
+      "name": "Work URL filter 390",
+      "passed": true
+    },
+    {
+      "name": "viewer keyboard, Escape, focus return 390",
+      "details": {
+        "touchSwipe": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Gallery empty category 390",
+      "passed": true
+    },
+    {
+      "name": "canonical project comment sat-chi",
+      "passed": true
+    },
+    {
+      "name": "canonical project comment huquq-test",
+      "passed": true
+    },
+    {
+      "name": "canonical project comment sme-financial-assistant",
+      "passed": true
+    },
+    {
+      "name": "canonical project comment telegram-media-downloader",
+      "passed": true
+    },
+    {
+      "name": "canonical project comment ielts-progress-tracker",
+      "passed": true
+    },
+    {
+      "name": "Unauthenticated admin redirects to login",
+      "passed": true
+    },
+    {
+      "name": "Editable SAT collaboration context",
+      "details": {
+        "fixture": true,
+        "posts": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "Failed comments show retry",
+      "passed": true
+    }
+  ],
+  "routes": [
+    {
+      "width": 1366,
+      "route": "/",
+      "overflow": false,
+      "h1": "THE OTHER\nSIDE OF\nDEFAULT.",
+      "smallTargets": [
+        {
+          "label": "About",
+          "width": 36.59375,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Work",
+          "width": 32.421875,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Links",
+          "width": 32.6875,
+          "height": 53,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/work",
+      "overflow": false,
+      "h1": "WORK.",
+      "smallTargets": [
+        {
+          "label": "About",
+          "width": 36.59375,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Work",
+          "width": 32.421875,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Links",
+          "width": 32.6875,
+          "height": 53,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/gallery",
+      "overflow": false,
+      "h1": "THE\nPRINT\nROOM.",
+      "smallTargets": [
+        {
+          "label": "About",
+          "width": 36.59375,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Work",
+          "width": 32.421875,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Links",
+          "width": 32.6875,
+          "height": 53,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/about",
+      "overflow": false,
+      "h1": "OTABEK\nRAKHIMOV.",
+      "smallTargets": [
+        {
+          "label": "About",
+          "width": 36.59375,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Work",
+          "width": 32.421875,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Links",
+          "width": 32.6875,
+          "height": 53,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/journal",
+      "overflow": false,
+      "h1": "In the\nmargins.",
+      "smallTargets": [
+        {
+          "label": "About",
+          "width": 36.59375,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Work",
+          "width": 32.421875,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Links",
+          "width": 32.6875,
+          "height": 53,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/links",
+      "overflow": false,
+      "h1": "FIND ME\nelsewhere.",
+      "smallTargets": [
+        {
+          "label": "About",
+          "width": 36.59375,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Work",
+          "width": 32.421875,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Links",
+          "width": 32.6875,
+          "height": 53,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/guestbook",
+      "overflow": false,
+      "h1": "Dear\nvisitor,",
+      "smallTargets": [
+        {
+          "label": "About",
+          "width": 36.59375,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Work",
+          "width": 32.421875,
+          "height": 53,
+          "visible": true
+        },
+        {
+          "label": "Links",
+          "width": 32.6875,
+          "height": 53,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/work",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "route": "/",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "route": "/work",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/work",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/work",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/work",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "overflow": false,
+      "h1": "THE OTHER\nSIDE OF\nDEFAULT.",
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "route": "/work",
+      "overflow": false,
+      "h1": "WORK.",
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "route": "/gallery",
+      "overflow": false,
+      "h1": "THE\nPRINT\nROOM.",
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "route": "/about",
+      "overflow": false,
+      "h1": "OTABEK\nRAKHIMOV.",
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "route": "/journal",
+      "overflow": false,
+      "h1": "In the\nmargins.",
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "route": "/links",
+      "overflow": false,
+      "h1": "FIND ME\nelsewhere.",
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "route": "/guestbook",
+      "overflow": false,
+      "h1": "Dear\nvisitor,",
+      "smallTargets": []
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "home",
+      "frames": [
+        {
+          "progress": 0,
+          "y": 0,
+          "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)"
+        },
+        {
+          "progress": 0.25,
+          "y": 301,
+          "transform": "matrix(1.32507, 0.146067, -0.146067, 1.32507, -56.3337, 0)"
+        },
+        {
+          "progress": 0.5,
+          "y": 601,
+          "transform": "matrix(1.66491, 0.0174355, -0.0174355, 1.66491, -112.481, 0)"
+        },
+        {
+          "progress": 0.75,
+          "y": 902,
+          "transform": "matrix(1.7, 0, 0, 1.7, -118.401, 0)"
+        },
+        {
+          "progress": 1,
+          "y": 1202,
+          "transform": "matrix(1.7, 0, 0, 1.7, -118.401, 0)"
+        }
+      ],
+      "reversed": "matrix(0.978148, 0.20791, -0.20791, 0.978148, 0, 0)"
+    },
+    {
+      "kind": "sat",
+      "frames": [
+        {
+          "progress": 0,
+          "y": 680,
+          "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)"
+        },
+        {
+          "progress": 0.25,
+          "y": 894,
+          "transform": "matrix(1.05683, 0.167383, -0.167383, 1.05683, -33.72, -5.71973)"
+        },
+        {
+          "progress": 0.5,
+          "y": 1108,
+          "transform": "matrix(1.13376, 0.11916, -0.11916, 1.13376, -67.44, -11.4395)"
+        },
+        {
+          "progress": 0.75,
+          "y": 1322,
+          "transform": "matrix(1.20834, 0.0633265, -0.0633265, 1.20834, -101.16, -17.1592)"
+        },
+        {
+          "progress": 1,
+          "y": 1536,
+          "transform": "matrix(1.28, 0, 0, 1.28, -134.88, -22.8789)"
+        }
+      ],
+      "reversed": "matrix(0.978148, 0.20791, -0.20791, 0.978148, 0, 0)"
+    },
+    {
+      "kind": "law",
+      "frames": [
+        {
+          "progress": 0,
+          "y": 2216,
+          "transform": "matrix3d(0.651981, 0.150522, 0.743145, 0, -0.224951, 0.97437, 0, 0, -0.724098, -0.167171, 0.669131, 0, 29.9972, 0, 0, 1)"
+        },
+        {
+          "progress": 0.25,
+          "y": 2430,
+          "transform": "matrix3d(0.799601, 0.12307, 0.587785, 0, -0.152123, 0.988362, 0, 0, -0.580944, -0.0894159, 0.809017, 0, 7.4993, 0, 0, 1)"
+        },
+        {
+          "progress": 0.5,
+          "y": 2644,
+          "transform": "matrix3d(0.910729, 0.071676, 0.406737, 0, -0.0784591, 0.996917, 0, 0, -0.405483, -0.0319122, 0.913545, 0, -14.9986, 0, 0, 1)"
+        },
+        {
+          "progress": 0.75,
+          "y": 2858,
+          "transform": "matrix3d(0.978138, 0.00426796, 0.207912, 0, -0.00436331, 0.99999, 0, 0, -0.20791, -0.000907183, 0.978148, 0, -37.4965, 0, 0, 1)"
+        },
+        {
+          "progress": 1,
+          "y": 3072,
+          "transform": "matrix(0.997564, -0.0697565, 0.0697565, 0.997564, -59.9944, 0)"
+        }
+      ],
+      "reversed": "matrix3d(0.651981, 0.150522, 0.743145, 0, -0.224951, 0.97437, 0, 0, -0.724098, -0.167171, 0.669131, 0, 29.9972, 0, 0, 1)"
+    },
+    {
+      "kind": "gallery",
+      "frames": [
+        {
+          "progress": 0,
+          "y": 0,
+          "transform": "matrix(0.835398, -0.0878039, 0.0878039, 0.835398, 0, 0)"
+        },
+        {
+          "progress": 0.25,
+          "y": 272,
+          "transform": "matrix(0.910972, -0.0623083, 0.0623083, 0.910972, 0, 0)"
+        },
+        {
+          "progress": 0.5,
+          "y": 543,
+          "transform": "matrix(0.985295, -0.0315374, 0.0315374, 0.985295, 0, 0)"
+        },
+        {
+          "progress": 0.75,
+          "y": 815,
+          "transform": "matrix(1.05, 0, 0, 1.05, 0, 0)"
+        },
+        {
+          "progress": 1,
+          "y": 1086,
+          "transform": "matrix(1.05, 0, 0, 1.05, 0, 0)"
+        }
+      ],
+      "reversed": "matrix(0.835398, -0.0878039, 0.0878039, 0.835398, 0, 0)"
+    }
+  ],
+  "axe": [
+    {
+      "width": 1366,
+      "route": "/",
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/work",
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/gallery",
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/gallery#viewer",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "#album-viewer-title"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".album-viewer_count__dEzV7"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "button[aria-label=\"Close image viewer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".album-viewer-controls > button:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "p[role=\"status\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".album-viewer-controls > button:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/about",
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/journal",
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/links",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".od-address-tabs > span:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.22 (foreground color: #dbddd4, background color: #757975, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "route": "/guestbook",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".discussion-note"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.81 (foreground color: #b6bbac, background color: #f9f6ee, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/work",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/gallery#viewer",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "#album-viewer-title"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".album-viewer_count__dEzV7"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "button[aria-label=\"Close image viewer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".album-viewer-controls > button:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "p[role=\"status\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".album-viewer-controls > button:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.16 (foreground color: #f4f0e8, background color: #e8dfca, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/gallery",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/about",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/journal",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/links",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".od-address-tabs > span:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.22 (foreground color: #dbddd4, background color: #757975, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/guestbook",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".discussion-note"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.81 (foreground color: #b6bbac, background color: #f9f6ee, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "limitations": [
+    "No authenticated owner/MFA session or live submission.",
+    "No real touch device.",
+    "Gallery awaits personal photos; Journal awaits owner writing."
+  ]
+}

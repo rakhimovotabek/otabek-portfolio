@@ -1,0 +1,19 @@
+PASS Work URL filter 1366
+PASS viewer keyboard, Escape, focus return 1366
+PASS Gallery empty category 1366
+PASS Work URL filter 390
+locator.dispatchEvent: TypeError: Failed to construct 'Touch': Failed to read the 'identifier' property from 'TouchInit': Required member is undefined.
+    at <anonymous>:7936:45
+    at Array.map (<anonymous>)
+    at InjectedScript.dispatchEvent (<anonymous>:7934:78)
+    at eval (eval at eval (:7098:24), <anonymous>:2:26)
+    at eval (eval at eval (:7098:24), <anonymous>:4:28)
+    at eval (eval at evaluate (:370:30), <anonymous>:15:22)
+    at UtilityScript.evaluate (<anonymous>:372:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+Call log:
+[2m  - waiting for locator('.album-viewer-image')[22m
+
+    at /home/otabek/Desktop/project/otabek-portfolio/scripts/review-other-side.cjs:196:16 {
+  log: [ "  - waiting for locator('.album-viewer-image')" ]
+}
