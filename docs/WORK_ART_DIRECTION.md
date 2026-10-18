@@ -1,5 +1,7 @@
 # Work — visual direction checkpoint
 
+**Current visual checkpoint:** [Creative overhaul review](design-research/overhaul/REVIEW.md). The notes below document the preceding `6238fa3` checkpoint. Its abstract primary artwork, restricted palette and static Gallery have been superseded by owner-approved interface captures and the compositions shown in the new browser evidence.
+
 Scope: `/work` only, following `97c1466`. No other page is redesigned. No new library, font, image, project fact, database/security change or deployment.
 
 ## Diagnosis from the original rendering

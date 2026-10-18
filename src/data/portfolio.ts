@@ -54,7 +54,7 @@ export const projects: readonly Project[] = [
     description:
       "A learning platform centered on SAT preparation. An exploration of how software can support studying.",
     technology: null,
-    url: null,
+    url: "https://sat-chi.netlify.app",
     image: null,
     status: null,
   },
@@ -65,7 +65,7 @@ export const projects: readonly Project[] = [
     description:
       "An online examination platform. A project at the intersection of education, assessment, and software.",
     technology: null,
-    url: null,
+    url: "https://yangiariq-yuridik-senter.netlify.app",
     image: null,
     status: null,
   },

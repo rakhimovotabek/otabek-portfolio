@@ -1,0 +1,23 @@
+.product { position: relative; width: 100%; height: auto; aspect-ratio: 1.18; perspective: 1600px; }
+.main, .detail { position: absolute; transform-origin: center; }
+.main img, .detail img { display: block; width: 100%; height: auto; box-shadow: 0 24px 50px -24px #11111455; }
+.label { display: block; font: 11px/1.4 var(--font-body), sans-serif; letter-spacing: .05em; margin-bottom: 10px; }
+.sat .main { width: 94%; left: 0; top: 12%; transform: rotateY(-9deg) rotate(-3deg); }
+.sat .detail { width: 29%; right: 0; top: 30%; transform: rotateY(-9deg) rotate(5deg); }
+.sat .main img { border-radius: 3px; }
+.sat .detail img { border-radius: 10px; }
+.huquq .main { width: 65%; left: 8%; top: 0; transform: rotate(-5deg); }
+.huquq .detail { width: 68%; right: -1%; top: 57%; transform: rotate(4deg); }
+.huquq .main img { border-radius: 22px; }
+.huquq .detail img { border-radius: 12px; }
+@media (max-width: 799px) {
+  .product { aspect-ratio: 1.18; height: auto; }
+  .label { font-size: 9px; margin-bottom: 6px; }
+  .sat .main { top: 5%; }
+  .sat .detail { top: 30%; width: 33%; }
+  .huquq { aspect-ratio: 1.05; }
+  .huquq .main { width: 72%; left: 0; }
+  .huquq .detail { width: 80%; top: 52%; right: 0; }
+}
+
+.huquq .detail .label { background: #48222c; color: #f1ddd6; padding: 4px 8px; width: fit-content; }

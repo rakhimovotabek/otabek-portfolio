@@ -5,6 +5,7 @@ import { ProjectArt } from "@/components/visuals/project-art";
 import { ScrollScene } from "./scroll-scene";
 import styles from "./signature.module.css";
 import artDirection from "./work-exhibition.module.css";
+import { ProductExhibit } from "./product-exhibit";
 
 export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
   if (works.length < 2) return null;
@@ -37,7 +38,9 @@ export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
                 data-exhibit-art
                 aria-label={`Explore ${work.title}`}
               >
-                {work.images[0] ? (
+                {work.id === "sat-chi" || work.id === "huquq-test" ? (
+                  <ProductExhibit id={work.id} />
+                ) : work.images[0] ? (
                   <MediaFrame media={work.images[0]} sizes="70vw" />
                 ) : work.commentProjectId ? (
                   <ProjectArt id={work.commentProjectId} />
@@ -46,7 +49,7 @@ export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
                 )}
               </Link>
               <span className={artDirection.provenance} data-exhibit-caption>
-                {work.images.length ? "Selected project image" : "Concept artwork · not an app screenshot"}
+                {work.id === "sat-chi" ? "Live interface / SAT’chi" : work.id === "huquq-test" ? "Live sign-in + source component demo" : "Selected project image"}
               </span>
               <div className={styles.exhibitCopy} data-exhibit-copy>
                 <p>{work.description.split(/(?<=\.)\s/)[0]}</p>

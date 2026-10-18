@@ -1,5 +1,5 @@
 import { projects, type ProjectId } from "./portfolio";
-import { visualStudies, type ArchiveMedia } from "./archive";
+import { visualStudies, projectCaptures, type ArchiveMedia } from "./archive";
 
 /** Public repository content. Future CMS adapters should return these contracts. */
 export type WorkCategory = "digital" | "physical" | "creative";
@@ -29,7 +29,7 @@ export const works: readonly WorkEntry[] = projects.map((project) => ({
   category: "digital",
   discipline: project.category,
   description: project.description,
-  images: project.image
+  images: projectCaptures[project.id] ?? (project.image
     ? [
         {
           id: `${project.id}-screenshot`,
@@ -42,7 +42,7 @@ export const works: readonly WorkEntry[] = projects.map((project) => ({
           credit: null,
         },
       ]
-    : [],
+    : []),
   technologiesOrMaterials: project.technology ? [project.technology] : [],
   status: project.status,
   externalLinks: project.url
@@ -54,8 +54,8 @@ export const works: readonly WorkEntry[] = projects.map((project) => ({
   openToCollaboration: project.id === "sat-chi",
   showCollaborationButton: project.id === "sat-chi",
   collaborationMessage: null,
-  contributionUrl: null,
-  contributionVerifiedPublic: false,
+  contributionUrl: project.id === "sat-chi" ? "https://github.com/rakhimovotabek/sat-chi" : project.id === "huquq-test" ? "https://github.com/rakhimovotabek/huquqchi" : null,
+  contributionVerifiedPublic: ["sat-chi", "huquq-test"].includes(project.id),
 }));
 export const workCategories = [
   {

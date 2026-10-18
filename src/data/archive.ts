@@ -249,3 +249,13 @@ export const galleryReservations: readonly ArchiveMedia[] = [
     credit: null,
   },
 ];
+
+/** Owner-approved public app captures, 18 October 2026. Provenance in docs/design-research/overhaul/ASSETS.md. */
+export const projectCaptures: Record<string, readonly ArchiveMedia[]> = {
+  "sat-chi": [{ id: "sat-landing", src: "/images/work/sat-landing.webp", width: 1800, height: 942,
+    alt: "SAT’chi public landing page", caption: "SAT’chi / Public landing page", placeholderLabel: "", credit: "Captured from sat-chi.netlify.app" },
+    { id: "sat-sign-in", src: "/images/work/sat-sign-in.webp", width: 860, height: 1256,
+    alt: "SAT’chi public sign-in interface", caption: "SAT’chi / Sign in", placeholderLabel: "", credit: "Captured from sat-chi.netlify.app/login" }],
+  "huquq-test": [{ id: "huquq-sign-in", src: "/images/work/huquq-sign-in.webp", width: 720, height: 564,
+    alt: "Yangiariq Yuridik Senter public sign-in interface", caption: "Huquq Test / Yangiariq Yuridik Senter sign-in", placeholderLabel: "", credit: "Captured from yangiariq-yuridik-senter.netlify.app" }],
+};

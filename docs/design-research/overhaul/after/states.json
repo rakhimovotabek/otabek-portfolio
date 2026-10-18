@@ -1,0 +1,205 @@
+[
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "sat",
+    "y": 556,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "huquq",
+    "y": 1247,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "index",
+    "y": 2387,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "ending",
+    "y": 3181,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "index-current",
+    "y": 2489,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "ending-current",
+    "y": 3129,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "transformation",
+    "y": 450,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "collections",
+    "y": 562,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "focus",
+    "y": 570,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "unfolded",
+    "y": 1118,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "collections-current",
+    "y": 1795,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "album",
+    "y": 666,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "home",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "sat",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "huquq",
+    "y": 595,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "index",
+    "y": 1492,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "ending",
+    "y": 2274,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "index-current",
+    "y": 1709,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "ending-current",
+    "y": 2324,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "huquq-current",
+    "y": 772,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "transformation",
+    "y": 450,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "collections",
+    "y": 1197,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "collections-current",
+    "y": 1668,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "album",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "home",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  }
+]

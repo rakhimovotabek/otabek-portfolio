@@ -1,55 +1,60 @@
 .exhibition[data-signature="gallery"] { height: auto; }
 .stage { position: relative; }
 .surface { display: none; }
-.exhibition[data-signature] [data-stage] { color: #f2efe7; background: #111114; overflow: clip; }
-.meta { display: flex; align-items: center; justify-content: space-between; padding: 20px var(--public-gutter); position: relative; z-index: 6; font-family: var(--font-mono), monospace; font-size: 12px; }
-.meta a { display: inline-flex; align-items: center; min-height: 48px; padding-inline: 12px; background: #111114; color: #f2efe7; }
-.title, .indexTitle { font-family: var(--font-body), Arial, sans-serif; font-weight: 500; line-height: 1; letter-spacing: -.065em; }
+.exhibition[data-signature] [data-stage] { color: #f2efe7; background: #243b33; overflow: clip; }
+.meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px var(--public-gutter); position: relative; z-index: 6; font: 12px/1.5 var(--font-body), sans-serif; }
+.meta a { display: inline-flex; align-items: center; min-height: 48px; padding-inline: 12px; background: #243b33; color: #f2efe7; }
+.metaActions { display: flex; gap: 12px; }
+.title, .indexTitle { font: 500 clamp(76px, 12vw, 190px)/.85 var(--font-body), sans-serif; letter-spacing: -.075em; }
 .title em, .indexTitle em { font-family: var(--font-reading), Georgia, serif; font-weight: 430; }
-.title { font-size: clamp(76px, 10vw, 160px); padding: 12px var(--public-gutter) 40px; }
+.title { padding: 30px var(--public-gutter) 55px; }
 .frames { position: relative; }
 .frame { position: relative; width: 75%; margin: 0 0 48px auto; }
 .aperture { overflow: clip; }
 .aperture > a { display: block; }
 .aperture :global(.media-frame) { margin: 0; }
-.aperture :global(.media-window) { border: 0; padding: 0; background: #111114; }
+.aperture :global(.media-window) { border: 0; padding: 0; }
 .aperture :global(figcaption) { display: none; }
 .caption { display: block; padding: 12px 0; font-size: 12px; }
 .frame:nth-child(2) { margin-left: 5%; margin-right: auto; width: 60%; }
 .frame:nth-child(3) { margin-right: 5%; width: 70%; }
 .focusCaption, .indexTitle { display: none; }
-.footer { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px var(--public-gutter); color: #f2efe7; background: #111114; border-top: 1px solid #f2efe72a; font-family: var(--font-mono), monospace; font-size: 12px; z-index: 8; }
-.footer a { display: flex; align-items: center; gap: 32px; min-height: 48px; font-family: var(--font-body), sans-serif; font-size: 16px; }
+.footer { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px var(--public-gutter); color: #f2efe7; background: #243b33; border-top: 1px solid #f2efe740; font-size: 12px; z-index: 8; }
+.footer a { display: flex; align-items: center; gap: 32px; min-height: 48px; font-size: 16px; }
 .footer i { position: absolute; inset: 0 0 auto; height: 1px; background: #f2efe7; transform: scaleX(0); transform-origin: left; }
 .exhibition a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 @media (min-width: 800px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) {
-  .exhibition[data-signature]:is([class*="reserved"], [class*="enhanced"]) { height: 300svh; }
+  .exhibition[data-signature]:is([class*="reserved"], [class*="enhanced"]) { height: 240svh; min-height: 240svh; }
   .exhibition:is([class*="reserved"], [class*="enhanced"]) [data-stage] { position: sticky; top: 0; height: 100svh; }
   .exhibition:is([class*="reserved"], [class*="enhanced"]) .surface { display: block; position: absolute; inset: 0; background: #f2efe7; transform: translateY(100%); }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .caption { color: #111114; }
-  .exhibition[class*="reserved"]:not([class*="enhanced"]) .frame[data-frame="1"] { transform: translate(-14vw, 6.5vh) perspective(1400px) rotateY(26deg) scale(.82); }
-  .exhibition[class*="reserved"]:not([class*="enhanced"]) .frame[data-frame="2"] { transform: translate(14vw, 6.5vh) perspective(1400px) rotateY(-26deg) scale(.82); }
-  .exhibition[class*="reserved"]:not([class*="enhanced"]) .frame:not(:first-child) .aperture { clip-path: inset(0% 12% 0% 12%); }
+  .exhibition:is([class*="reserved"], [class*="enhanced"]) .caption { color: #111114; font-size: 18px; }
+  .exhibition[class*="reserved"]:not([class*="enhanced"]) .frame[data-frame="1"] { transform: translate(-34vw, -5vh) rotate(-9deg) scale(.62); }
+  .exhibition[class*="reserved"]:not([class*="enhanced"]) .frame[data-frame="2"] { transform: translate(-16vw, 40vh) rotate(8deg) scale(.45); }
   .exhibition[class*="reserved"]:not([class*="enhanced"]) :is(.focusCaption, .indexTitle, .caption) { opacity: 0; visibility: hidden; }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .title { position: absolute; left: var(--public-gutter); top: 25%; z-index: 5; padding: 0; pointer-events: none; }
+  .exhibition:is([class*="reserved"], [class*="enhanced"]) .title { position: absolute; left: var(--public-gutter); top: 38%; z-index: 5; padding: 0; pointer-events: none; }
   .exhibition:is([class*="reserved"], [class*="enhanced"]) .frames { position: absolute; inset: 0; }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .frame { position: absolute; left: 53.5%; top: 15%; width: 31%; height: 70%; margin: 0; transform-origin: center; }
+  .exhibition:is([class*="reserved"], [class*="enhanced"]) .frame { position: absolute; left: 49%; top: 12%; width: 40%; height: 72%; margin: 0; transform-origin: center; }
   .exhibition:is([class*="reserved"], [class*="enhanced"]) .frame:first-child { z-index: 3; }
   .exhibition:is([class*="reserved"], [class*="enhanced"]) .aperture,
   .exhibition:is([class*="reserved"], [class*="enhanced"]) .aperture > a,
   .exhibition:is([class*="reserved"], [class*="enhanced"]) .aperture :global(.media-frame),
   .exhibition:is([class*="reserved"], [class*="enhanced"]) .aperture :global(.media-window) { height: 100%; width: 100%; aspect-ratio: auto; }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .focusCaption { display: block; position: absolute; left: var(--public-gutter); bottom: 13%; z-index: 5; font-size: 16px; }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .indexTitle { display: block; position: absolute; left: var(--public-gutter); top: 5%; font-size: clamp(48px, 5vw, 76px); z-index: 5; color: #111114; }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .footer { position: absolute; left: 0; right: 0; bottom: 0; height: 72px; padding-block: 0; padding-right: calc(var(--public-gutter) + 190px); }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .meta { padding-top: 12px; }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .meta > span { display: none; }
-  .exhibition:is([class*="reserved"], [class*="enhanced"]) .meta a { margin-left: auto; }
+  .exhibition:is([class*="reserved"], [class*="enhanced"]) .focusCaption { display: block; position: absolute; left: var(--public-gutter); bottom: 14%; z-index: 5; font-size: 16px; padding: 12px; background: #243b33; }
+  .exhibition:is([class*="reserved"], [class*="enhanced"]) .indexTitle { display: block; position: absolute; left: var(--public-gutter); top: 12%; font-size: clamp(48px, 5vw, 76px); z-index: 5; color: #111114; }
+  .exhibition:is([class*="reserved"], [class*="enhanced"]) .footer { position: absolute; left: 0; right: 0; bottom: 0; height: 72px; padding-block: 0; }
 }
 @media (max-width: 799px) {
-  .title { font-size: clamp(66px, 17vw, 110px); padding-bottom: 32px; }
-  .frame { width: calc(100% - 2 * var(--public-gutter)); margin-right: var(--public-gutter); }
-  .frame:nth-child(2), .frame:nth-child(3) { width: 78%; margin-left: var(--public-gutter); margin-right: var(--public-gutter); }
-  .frame:nth-child(3) { margin-left: auto; }
-  .footer { flex-wrap: wrap; gap: 8px; padding-right: 88px; }
+  .title { font-size: clamp(82px, 24vw, 160px); padding-bottom: 50px; }
+  .meta { font-size: 11px; }
+  .metaActions { gap: 0; }
+  .metaActions a:first-child { display: none; }
+  .frame { width: 86%; margin-right: 0; }
+  .frame:nth-child(2) { width: 83%; margin-left: 0; margin-top: 90px; }
+  .frame:nth-child(3) { width: 65%; margin-right: 5%; margin-top: 80px; margin-bottom: 70px; }
+  .frame:nth-child(1) .aperture { transform: rotate(-3deg); transform-origin: right; }
+  .frame:nth-child(3) .aperture { transform: rotate(5deg); }
+  .caption { padding: 20px 12px; }
+  .footer { flex-wrap: wrap; gap: 8px; }
 }
+
+.meta > span { background: #243b33; padding: 8px 10px; margin-left: -10px; }

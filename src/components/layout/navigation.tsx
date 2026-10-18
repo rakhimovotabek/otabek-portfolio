@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { TransitionLink as Link } from "@/components/motion/route-transitions";
 import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
+import { OpenMessage } from "@/components/contact/open-message";
 const links = site.navigation;
 export function Navigation() {
   const menu = useRef<HTMLDetailsElement>(null);
@@ -32,7 +33,7 @@ export function Navigation() {
           </Link>
         ))}
       </nav>
-      <span className="header-location">UZBEKISTAN / UZT</span>
+      <div className="nav-correspondence"><OpenMessage label="Message me" /></div>
       <details ref={menu} className="mobile-menu">
         <summary aria-label="Toggle navigation">
           <Menu size={23} aria-hidden="true" />

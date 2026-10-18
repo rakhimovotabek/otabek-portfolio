@@ -99,7 +99,7 @@ export function AlbumViewer({ images, title }: { images: readonly ArchiveMedia[]
     <>
       <div className={`album-images ${styles.images}`}>
         {images.map((item, i) => (
-          <div className={`album-mount ${styles.mount}`} key={item.id}>
+          <div className={`album-mount ${styles.mount}`} key={item.id} id={item.id}>
             <MediaFrame media={galleryMedia(item)} sizes="(max-width: 799px) 95vw, 70vw" />
             <button
               type="button"

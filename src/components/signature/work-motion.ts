@@ -14,27 +14,30 @@ export function workMotion(gsap: MotionEngine, timeline: gsap.core.Timeline, hos
       timeline.to(panel, { yPercent: 0, duration: .14 }, .37);
     }
     timeline.to(art, {
-      x: () => -stage.clientWidth * .43,
+      x: () => -stage.clientWidth * .34,
       y: () => -stage.clientHeight * .01,
-      scale: .82,
-      rotation: i ? 2 : -2,
+      scale: .9,
+      rotation: 0,
       duration: .24,
     }, start + .02);
     timeline.to(title, {
-      x: () => stage.clientWidth * .51,
+      x: () => stage.clientWidth * .58,
       y: () => -stage.clientHeight * (i ? .025 : .07),
       scale: i ? .55 : .5,
       duration: .24,
     }, start + .02);
     timeline.to(copy, {
-      x: () => stage.clientWidth * .51,
+      x: () => stage.clientWidth * .58,
       y: () => -stage.clientHeight * .07,
       duration: .24,
     }, start + .02);
     timeline.to(caption, {
-      x: () => -stage.clientWidth * .38,
+      x: () => -stage.clientWidth * .34,
       duration: .24,
     }, start + .02);
+    timeline.fromTo(panel.querySelector("[data-product-detail]"),
+      { y: 35, rotation: i ? 7 : 8 },
+      { y: -12, rotation: i ? -2 : 1, duration: .28 }, start + .02);
     // A single compositional handoff. No extra geometry loops or blank reveal gap.
     if (!i) timeline.to(panel, { yPercent: -18, duration: .14 }, .37);
   });

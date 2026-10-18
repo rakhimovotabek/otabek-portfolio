@@ -651,3 +651,14 @@
     font-size: clamp(40px, 9vw, 64px);
   }
 }
+
+/* Contact belongs to the navigation, leaving exhibition surfaces unobstructed. */
+.reference-navigation .desktop-nav { font-size: 14px; margin-inline: auto; gap: clamp(16px, 2vw, 30px); }
+.nav-correspondence { justify-self: end; margin-left: auto; }
+.nav-correspondence .text-link { display: inline-flex; align-items: center; gap: 18px; min-height: 46px; padding: 0 14px; border: 1px solid currentColor; border-radius: 2px; font-size: 13px; color: inherit; }
+.nav-correspondence .text-link:hover { background: #f2efe7; color: #111114; }
+.message-button { display: none; }
+@media (max-width: 799px) {
+  .nav-correspondence { margin-right: 12px; }
+  .nav-correspondence .text-link { min-height: 44px; padding: 0 10px; font-size: 12px; gap: 8px; }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "opening",
+    "y": 0
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "sat",
+    "y": 556
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "huquq",
+    "y": 1247
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "index",
+    "y": 2387
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "ending",
+    "y": 3181
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "opening",
+    "y": 0
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "transformation",
+    "y": 450
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "collections",
+    "y": 562
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "album",
+    "y": 666
+  },
+  {
+    "width": 1366,
+    "route": "home",
+    "name": "opening",
+    "y": 0
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "opening",
+    "y": 0
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "sat",
+    "y": 0
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "huquq",
+    "y": 595
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "index",
+    "y": 1492
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "ending",
+    "y": 2274
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "opening",
+    "y": 0
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "transformation",
+    "y": 450
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "collections",
+    "y": 1197
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "album",
+    "y": 0
+  },
+  {
+    "width": 390,
+    "route": "home",
+    "name": "opening",
+    "y": 0
+  }
+]

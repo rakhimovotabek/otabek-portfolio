@@ -1,0 +1,533 @@
+{
+  "session": {
+    "base": "http://127.0.0.1:3005",
+    "build": "production",
+    "browser": "Chromium",
+    "workers": 1,
+    "seeded": false,
+    "liveWrites": false
+  },
+  "states": [
+    {
+      "label": "work",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 568.58935546875,
+          "height": 580.4771728515625,
+          "clipPath": "none"
+        },
+        {
+          "width": 384.5478210449219,
+          "height": 391.02227783203125,
+          "clipPath": "none"
+        },
+        {
+          "width": 275.43951416015625,
+          "height": 280.2508544921875,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "work",
+      "width": 390,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 390,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 343.1559753417969,
+          "height": 419.45086669921875,
+          "clipPath": "none"
+        },
+        {
+          "width": 311.25,
+          "height": 233.4375,
+          "clipPath": "none"
+        },
+        {
+          "width": 268.78668212890625,
+          "height": 318.016845703125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "work",
+      "width": 320,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 320,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 279.0962219238281,
+          "height": 341.13763427734375,
+          "clipPath": "none"
+        },
+        {
+          "width": 253.140625,
+          "height": 189.84375,
+          "clipPath": "none"
+        },
+        {
+          "width": 218.6131591796875,
+          "height": 258.653564453125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "work",
+      "width": 768,
+      "overflow": false,
+      "navX": 19.953125,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 768,
+      "overflow": false,
+      "navX": 19.953125,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 689.0549926757812,
+          "height": 842.2509765625,
+          "clipPath": "none"
+        },
+        {
+          "width": 624.984375,
+          "height": 468.734375,
+          "clipPath": "none"
+        },
+        {
+          "width": 539.7105712890625,
+          "height": 638.568359375,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "work",
+      "width": 1024,
+      "overflow": false,
+      "navX": 26.609375,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "8"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 1024,
+      "overflow": false,
+      "navX": 26.609375,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 431.97998046875,
+          "height": 573.3177490234375,
+          "clipPath": "none"
+        },
+        {
+          "width": 300.7779541015625,
+          "height": 377.75445556640625,
+          "clipPath": "none"
+        },
+        {
+          "width": 214.47998046875,
+          "height": 271.68359375,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "8"
+      }
+    },
+    {
+      "label": "reduced-work",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "reduced-gallery",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 1013.25,
+          "height": 1266.5625,
+          "clipPath": "none"
+        },
+        {
+          "width": 810.59375,
+          "height": 607.9375,
+          "clipPath": "none"
+        },
+        {
+          "width": 945.6875,
+          "height": 1155.828125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "nojs-work",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "nojs-gallery",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 1013.25,
+          "height": 1266.5625,
+          "clipPath": "none"
+        },
+        {
+          "width": 810.59375,
+          "height": 607.9375,
+          "clipPath": "none"
+        },
+        {
+          "width": 945.6875,
+          "height": 1155.828125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    }
+  ],
+  "checks": [
+    "Message editing untested: preview submissions disabled; no Turnstile site key. Prefill and dialog open/close verified.",
+    "viewer 1366: arrows, Escape, trap, focus return, scroll unlock",
+    "Work/Gallery 1366: reflow, source media, project index, reversible gallery, targets",
+    "viewer 390: arrows, Escape, trap, focus return, scroll unlock, synthetic swipe",
+    "Work/Gallery 390: reflow, source media, project index, reversible gallery, targets",
+    "Work/Gallery 320: reflow, source media, project index, reversible gallery, targets",
+    "Work/Gallery 768: reflow, source media, project index, reversible gallery, targets",
+    "Work/Gallery 1024: reflow, source media, project index, reversible gallery, targets",
+    "viewer 1366: arrows, Escape, trap, focus return, scroll unlock",
+    "reduced: readable content, links, media, native disclosures, no scroll trap",
+    "nojs: readable content, links, media, native disclosures, no scroll trap",
+    "Home hero focus; all public routes; five project URLs; 15 client route changes; owner API rejects anonymous access; admin public scene absent"
+  ],
+  "runtime": {
+    "console": [
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/24ph_p8a9w85n.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies#study-volume",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies#study-volume",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies#study-volume",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies#study-volume",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/24ph_p8a9w85n.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      }
+    ],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:3005/work?category=digital&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=physical&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=creative&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=IB5aMaPjZV-ZRXyk",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=HFI9eSoz95Ty8BIt",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=-9sLjSlgneXyRTK-",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=physical&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=digital&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=HFI9eSoz95Ty8BIt",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=PPJxfRJ-k5tS7084",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=PHlL9_R32Alzzlxs",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=Sdev7PUlRw12F58X",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=yMFZbW3py_RmPDJX",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=tXyZJ52UQVBCVsD3",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "badStatus": []
+  },
+  "axe": [
+    {
+      "name": "work-exhibit",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "gallery-unfolded",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "gallery-desktop",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "viewer",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "gallery-mobile",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "viewer",
+      "violations": [],
+      "incomplete": []
+    }
+  ],
+  "alignment": [
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625
+  ],
+  "performance": {
+    "samples": 121,
+    "p95Ms": 17,
+    "maxMs": 18,
+    "longTasksMs": [],
+    "dom": 286,
+    "jsHeapBytes": 21361304,
+    "taskSeconds": 0.14525,
+    "wallSeconds": 2.0157229999967967
+  }
+}

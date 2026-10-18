@@ -1,0 +1,32 @@
+[
+  {
+    "name": "SAT text",
+    "foreground": "#18231b",
+    "background": "#dce879",
+    "ratio": 12.25
+  },
+  {
+    "name": "Huquq text and demo label",
+    "foreground": "#f1ddd6",
+    "background": "#48222c",
+    "ratio": 10.42
+  },
+  {
+    "name": "Gallery labels and footer",
+    "foreground": "#f2efe7",
+    "background": "#243b33",
+    "ratio": 10.45
+  },
+  {
+    "name": "Gallery final title and captions",
+    "foreground": "#111114",
+    "background": "#f2efe7",
+    "ratio": 16.4
+  },
+  {
+    "name": "Exhibit navigation muted text",
+    "foreground": "#b9b7b1",
+    "background": "#111114",
+    "ratio": 9.4
+  }
+]
