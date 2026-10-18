@@ -23,3 +23,5 @@ node scripts/check-other-side-lifecycle.cjs
 ```
 
 The last probe verifies native navigation and rapid clicks; its registry result is explicitly `unknown` when the compiled runtime does not expose ScrollTrigger. Use `RECORD_ONLY_MOBILE=1` with the recording script to resume only the phone clip after the three desktop clips exist.
+
+Text log whitespace and license line endings are normalized for clean diffs; test results and license wording are preserved.

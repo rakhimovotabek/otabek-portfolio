@@ -9,4 +9,3 @@ npm notice run next build --webpack
   Running TypeScript ...
 .next/dev/types/validator.ts(5,79): error TS2306: File '/home/otabek/Desktop/project/otabek-portfolio/.next/dev/types/routes.d.ts' is not a module.
 Failed to type check.
-
