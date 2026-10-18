@@ -662,3 +662,9 @@
   .nav-correspondence { margin-right: 12px; }
   .nav-correspondence .text-link { min-height: 44px; padding: 0 10px; font-size: 12px; gap: 8px; }
 }
+
+/* Correspondence is a quiet navigation action, rather than a boxed utility. */
+.nav-correspondence .text-link { border: 0; padding-inline: 0; gap: 12px; }
+.nav-correspondence .text-link > svg { width: 34px; height: 34px; padding: 8px; border: 1px solid currentColor; border-radius: 50%; transition: transform .2s; }
+.nav-correspondence .text-link:hover { color: inherit; background: transparent; }
+.nav-correspondence .text-link:hover > svg { transform: rotate(45deg); }

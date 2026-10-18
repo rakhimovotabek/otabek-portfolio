@@ -38,3 +38,11 @@
   .visual { height: min(64dvh, calc(100dvh - 260px)); }
   .viewer .imageArea { padding: 16px 0; }
 }
+
+/* A light viewing table: the selected print unfolds from its actual mount. */
+.viewer:global(.album-dialog) { background: #e8dfca; color: #24241f; }
+.viewer .header, .viewer .controls { border-color: #24241f40; }
+.viewer :focus-visible { outline-color: #24241f; }
+.visual { perspective: 1400px; }
+.visual { width: min(100%, calc(72dvh * var(--viewer-factor, 1)), calc((100dvh - 210px) * var(--viewer-factor, 1))); height: auto; aspect-ratio: var(--viewer-ratio, 1); }
+@media(max-width:799px) { .visual { width: min(100%, calc(64dvh * var(--viewer-factor, 1)), calc((100dvh - 260px) * var(--viewer-factor, 1))); height: auto; } }

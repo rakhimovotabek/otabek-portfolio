@@ -1,5 +1,5 @@
 import { projects, type ProjectId } from "./portfolio";
-import { visualStudies, projectCaptures, type ArchiveMedia } from "./archive";
+import { exhibitionStudies, projectCaptures, type ArchiveMedia } from "./archive";
 
 /** Public repository content. Future CMS adapters should return these contracts. */
 export type WorkCategory = "digital" | "physical" | "creative";
@@ -107,12 +107,12 @@ export interface GalleryAlbum {
 export const galleryAlbums: readonly GalleryAlbum[] = [
   {
     slug: "site-studies",
-    title: "Studies for an open archive",
+    title: "Form studies",
     category: "visual-experiment",
     date: null,
     description:
-      "Three original geometric studies created for this website. Site artwork, rather than personal photographs or drawings.",
-    images: visualStudies,
+      "Three original graphic studies created for this gallery. Demonstration artwork, not personal photographs.",
+    images: exhibitionStudies,
     journalSlugs: [],
     status: "published",
     siteArtwork: true,

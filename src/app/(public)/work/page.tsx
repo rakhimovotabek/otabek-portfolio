@@ -7,6 +7,7 @@ import {
   publicIdentities,
   type WorkCategory,
 } from "@/data/universe";
+import { profile } from "@/data/portfolio";
 import { site } from "@/data/site";
 import { WorkActions } from "@/components/universe/work-actions";
 import { FilterScene } from "@/components/universe/filter-scene";
@@ -39,7 +40,7 @@ export default async function WorkPage({
     <div className={`inner-page work-page ${styles.page} ${system.system} ${system.ink}`}>
       <header className={styles.opening}>
         <h1 data-page-title>
-          <span>Selected <em>work.</em></span>
+          <span>Selected works / {profile.name}</span>
         </h1>
         <span>Software / 01—{String(works.length).padStart(2, "0")}</span>
       </header>
@@ -51,7 +52,7 @@ export default async function WorkPage({
         aria-labelledby="work-index-title"
       >
         <header className={styles.indexHeading}>
-          <h2 id="work-index-title">The index.</h2>
+          <h2 id="work-index-title">Other<br /><em>working ideas.</em></h2>
           <span>{String(works.length).padStart(2, "0")} projects / digital</span>
         </header>
         <nav
@@ -75,7 +76,8 @@ export default async function WorkPage({
           {entries.length ? (
             <div data-work-index>
               {entries.map((work, i) => (
-                <article key={work.id} className={styles.entry}>
+                <article key={work.id} className={styles.entry} data-featured={i < 2 || undefined}>
+                  {i >= 2 && <Link className={styles.archivePrint} href={`/work/${work.slug}`} aria-label={`Explore ${work.title}`} aria-hidden="true" tabIndex={-1}><span>{work.id === "sme-financial-assistant" ? "SME" : work.id === "telegram-media-downloader" ? "↓" : "a—z"}</span><small>{work.discipline}</small></Link>}
                   <span className={styles.number}>{String(i + 1).padStart(2, "0")}</span>
                   <h3>
                     <Link href={`/work/${work.slug}`}>
@@ -113,7 +115,7 @@ export default async function WorkPage({
         aria-labelledby="work-collaboration-title"
       >
         <span className={styles.endingLabel}>An open invitation / SAT’chi</span>
-        <h2 id="work-collaboration-title">Next,<br /><em>together.</em></h2>
+        <h2 id="work-collaboration-title">Let’s work<br /><em>on it.</em></h2>
         <div className={styles.endingActions}>
           {collaborations.map((work) => <WorkActions key={work.id} work={work} />)}
           {github && (

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "SAT room",
+    "foreground": "#f4f0e5",
+    "background": "#233cdb",
+    "contrast": 6.73
+  },
+  {
+    "name": "Study sheet",
+    "foreground": "#1721a6",
+    "background": "#f3f0df",
+    "contrast": 10.16
+  },
+  {
+    "name": "Journey",
+    "foreground": "#111b45",
+    "background": "#e1fa88",
+    "contrast": 14.39
+  },
+  {
+    "name": "Huquq",
+    "foreground": "#502333",
+    "background": "#e8dfcd",
+    "contrast": 9.74
+  },
+  {
+    "name": "Gallery label",
+    "foreground": "#24241f",
+    "background": "#e8dfca",
+    "contrast": 11.76
+  },
+  {
+    "name": "Gallery large title on vermilion",
+    "foreground": "#f2eadd",
+    "background": "#d65c3d",
+    "contrast": 3.22
+  },
+  {
+    "name": "Collection body",
+    "foreground": "#111114",
+    "background": "#d65c3d",
+    "contrast": 4.9
+  }
+]

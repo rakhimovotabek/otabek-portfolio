@@ -1,0 +1,233 @@
+[
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "sat",
+    "y": 556,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "huquq",
+    "y": 1247,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "index",
+    "y": 2387,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "ending",
+    "y": 3181,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "sat-current",
+    "y": 512,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "huquq-current",
+    "y": 1314,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "index-current",
+    "y": 2345,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "ending-current",
+    "y": 3834,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "work",
+    "name": "archive-prints",
+    "y": 2749,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "transformation",
+    "y": 450,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "collections",
+    "y": 562,
+    "matchedBaseline": true
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "focus",
+    "y": 604,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "unfolded",
+    "y": 1192,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "collections-current",
+    "y": 1905,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "gallery",
+    "name": "album",
+    "y": 9,
+    "matchedBaseline": false
+  },
+  {
+    "width": 1366,
+    "route": "home",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "sat",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "huquq",
+    "y": 595,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "index",
+    "y": 1492,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "ending",
+    "y": 2274,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "index-current",
+    "y": 1780,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "ending-current",
+    "y": 3006,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "archive-prints",
+    "y": 2066,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "work",
+    "name": "huquq-current",
+    "y": 918,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "transformation",
+    "y": 450,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "collections",
+    "y": 1197,
+    "matchedBaseline": true
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "collections-current",
+    "y": 1704,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "gallery",
+    "name": "album",
+    "y": 0,
+    "matchedBaseline": false
+  },
+  {
+    "width": 390,
+    "route": "home",
+    "name": "opening",
+    "y": 0,
+    "matchedBaseline": true
+  }
+]

@@ -50,3 +50,8 @@ Work: a smaller route masthead gives the project poster priority. Its native sti
 Gallery: when every published album is marked `siteArtwork`, render `StudyPlate`, a still paper composition: one 4:5 lead study, two unequal previews, explicit provenance, and a collection link. It uses natural media ratios; all three mounts link to the existing album. No 300svh stage for an archive without photographs. `room-timelines.ts` excludes this plate from generic media masks/parallax, keeping mobile and first-view art visible. The existing photo-capable Gallery scene and native album viewer remain for future personal media. No pinch/zoom support is claimed.
 
 See `design-research/DISCOVERY.md`, `REFERENCE_LEDGER.md`, and `CHECKPOINT.md` for direction comparisons, measured bounds, recordings, regression results and missing owner assets. The previous font/colour material for other rooms remains unchanged pending review.
+
+
+## Hard reset — Work / Gallery, after f5dac8b
+
+The controlling user direction now permits clearly labeled, art-directed project interpretations. Work replaces the former screenshot/copy exchange with a full-width SAT poster/study-desk sequence and an independent Huquq examination folio. Gallery replaces the forest print fan with a centered aperture, full-width typographic overprint, new original site-art prints and direct aperture-to-viewer opening. Its standalone album route remains. The archive uses a dark cabinet with typographic project prints and the ending uses paper. Shared fonts, homepage scenes and backend contracts remain. See [reset art direction and source mapping](design-research/reset/ART_DIRECTION.md) and the browser evidence alongside it. Historical descriptions above document earlier checkpoints.

@@ -1,0 +1,95 @@
+[
+  {
+    "timeMs": 10,
+    "desired": 0
+  },
+  {
+    "timeMs": 1009,
+    "desired": 0
+  },
+  {
+    "timeMs": 2003,
+    "desired": 0.08376666666691501,
+    "observed": "0.080"
+  },
+  {
+    "timeMs": 3001,
+    "desired": 0.25018333333358167,
+    "observed": "0.247"
+  },
+  {
+    "timeMs": 4009,
+    "desired": 0.41820000000049673,
+    "observed": "0.415"
+  },
+  {
+    "timeMs": 5002,
+    "desired": 0.5836000000002484,
+    "observed": "0.581"
+  },
+  {
+    "timeMs": 6002,
+    "desired": 0.750266666666915,
+    "observed": "0.746"
+  },
+  {
+    "timeMs": 7009,
+    "desired": 0.918233333333085,
+    "observed": "0.916"
+  },
+  {
+    "timeMs": 8009,
+    "desired": 1,
+    "observed": "1.000"
+  },
+  {
+    "timeMs": 9009,
+    "desired": 1,
+    "observed": "1.000"
+  },
+  {
+    "timeMs": 10009,
+    "desired": 0.9151833333335817,
+    "observed": "0.918"
+  },
+  {
+    "timeMs": 11013,
+    "desired": 0.7478666666671634,
+    "observed": "0.751"
+  },
+  {
+    "timeMs": 12009,
+    "desired": 0.5817999999995033,
+    "observed": "0.585"
+  },
+  {
+    "timeMs": 13009,
+    "desired": 0.41514999999975166,
+    "observed": "0.418"
+  },
+  {
+    "timeMs": 14001,
+    "desired": 0.24978333333383007,
+    "observed": "0.252"
+  },
+  {
+    "timeMs": 15009,
+    "desired": 0.08191666666666664,
+    "observed": "0.085"
+  },
+  {
+    "timeMs": 16009,
+    "desired": 0,
+    "observed": "0.000"
+  },
+  {
+    "timeMs": 17009,
+    "desired": 0,
+    "observed": "0.000"
+  },
+  {
+    "timeMs": 18009,
+    "desired": 0,
+    "observed": "0.000"
+  }
+]

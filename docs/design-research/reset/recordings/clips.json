@@ -1,0 +1,42 @@
+[
+  {
+    "name": "work-scroll.webm",
+    "viewport": "1366x768",
+    "recording": "910x512",
+    "durationSeconds": 22.8,
+    "playbackSpeed": 1,
+    "input": "native scrollTo, forward and reverse on a browser clock with endpoint holds; complete browser capture including loading/warmup",
+    "interactionDurationSeconds": 18,
+    "sourceCapture": "page@f1528d2c2f45401aaae3bf6b2b1583a0.webm"
+  },
+  {
+    "name": "1366-album.webm",
+    "viewport": "1366x768",
+    "recording": "910x512",
+    "durationSeconds": 15.44,
+    "playbackSpeed": 1,
+    "input": "print \u2192 aperture-to-print growth \u2192 right/left arrows \u2192 Escape \u2192 original print; complete browser capture including loading/warmup",
+    "interactionDurationSeconds": 12,
+    "sourceCapture": "page@4d8c059ea88c74781c122fe80de8175c.webm"
+  },
+  {
+    "name": "390-album.webm",
+    "viewport": "390x844",
+    "recording": "390x844",
+    "durationSeconds": 14.68,
+    "playbackSpeed": 1,
+    "input": "print \u2192 aperture-to-print growth \u2192 right/left arrows \u2192 Escape \u2192 original print; complete browser capture including loading/warmup",
+    "interactionDurationSeconds": 12,
+    "sourceCapture": "page@7cb1ee9c024752b19d452667ebb672a7.webm"
+  },
+  {
+    "name": "gallery-scroll.webm",
+    "viewport": "1366x768",
+    "recording": "910x512",
+    "durationSeconds": 26.6,
+    "playbackSpeed": 1,
+    "input": "native scrollTo, forward and reverse on a browser clock with endpoint holds; complete browser capture including loading/warmup",
+    "interactionDurationSeconds": 16,
+    "sourceCapture": "page@68549b297330d824dcfb400120eeea0f.webm"
+  }
+]

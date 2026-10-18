@@ -42,3 +42,9 @@
   .albumHeading h1 { font-size: clamp(44px, 12vw, 72px); }
   .albumNotes { grid-column: 1 / -1; justify-self: start; }
 }
+
+.collections { background: #d65c3d; color: #111114; padding-top: 70px; }
+.collectionHeading h2 { font-family: var(--font-body), sans-serif; font-size: clamp(48px, 7vw, 100px); letter-spacing: -.065em; }
+.collectionEntry { grid-template-columns: 10% minmax(0, 1fr) 160px; padding-block: 45px; }
+.collectionEntry h3 { font-family: var(--font-reading), serif; font-style: italic; font-size: clamp(48px, 7vw, 100px); }
+@media(max-width:799px) { .collectionEntry { grid-template-columns: 24px 1fr; } .collectionEntry h3 { font-size: 52px; } }

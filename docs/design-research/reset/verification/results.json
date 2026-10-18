@@ -1,0 +1,80 @@
+{
+  "build": "production",
+  "base": "http://127.0.0.1:3005",
+  "browser": "Chromium",
+  "workers": 1,
+  "liveWrites": false,
+  "checks": [
+    "viewer 1366: growth, arrows, focus trap/return, Escape, scroll unlock",
+    "viewer 1366: growth, arrows, focus trap/return, Escape, scroll unlock",
+    "Work/Gallery 1366: overflow, index, contact, native scene controls, source image loading, direct print opening",
+    "viewer 390: growth, arrows, focus trap/return, Escape, scroll unlock, synthetic swipe",
+    "viewer 390: growth, arrows, focus trap/return, Escape, scroll unlock, synthetic swipe",
+    "Work/Gallery 390: overflow, index, contact, native scene controls, source image loading, direct print opening",
+    "Work/Gallery 320: overflow, index, contact, native scene controls, source image loading, direct print opening",
+    "Work/Gallery 768: overflow, index, contact, native scene controls, source image loading, direct print opening",
+    "Work/Gallery 1024: overflow, index, contact, native scene controls, source image loading, direct print opening",
+    "reduced: normal flow, readable media, links, disclosures; no scroll pinning",
+    "nojs: normal flow, readable media, links, disclosures; no scroll pinning",
+    "Homepage focus phase; public routes; five project routes; anonymous owner rejection; five client scene changes without drift"
+  ],
+  "axe": [
+    {
+      "name": "huquq",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "contact-sheet",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "gallery-1366",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "viewer",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "viewer",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "gallery-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    }
+  ],
+  "runtime": [],
+  "performance": {
+    "work": {
+      "samples": 121,
+      "p95Ms": 17.30000000447035,
+      "maxMs": 27.30000000447035,
+      "longTasksMs": [],
+      "dom": 351
+    },
+    "gallery": {
+      "samples": 120,
+      "p95Ms": 21.30000000447035,
+      "maxMs": 25.799999997019768,
+      "longTasksMs": [],
+      "dom": 212
+    }
+  }
+}

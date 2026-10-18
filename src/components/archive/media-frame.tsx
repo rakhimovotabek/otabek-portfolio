@@ -7,10 +7,12 @@ export function MediaFrame({
   media,
   className = "",
   sizes = "(max-width: 700px) 90vw, 45vw",
+  eager = false,
 }: {
   media: ArchiveMedia;
   className?: string;
   sizes?: string;
+  eager?: boolean;
 }) {
   return (
     <figure className={`media-frame ${className}`} data-media-id={media.id}>
@@ -24,7 +26,7 @@ export function MediaFrame({
       >
         <div className="media-image">
           {media.src ? (
-            <Image src={media.src} alt={media.alt} fill sizes={sizes} />
+            <Image loading={eager ? "eager" : undefined} src={media.src} alt={media.alt} fill sizes={sizes} />
           ) : media.study ? (
             <div role="img" aria-label={media.alt}>
               <StudyArt kind={media.study} />

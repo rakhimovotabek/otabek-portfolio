@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import { gsap } from "gsap";
 import type { ArchiveMedia } from "@/data/archive";
 import { MediaFrame } from "@/components/archive/media-frame";
@@ -7,10 +7,11 @@ import styles from "./album-viewer.module.css";
 import { galleryMedia } from "@/components/signature/gallery-media";
 
 /** Native modal semantics, frame-origin expansion and directional image masks. */
-export function AlbumViewer({ images, title }: { images: readonly ArchiveMedia[]; title: string }) {
+export function AlbumViewer({ images, title, externalTriggers = false }: { images: readonly ArchiveMedia[]; title: string; externalTriggers?: boolean }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const origin = useRef<HTMLElement | null>(null);
   const originBox = useRef<DOMRect | null>(null);
+  const originMask = useRef("inset(0%)");
   const finalBox = useRef<DOMRect | null>(null);
   const visual = useRef<HTMLDivElement>(null);
   const incoming = useRef<HTMLDivElement>(null);
@@ -26,6 +27,28 @@ export function AlbumViewer({ images, title }: { images: readonly ArchiveMedia[]
   const [previous, setPrevious] = useState<number | null>(null);
   const [open, setOpen] = useState(false);
   const image = images[index];
+  const openAt = useCallback((i: number, trigger: HTMLElement) => {
+    if (dialog.current?.open || !Number.isInteger(i) || i < 0 || i >= images.length) return;
+    origin.current = trigger;
+    originBox.current = (trigger.querySelector(".media-window") || trigger.parentElement?.querySelector(".media-window") || trigger).getBoundingClientRect();
+    originMask.current = getComputedStyle(trigger.closest("[data-gallery-aperture]") || trigger).clipPath;
+    current.current = i;
+    setPrevious(null);
+    setIndex(i);
+    opening.current = true;
+    closing.current = false;
+    setOpen(true);
+    dialog.current?.showModal();
+  }, [images.length]);
+  useEffect(() => {
+    if (!externalTriggers) return;
+    const openStudy = (event: Event) => {
+      const detail = (event as CustomEvent<{ index: number; origin: HTMLElement }>).detail;
+      if (detail?.origin instanceof HTMLElement) openAt(detail.index, detail.origin);
+    };
+    window.addEventListener("portfolio:open-gallery-study", openStudy);
+    return () => window.removeEventListener("portfolio:open-gallery-study", openStudy);
+  }, [externalTriggers, openAt]);
   const change = (step: number) => {
     if (images.length < 2 || closing.current) return;
     direction.current = step;
@@ -82,7 +105,9 @@ export function AlbumViewer({ images, title }: { images: readonly ArchiveMedia[]
             y: start.y + start.height / 2 - end.y - end.height / 2,
             scaleX: start.width / end.width,
             scaleY: start.height / end.height,
-          }, { x: 0, y: 0, scaleX: 1, scaleY: 1, duration: .65, ease: "power3.inOut", clearProps: "transform" });
+            rotation: -5,
+          }, { rotation: 0, x: 0, y: 0, scaleX: 1, scaleY: 1, duration: .78, ease: "power3.inOut", clearProps: "transform" });
+        timeline.fromTo(incoming.current, { clipPath: externalTriggers && originMask.current !== "none" ? originMask.current : "inset(0%)" }, { clipPath: "inset(0% round 0%)", duration: .78, ease: "power3.inOut", clearProps: "clipPath" }, 0);
       } else {
         const forward = direction.current > 0;
         timeline.fromTo(incoming.current, {
@@ -94,10 +119,10 @@ export function AlbumViewer({ images, title }: { images: readonly ArchiveMedia[]
       }
     }, dialog);
     return () => context.revert();
-  }, [index, open]);
+  }, [index, open, externalTriggers]);
   return (
     <>
-      <div className={`album-images ${styles.images}`}>
+      {!externalTriggers && <div className={`album-images ${styles.images}`}>
         {images.map((item, i) => (
           <div className={`album-mount ${styles.mount}`} key={item.id} id={item.id}>
             <MediaFrame media={galleryMedia(item)} sizes="(max-width: 799px) 95vw, 70vw" />
@@ -106,22 +131,11 @@ export function AlbumViewer({ images, title }: { images: readonly ArchiveMedia[]
               className={`view-study ${styles.openButton}`}
               aria-haspopup="dialog"
               aria-label={`View ${item.caption} full screen`}
-              onClick={event => {
-                if (dialog.current?.open) return;
-                origin.current = event.currentTarget;
-                originBox.current = event.currentTarget.parentElement!.querySelector(".media-window")!.getBoundingClientRect();
-                current.current = i;
-                setPrevious(null);
-                setIndex(i);
-                opening.current = true;
-                closing.current = false;
-                setOpen(true);
-                dialog.current?.showModal();
-              }}
+              onClick={event => openAt(i, event.currentTarget)}
             >Open image <span aria-hidden>↗</span></button>
           </div>
         ))}
-      </div>
+      </div>}
       <dialog
         ref={dialog}
         className={`album-dialog ${styles.viewer}`}
@@ -163,7 +177,7 @@ export function AlbumViewer({ images, title }: { images: readonly ArchiveMedia[]
               touch.current = null;
             }}
           >
-            <div className={styles.visual} ref={visual}>
+            <div className={styles.visual} ref={visual} style={{ "--viewer-factor": image.width / image.height, "--viewer-ratio": `${image.width} / ${image.height}` } as CSSProperties}>
               {previous !== null && images[previous] && <div className={`${styles.plane} ${styles.outgoing}`} ref={outgoing} aria-hidden><MediaFrame media={galleryMedia(images[previous])} sizes="90vw" /></div>}
               <div className={styles.plane} ref={incoming} data-viewer-current><MediaFrame media={galleryMedia(image)} sizes="90vw" /></div>
             </div>

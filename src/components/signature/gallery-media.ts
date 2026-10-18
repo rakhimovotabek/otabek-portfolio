@@ -2,6 +2,7 @@ import type { ArchiveMedia } from "@/data/archive";
 
 /** Descriptions of the Gallery's local color treatment; source records stay intact. */
 export function galleryMedia(media: ArchiveMedia): ArchiveMedia {
+  if (media.src) return media;
   if (media.id === "study-balance")
     return { ...media, alt: "Original composition of a forest-green circle and a terracotta plane" };
   if (media.id === "study-contour")

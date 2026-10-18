@@ -259,3 +259,10 @@ export const projectCaptures: Record<string, readonly ArchiveMedia[]> = {
   "huquq-test": [{ id: "huquq-sign-in", src: "/images/work/huquq-sign-in.webp", width: 720, height: 564,
     alt: "Yangiariq Yuridik Senter public sign-in interface", caption: "Huquq Test / Yangiariq Yuridik Senter sign-in", placeholderLabel: "", credit: "Captured from yangiariq-yuridik-senter.netlify.app" }],
 };
+
+/** Original demonstration prints made for the Gallery reset, not personal photographs. */
+export const exhibitionStudies: readonly ArchiveMedia[] = [
+  { id: "study-volume", src: "/images/studies/interval.svg", alt: "Original vermilion graphic study of interwoven dark ribbons and fine contour lines", caption: "Study 01 / Interval", width: 1200, height: 1500, placeholderLabel: "", credit: "Original site artwork · vector study" },
+  { id: "study-contour", src: "/images/studies/counterform.svg", alt: "Original oversized cream italic letter g with a vermilion counterpoint on an ink field", caption: "Study 02 / Counterform", width: 1200, height: 1500, placeholderLabel: "", credit: "Original site artwork · vector study" },
+  { id: "study-balance", src: "/images/studies/intersection.svg", alt: "Original striped vermilion diamond interrupted by concentric circles on warm paper", caption: "Study 03 / Intersection", width: 1200, height: 1500, placeholderLabel: "", credit: "Original site artwork · vector study" },
+];
