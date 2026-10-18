@@ -12,6 +12,7 @@ import { WorkActions } from "@/components/universe/work-actions";
 import { FilterScene } from "@/components/universe/filter-scene";
 import { WorkExhibition } from "@/components/signature/work-exhibition";
 import styles from "./work.module.css";
+import system from "@/components/signature/editorial-system.module.css";
 
 export const metadata: Metadata = { title: `Work — ${site.brand}` };
 
@@ -35,7 +36,7 @@ export default async function WorkPage({
   );
 
   return (
-    <div className={`inner-page work-page ${styles.page}`}>
+    <div className={`inner-page work-page ${styles.page} ${system.system} ${system.ink}`}>
       <header className={styles.opening}>
         <h1 data-page-title>
           <span>Selected <em>work.</em></span>
@@ -78,7 +79,7 @@ export default async function WorkPage({
                   <span className={styles.number}>{String(i + 1).padStart(2, "0")}</span>
                   <h3>
                     <Link href={`/work/${work.slug}`}>
-                      {work.title}<span aria-hidden>↗</span>
+                      {work.title}<span aria-hidden>→</span>
                     </Link>
                   </h3>
                   <span className={styles.discipline}>{work.discipline}</span>

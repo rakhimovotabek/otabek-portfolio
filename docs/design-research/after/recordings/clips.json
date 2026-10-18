@@ -1,0 +1,38 @@
+[
+  {
+    "name": "work-scroll.webm",
+    "viewport": "1366x768",
+    "recording": "910x512",
+    "playbackSpeed": 1,
+    "input": "native scrollTo, forward and reverse on a 16s browser clock; warmup trimmed",
+    "targetDurationSeconds": 16,
+    "durationSeconds": 15.4
+  },
+  {
+    "name": "gallery-scroll.webm",
+    "viewport": "1366x768",
+    "recording": "910x512",
+    "playbackSpeed": 1,
+    "input": "native scrollTo, forward and reverse on a 16s browser clock; warmup trimmed",
+    "targetDurationSeconds": 16,
+    "durationSeconds": 15.6
+  },
+  {
+    "name": "1366-album.webm",
+    "viewport": "1366x768",
+    "recording": "910x512",
+    "playbackSpeed": 1,
+    "input": "collection link \u2192 viewer \u2192 right/left arrows \u2192 Escape \u2192 browser Back",
+    "targetDurationSeconds": 20,
+    "durationSeconds": 19.24
+  },
+  {
+    "name": "390-album.webm",
+    "viewport": "390x844",
+    "recording": "390x844",
+    "playbackSpeed": 1,
+    "input": "collection link \u2192 viewer \u2192 right/left arrows \u2192 Escape \u2192 browser Back",
+    "targetDurationSeconds": 20,
+    "durationSeconds": 19.88
+  }
+]

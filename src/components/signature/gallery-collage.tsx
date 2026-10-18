@@ -6,9 +6,13 @@ import shell from "./signature.module.css";
 import styles from "./gallery-exhibition.module.css";
 import art from "./gallery-art.module.css";
 import { galleryMedia } from "./gallery-media";
+import { StudyPlate } from "./study-plate";
 
 /** A composed triptych of real published media, without invented photographs. */
 export function GalleryCollage({ albums }: { albums: readonly GalleryAlbum[] }) {
+  if (albums.length && albums.every(album => album.siteArtwork)) {
+    return <StudyPlate albums={albums} />;
+  }
   const images = albums.flatMap(album => album.images.map(media => ({
     media, href: `/gallery/${album.slug}`, siteArtwork: album.siteArtwork,
   }))).slice(0, 3);

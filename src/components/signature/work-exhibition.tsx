@@ -44,22 +44,20 @@ export function WorkExhibition({ works }: { works: readonly WorkEntry[] }) {
                 ) : (
                   <span>Images to come.</span>
                 )}
-                <span className={styles.artCaption}>
-                  {work.images.length
-                    ? "Selected project image"
-                    : "Concept artwork · not an application screenshot"}
-                </span>
               </Link>
+              <span className={artDirection.provenance} data-exhibit-caption>
+                {work.images.length ? "Selected project image" : "Concept artwork · not an app screenshot"}
+              </span>
               <div className={styles.exhibitCopy} data-exhibit-copy>
                 <p>{work.description.split(/(?<=\.)\s/)[0]}</p>
                 <Link href={`/work/${work.slug}`} className={styles.explore}>
-                  View project <span aria-hidden>↗</span>
+                  View case study <span aria-hidden>→</span>
                 </Link>
               </div>
             </article>
           ))}
           <div className={styles.stageFooter}>
-            <div className={styles.exhibitNav} aria-label="Choose an exhibit">
+            <div className={styles.exhibitNav} role="group" aria-label="Choose an exhibit">
               {works.slice(0, 2).map((work, i) => (
                 <button
                   type="button"

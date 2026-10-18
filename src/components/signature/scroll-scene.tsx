@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef, type ReactNode } from "react";
 import type { MotionEngine } from "@/components/motion/tokens";
 import styles from "./signature.module.css";
 import { galleryMotion } from "./gallery-motion";
+import { workMotion } from "./work-motion";
 
 export type SceneKind = "work" | "gallery" | "about";
 
@@ -54,7 +55,9 @@ export function ScrollScene({
               delete host.dataset.progress;
             };
           },
-          root,
+          // Keep the mounted element as the scope during teardown; React clears
+          // ref.current before GSAP has finished reverting its selectors.
+          host!,
         );
       })
       .catch(() => {
@@ -117,49 +120,7 @@ function createTimeline(
     timeline.eventCallback("onUpdate", () =>
       activate(timeline.progress() < 0.48 ? 0 : 1),
     );
-    panels.forEach((panel, i) => {
-      const art = panel.querySelector("[data-exhibit-art]");
-      const title = panel.querySelector("[data-exhibit-title]");
-      const copy = panel.querySelector("[data-exhibit-copy]");
-      const geometry = panel.querySelector("svg");
-      const start = i * 0.5;
-      if (i) gsap.set(panel, { yPercent: 100 });
-      gsap.set(copy, { autoAlpha: 0, y: 35 });
-      if (i) timeline.to(panel, { yPercent: 0, duration: 0.12 }, 0.4);
-      timeline.to(
-        art,
-        {
-          x: () => -stage.clientWidth * 0.42,
-          y: () => stage.clientHeight * 0.05,
-          scale: 0.73,
-          rotation: i ? 3 : -4,
-          duration: 0.17,
-        },
-        start + 0.06,
-      );
-      timeline.to(
-        title,
-        {
-          x: () => stage.clientWidth * 0.47,
-          y: () => -stage.clientHeight * 0.07,
-          scale: 0.5,
-          duration: 0.17,
-        },
-        start + 0.06,
-      );
-      timeline.to(copy, { autoAlpha: 1, y: 0, duration: 0.1 }, start + 0.17);
-      if (geometry)
-        timeline.to(
-          geometry,
-          { rotation: i ? -12 : 16, scale: 1.15, duration: 0.26 },
-          start,
-        );
-      if (!i) {
-        timeline.to(panel, { yPercent: -24, duration: 0.12 }, 0.4);
-        timeline.to(art, { rotation: -10, scale: 0.62, duration: 0.12 }, 0.4);
-      }
-    });
-    timeline.to(q("[data-stage-rule]"), { scaleX: 1, duration: 1 }, 0);
+    workMotion(gsap, timeline, host, stage);
     q("[data-jump]").forEach((button, i) => {
       const jump = () => {
         const trigger = timeline.scrollTrigger!;

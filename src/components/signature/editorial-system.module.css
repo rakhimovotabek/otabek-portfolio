@@ -1,0 +1,19 @@
+/* Scoped to Work / Gallery; the reference homepage and admin keep their system. */
+.system {
+  --ink: #111114;
+  --paper: #f2efe7;
+  --accent: #284bff;
+  --page-gutter: var(--public-gutter);
+  --measure: 65ch;
+  --display-fluid: clamp(4.2rem, 8vw, 8rem);
+  --ease-editorial: cubic-bezier(.22, 1, .36, 1);
+  --ease-energetic: cubic-bezier(.76, 0, .24, 1);
+  --grid-columns: 12;
+  --grid-gap: 24px;
+}
+.ink { --bg: var(--ink); --fg: var(--paper); --muted: #b9b7b1; --line: #4a4d55; }
+.paper { --bg: var(--paper); --fg: var(--ink); --muted: #62615d; --line: #d7d4cc; }
+.ultramarine { --bg: var(--accent); --fg: var(--paper); --muted: #e2e7ff; --line: #a7b4ff; }
+.system a, .system button, .system summary { touch-action: manipulation; }
+@media (min-width: 800px) and (max-width: 1099px) { .system { --grid-columns: 8; } }
+@media (max-width: 799px) { .system { --grid-columns: 4; --grid-gap: 16px; } }

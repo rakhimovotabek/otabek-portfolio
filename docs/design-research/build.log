@@ -1,0 +1,52 @@
+npm notice run otabek-portfolio@0.1.0 build
+npm notice run next build
+▲ Next.js 16.4.0 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 28ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 42s
+  Running TypeScript ...
+  Finished TypeScript in 5.4s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/21) ...
+  Generating static pages using 3 workers (5/21)
+  Generating static pages using 3 workers (10/21)
+  Generating static pages using 3 workers (15/21)
+✓ Generating static pages using 3 workers (21/21) in 652ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin
+├ ƒ /admin/login
+├ ƒ /api/auth/[action]
+├ ƒ /api/comments
+├ ƒ /api/community/config
+├ ƒ /api/contact
+├ ƒ /api/owner/comments
+├ ƒ /api/owner/comments/[id]
+├ ƒ /api/owner/inbox
+├ ƒ /api/owner/inbox/[id]
+├ ƒ /api/owner/overview
+├ ○ /gallery
+├   /gallery/[slug]
+│ └ ● /gallery/site-studies
+├ ○ /guestbook
+├ ○ /icon.svg
+├ ○ /journal
+├ ● /journal/[slug]
+├ ○ /links
+├ ƒ /work
+└   /work/[slug]
+  ├ ● /work/sat-chi
+  ├ ● /work/huquq-test
+  ├ ● /work/sme-financial-assistant
+  └ ● [+2 more paths]
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

@@ -1,0 +1,78 @@
+{
+  "session": {
+    "base": "http://127.0.0.1:3005",
+    "build": "production",
+    "browser": "Chromium",
+    "workers": 1,
+    "seeded": false,
+    "liveWrites": false
+  },
+  "states": [
+    {
+      "label": "work",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    }
+  ],
+  "checks": [],
+  "runtime": {
+    "console": [
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      }
+    ],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:3005/work?category=physical&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=creative&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=digital&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "badStatus": []
+  },
+  "axe": [
+    {
+      "name": "work-exhibit",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    }
+  ],
+  "failure": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.contact-dialog').getByLabel('Your message', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <textarea rows=\"4\" required=\"\" name=\"message\" minlength=\"10\" maxlength=\"4000\" aria-invalid=\"false\" id=\"private-contact-message\" placeholder=\"What’s on your mind?\" aria-labelledby=\"private-contact-message-label\" aria-describedby=\"private-contact-message-limit\"></textarea>\u001b[22m\n\u001b[2m    - fill(\"Project: sat-chi — review only, no submission\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    60 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+}

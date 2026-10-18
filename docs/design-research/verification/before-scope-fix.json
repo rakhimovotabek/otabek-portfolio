@@ -1,0 +1,761 @@
+{
+  "session": {
+    "base": "http://127.0.0.1:3005",
+    "build": "production",
+    "browser": "Chromium",
+    "workers": 1,
+    "seeded": false,
+    "liveWrites": false
+  },
+  "states": [
+    {
+      "label": "work",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 345.59375,
+          "height": 431.984375,
+          "clipPath": "none"
+        },
+        {
+          "width": 193.328125,
+          "height": 144.984375,
+          "clipPath": "none"
+        },
+        {
+          "width": 144.984375,
+          "height": 177.203125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "work",
+      "width": 390,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 390,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 294.96875,
+          "height": 368.703125,
+          "clipPath": "none"
+        },
+        {
+          "width": 163.5,
+          "height": 122.625,
+          "clipPath": "none"
+        },
+        {
+          "width": 138.96875,
+          "height": 169.84375,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "work",
+      "width": 320,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 320,
+      "overflow": false,
+      "navX": 16,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 234.765625,
+          "height": 293.453125,
+          "clipPath": "none"
+        },
+        {
+          "width": 128.5,
+          "height": 96.375,
+          "clipPath": "none"
+        },
+        {
+          "width": 109.21875,
+          "height": 133.484375,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "work",
+      "width": 768,
+      "overflow": false,
+      "navX": 19.953125,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 768,
+      "overflow": false,
+      "navX": 19.953125,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 613.25,
+          "height": 766.5625,
+          "clipPath": "none"
+        },
+        {
+          "width": 348.546875,
+          "height": 261.40625,
+          "clipPath": "none"
+        },
+        {
+          "width": 296.25,
+          "height": 362.078125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "4"
+      }
+    },
+    {
+      "label": "work",
+      "width": 1024,
+      "overflow": false,
+      "navX": 26.609375,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "8"
+      }
+    },
+    {
+      "label": "gallery",
+      "width": 1024,
+      "overflow": false,
+      "navX": 26.609375,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 343.421875,
+          "height": 429.265625,
+          "clipPath": "none"
+        },
+        {
+          "width": 176.75,
+          "height": 132.5625,
+          "clipPath": "none"
+        },
+        {
+          "width": 143.609375,
+          "height": 175.515625,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "8"
+      }
+    },
+    {
+      "label": "reduced-work",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "reduced-gallery",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 345.59375,
+          "height": 431.984375,
+          "clipPath": "none"
+        },
+        {
+          "width": 193.328125,
+          "height": 144.984375,
+          "clipPath": "none"
+        },
+        {
+          "width": 144.984375,
+          "height": 177.203125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "nojs-work",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [],
+      "theme": {
+        "bg": "rgb(17, 17, 20)",
+        "fg": "rgb(242, 239, 231)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    },
+    {
+      "label": "nojs-gallery",
+      "width": 1366,
+      "overflow": false,
+      "navX": 35.515625,
+      "mainX": 0,
+      "media": [
+        {
+          "width": 345.59375,
+          "height": 431.984375,
+          "clipPath": "none"
+        },
+        {
+          "width": 193.328125,
+          "height": 144.984375,
+          "clipPath": "none"
+        },
+        {
+          "width": 144.984375,
+          "height": 177.203125,
+          "clipPath": "none"
+        }
+      ],
+      "theme": {
+        "bg": "rgb(242, 239, 231)",
+        "fg": "rgb(17, 17, 20)",
+        "gutter": "clamp(16px, 2.6vw, 44px)",
+        "columns": "12"
+      }
+    }
+  ],
+  "checks": [
+    "Message editing untested: preview submissions disabled; no Turnstile site key. Prefill and dialog open/close verified.",
+    "viewer 1366: arrows, Escape, trap, focus return, scroll unlock",
+    "Work/Gallery 1366: reflow, source media, project index, static gallery, targets",
+    "viewer 390: arrows, Escape, trap, focus return, scroll unlock, synthetic swipe",
+    "Work/Gallery 390: reflow, source media, project index, static gallery, targets",
+    "Work/Gallery 320: reflow, source media, project index, static gallery, targets",
+    "Work/Gallery 768: reflow, source media, project index, static gallery, targets",
+    "Work/Gallery 1024: reflow, source media, project index, static gallery, targets",
+    "viewer 1366: arrows, Escape, trap, focus return, scroll unlock",
+    "reduced: readable content, links, media, native disclosures, no scroll trap",
+    "nojs: readable content, links, media, native disclosures, no scroll trap",
+    "Home hero focus; all public routes; five project URLs; 15 client route changes; owner API rejects anonymous access; admin public scene absent"
+  ],
+  "runtime": {
+    "console": [
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/gallery/site-studies",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/36a0xhfk9pr_k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/0h6un77a23c-n.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/",
+        "text": "The resource http://127.0.0.1:3005/_next/static/chunks/3o9smfja5v42u.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      },
+      {
+        "type": "warning",
+        "route": "http://127.0.0.1:3005/work",
+        "text": "Invalid scope"
+      }
+    ],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:3005/work?category=digital&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=-9sLjSlgneXyRTK-",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=HFI9eSoz95Ty8BIt",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=digital&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?category=physical&_rsc=ebxhI9ek-oKkZVJy",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=tXyZJ52UQVBCVsD3",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=TmM_xKGPrZ30O3U6",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=PPJxfRJ-k5tS7084",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=PHlL9_R32Alzzlxs",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=m3uBOsJdzrgzqUQz",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=aLpEJ96a8vtQf-t8",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:3005/work?_rsc=tXyZJ52UQVBCVsD3",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "badStatus": []
+  },
+  "axe": [
+    {
+      "name": "work-exhibit",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "gallery-desktop",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "viewer",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "gallery-mobile",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "viewer",
+      "violations": [],
+      "incomplete": []
+    }
+  ],
+  "alignment": [
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625,
+    35.515625
+  ],
+  "performance": {
+    "samples": 121,
+    "p95Ms": 17.099999997764826,
+    "maxMs": 19.399999998509884,
+    "longTasksMs": [],
+    "dom": 306,
+    "jsHeapBytes": 23837442,
+    "taskSeconds": 0.165278,
+    "wallSeconds": 2.022686000000249
+  }
+}

@@ -8,6 +8,9 @@ import { roomTimelines } from "./room-timelines";
 export function PageMotion({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    // ScrollTrigger may refresh during the next room's layout effect, after
+    // React has cleared this room's ref but before passive cleanup runs.
+    const host = root.current;
     let disposed = false;
     let cleanup: (() => void) | undefined;
     void Promise.all([
@@ -16,7 +19,7 @@ export function PageMotion({ children }: { children: ReactNode }) {
       document.fonts.ready,
     ])
       .then(([{ gsap }, { ScrollTrigger }]) => {
-        if (disposed || !root.current) return;
+        if (disposed || !host) return;
         gsap.registerPlugin(ScrollTrigger);
         const media = gsap.matchMedia();
         cleanup = () => media.revert();
@@ -27,20 +30,20 @@ export function PageMotion({ children }: { children: ReactNode }) {
             pointer: "(hover: hover) and (pointer: fine)",
           },
           (context) => {
-            if (!context.conditions?.motion || !root.current) return;
+            if (!context.conditions?.motion) return;
             const roomCleanup = roomTimelines(
               gsap,
-              root.current,
+              host,
               !!context.conditions.pointer,
             );
             const heroCleanup = heroTimeline(
               gsap,
-              root.current,
+              host,
               !!context.conditions.desktop,
             );
             const editorialCleanup = editorialTimelines(
               gsap,
-              root.current,
+              host,
               !!context.conditions.desktop,
               !!context.conditions.pointer,
             );
@@ -50,7 +53,7 @@ export function PageMotion({ children }: { children: ReactNode }) {
               roomCleanup();
             };
           },
-          root,
+          host,
         );
       })
       .catch(() => {

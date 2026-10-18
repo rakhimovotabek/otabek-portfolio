@@ -1,0 +1,45 @@
+npm notice run otabek-portfolio@0.1.0 test:backend
+npm notice run node --conditions=react-server --import tsx --test tests/backend/*.test.ts
+✔ contact: valid submission persists privately with unread default (3731.632719ms)
+✔ contact: empty, short, overlong, honeypot and privileged fields rejected (9.689148ms)
+✔ HTTP body byte cap, invalid JSON/UTF-8 and media type enforced (1.836343ms)
+✔ CAPTCHA failure prevents inserts and consumes persistent quota (5.93307ms)
+✔ Turnstile real mode validates hostname/action, rejects replay failure and fails closed on outage (2.262009ms)
+✔ rate limit is shared by contacts/comments and enforced by the database (74.103626ms)
+✔ daily and global quotas cannot be bypassed by resetting a process (559.067622ms)
+✔ comments default to pending for valid guestbook and project targets (19.333859ms)
+✔ private endpoints reject anonymous, invalid, non-owner, and non-MFA identities (25.771891ms)
+✔ owner can read pending, approve/reject comments, and update inbox statuses (191.370064ms)
+✔ approved-only public projection, stable cursor pagination, and safe text output (16.027457ms)
+✔ RLS/grants: anonymous clients cannot access inbox, private tables, pending fields, or write (31.003052ms)
+✔ RLS/grants: authenticated non-owners and AAL1 owners see no private rows (30.278412ms)
+✔ database constraints and server credential column restrictions (18.186525ms)
+✔ configuration fails closed; origins/IP hashes cannot fall back to forwarded client headers (10.606915ms)
+✔ owner verifier uses network-verified identity and hides backend errors (0.374301ms)
+✔ production Supabase DAL requests enforce projections, minimal inserts and owner JWTs (8.080181ms)
+✔ body stream timeouts and incremental size limits prevent unbounded reads (5003.230335ms)
+✔ public submissions and owner mutations reject foreign origins (8.466623ms)
+✔ API errors hide internal details and never report a failed insert as success (156.623214ms)
+✔ production accepts complete real configuration but blocks test secrets, insecure origins and local IP fallback (2.833524ms)
+✔ migration project IDs match the central portfolio configuration (76.52483ms)
+✔ public configuration rejects owner/user JWTs and accepts only supported public key types (1.313987ms)
+✔ pre-MFA identity RPC grants no private access and remains unavailable to anon (9.696166ms)
+✔ owner overview and status-filtered lists require MFA authorization (32.002535ms)
+✔ owner auth rejects anonymous, invalid credentials and cross-origin requests (189.395078ms)
+✔ non-owner password login is denied before MFA enrollment (32.369007ms)
+✔ owner password login requires MFA; private reads still denied (48.356108ms)
+✔ MFA success authorizes owner, refresh works, logout revokes and clears (56.507032ms)
+✔ allowlisted first owner can enroll TOTP and must verify before access (30.992634ms)
+✔ cookie settings are HttpOnly, SameSite Strict and production Secure (2.256043ms)
+✔ expired access refreshes safely; invalid refresh clears the browser session (34.795431ms)
+✔ logout clears cookies and honestly reports unavailable remote revocation (2.85578ms)
+✔ cookie API adapter preserves GET and streaming mutation bodies (202.269815ms)
+✔ production owner login refuses insecure or noncanonical website origins (3.084769ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11858.290752
