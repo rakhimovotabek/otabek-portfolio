@@ -39,6 +39,7 @@ export async function endpoint(task: () => Promise<Response>) {
 export async function readBody<T>(
   request: Request,
   schema: z.ZodType<T>,
+  maxBytes = MAX_BODY_BYTES,
 ): Promise<T> {
   if (
     request.headers.get("content-type")?.split(";")[0].trim().toLowerCase() !==
@@ -48,7 +49,7 @@ export async function readBody<T>(
   const length = request.headers.get("content-length");
   if (
     length !== null &&
-    (!/^\d+$/.test(length) || Number(length) > MAX_BODY_BYTES)
+    (!/^\d+$/.test(length) || Number(length) > maxBytes)
   )
     throw new ApiError(413, "request_too_large");
   if (!request.body) throw new ApiError(400, "invalid_input");
@@ -67,7 +68,7 @@ export async function readBody<T>(
       const { value, done } = await Promise.race([reader.read(), expired]);
       if (done) break;
       size += value.byteLength;
-      if (size > MAX_BODY_BYTES) {
+      if (size > maxBytes) {
         void reader.cancel().catch(() => {});
         throw new ApiError(413, "request_too_large");
       }

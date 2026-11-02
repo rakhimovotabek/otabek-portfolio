@@ -5,6 +5,7 @@ import { authCookies } from "@/lib/auth/cookies";
 import { ownerClient } from "@/lib/backend/runtime";
 import { ApiError } from "@/lib/backend/errors";
 import { AdminDashboard } from "@/components/admin/dashboard";
+import {ContentStudio} from "@/components/production/cms";
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Private archive",
@@ -34,5 +35,5 @@ export default async function AdminPage() {
       </main>
     );
   }
-  return <AdminDashboard />;
+  return <><AdminDashboard /><ContentStudio /></>;
 }

@@ -1,0 +1,1 @@
+import {Beyond} from "@/components/production/beyond";export default function Page(){return <Beyond/>}

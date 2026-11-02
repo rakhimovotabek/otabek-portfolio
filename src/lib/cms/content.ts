@@ -1,0 +1,8 @@
+import 'server-only';
+import {createClient} from '@supabase/supabase-js';
+import {publicConfig} from '@/lib/backend/config';
+export type Content={kind:string;slug:string;title:string;body:string;excerpt:string;image:string;url:string;album:string;position:number;published:boolean};
+export function cmsClient(token?:string){const {url,key}=publicConfig();return createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false},global:{headers:token?{Authorization:`Bearer ${token}`}:{},fetch:(url,init)=>fetch(url,{...init,cache:'no-store',signal:AbortSignal.timeout(8000)})}})}
+export async function published(kind:string):Promise<{items:Content[];available:boolean}>{try{const {data,error}=await cmsClient().from('portfolio_content').select('*').eq('kind',kind).eq('published',true).order('position');if(error)throw error;return {items:data??[],available:true}}catch{return {items:[],available:false}}}
+export const initialProjects:Content[]=[{kind:'project',slug:'satchi',title:"SAT'chi",body:'SAT learning and practice: question banks, books, homework, vocabulary, battles and progress tracking.',excerpt:'SAT practice and learning tools',image:'/projects/satchi-concept-a.webp',url:'https://satchi.vercel.app/',album:'',position:0,published:true},{kind:'project',slug:'huquqchi',title:'Huquqchi',body:'A legal education and testing platform.',excerpt:'Legal education and testing',image:'/projects/huquqchi-concept-a.webp',url:'https://yangiariq-yuridik-senter.netlify.app/',album:'',position:1,published:true}];
+export async function projects(){const result=await published('project');return result.available?result.items:initialProjects}

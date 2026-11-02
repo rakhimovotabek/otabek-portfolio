@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08090a">
+<title>Otabek — Pit Stop v15 / Detail & 1.3x</title>
+<style>
+:root{color-scheme:dark;--ink:#f8f8f5;--bg:#070809;--paper:#f4f4f0;--ease:cubic-bezier(.76,0,.2,1)}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);font-family:Inter,Arial,Helvetica,sans-serif}button{font:inherit}button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+#loader{position:fixed;inset:0;overflow:hidden;background:var(--bg);isolation:isolate}
+.film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;background:#18191a}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.23),transparent 24%,transparent 78%,rgba(0,0,0,.22));z-index:1}
+.top{position:absolute;top:0;left:0;right:0;display:flex;align-items:flex-start;justify-content:space-between;padding:clamp(14px,2.7vw,30px);gap:12px;z-index:5;pointer-events:none}
+.corner{font:700 10px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;color:rgba(255,255,255,.9);letter-spacing:.18em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.buttons{display:flex;gap:8px;pointer-events:auto}.button{padding:10px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.43);background:rgba(8,8,9,.47);color:#fff;cursor:pointer;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;transition:background .12s,color .12s}.button:hover{background:white;color:#080808}
+.loading{position:absolute;top:clamp(70px,10vh,122px);left:50%;transform:translateX(-50%);z-index:4;text-align:center;color:#fff;white-space:nowrap;text-shadow:0 3px 15px rgba(0,0,0,.83)}
+.word{font-weight:850;font-size:clamp(24px,2.5vw,35px);line-height:1;letter-spacing:.11em}
+.word .glyph{display:inline-block;animation:enter .09s steps(2,end) backwards;animation-delay:calc(var(--n)*75ms)}
+@keyframes enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.dots{display:inline-block;min-width:1.4em;text-align:left;font:inherit;letter-spacing:0}
+.subtitle{margin-top:12px;font:10px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.22em;color:rgba(250,250,250,.83)}
+.bottom{position:absolute;bottom:clamp(20px,2.6vw,36px);left:clamp(18px,2.7vw,34px);right:clamp(18px,2.7vw,34px);z-index:5;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;color:#fff;text-shadow:0 2px 12px #000;pointer-events:none}
+.counter{font:700 clamp(26px,3.5vw,42px)/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-.06em;font-variant-numeric:tabular-nums}.status{font:10px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.2em;color:rgba(255,255,255,.8);text-transform:uppercase}
+.rail{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.18);z-index:7}.rail-fill{height:100%;background:white;transform:scaleX(0);transform-origin:left;will-change:transform}
+.wipe{position:absolute;inset:0;z-index:10;background:var(--paper);transform:translate3d(100%,0,0);pointer-events:none;will-change:transform}.wiping .wipe{transition:transform .72s var(--ease);transform:translate3d(0,0,0)}
+.ready{position:absolute;inset:0;z-index:11;background:var(--paper);display:grid;place-items:center;color:#111;opacity:0;visibility:hidden;pointer-events:none}.ready.visible{opacity:1;visibility:visible;pointer-events:auto}
+.ready-inside{text-align:center;padding:24px;opacity:0;transform:translate3d(65px,0,0)}.ready.visible .ready-inside{animation:readyIn .45s cubic-bezier(.16,1,.3,1) both}
+@keyframes readyIn{to{opacity:1;transform:translate3d(0,0,0)}}
+.ready small{display:block;color:#696969;font:11px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.21em;text-transform:uppercase}
+.ready h1{font-weight:950;font-size:clamp(100px,19vw,285px);line-height:.8;letter-spacing:-.105em;margin:18px 0 0}.ready p{color:#696969;font-size:13px;line-height:1.6;margin:24px 0}.ready button{background:#161616;border:none;color:#fff;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer}
+.error{position:absolute;inset:0;background:#080808;color:#fff;z-index:20;display:none;place-items:center;text-align:center;padding:24px}.error.visible{display:grid}.error p{max-width:400px;line-height:1.5;color:#bbb}
+@media(max-width:740px) and (orientation:portrait){.loading{top:clamp(100px,13vh,148px)}.word{font-size:clamp(25px,6vw,31px)}.subtitle{font-size:9px;letter-spacing:.13em}.wipe{transform:translate3d(0,100%,0)}.wiping .wipe{transform:translate3d(0,0,0)}.ready-inside{transform:translate3d(0,65px)}.top{padding:16px}.corner{font-size:9px}.button{font-size:10px;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.word .glyph{animation:none}.wiping .wipe{transition-duration:.24s}.ready.visible .ready-inside{animation-duration:.2s}}
+</style>
+</head>
+<body>
+<main id="loader" aria-label="Pit stop loading screen">
+  <video id="film" class="film" muted playsinline preload="auto" aria-hidden="true"></video>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="top"><div class="corner">PIT STOP <span style="opacity:.66">/</span> LOADING</div><div class="buttons"><button class="button" id="replay" type="button">Replay</button><button class="button" id="skip" type="button">Skip</button></div></div>
+  <div class="loading" role="status" aria-label="Loading"><div class="word" id="word"><span class="glyph" style="--n:0">L</span><span class="glyph" style="--n:1">O</span><span class="glyph" style="--n:2">A</span><span class="glyph" style="--n:3">D</span><span class="glyph" style="--n:4">I</span><span class="glyph" style="--n:5">N</span><span class="glyph" style="--n:6">G</span><span class="dots" id="dots">.</span></div><div class="subtitle">INITIALIZING YOUR EXPERIENCE</div></div>
+  <div class="bottom"><div id="counter" class="counter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">00%</div><div class="status">OTABEK / PIT LANE</div></div>
+  <div class="rail"><div id="railFill" class="rail-fill"></div></div>
+  <div id="wipe" class="wipe" aria-hidden="true"></div>
+  <section class="ready" id="ready"><div class="ready-inside"><small>sequence complete</small><h1>READY.</h1><p>The next frame would be your homepage.</p><button id="again" type="button">Replay</button></div></section>
+  <section class="error" id="error" role="alert"><div><h2>Footage unavailable</h2><p>This preview couldn't play the overhead pit stop film. You can skip to the ready state.</p><button id="errorSkip" class="button">Skip</button></div></section>
+</main>
+<script>
+(()=>{
+'use strict';
+const el=id=>document.getElementById(id),film=el('film'),loader=el('loader'),ready=el('ready'),dots=el('dots'),counter=el('counter'),rail=el('railFill'),error=el('error');
+const CLIPS={desktop:'./desktop.mp4',mobile:'./mobile.mp4'};
+const WIPE_AT=3.575;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+let state='idle',frame=0,dotsTimer=0,finishTimer=0,readyToken=0,lastCount=-1,source='';
+const isMobile=()=>matchMedia('(max-width:740px) and (orientation:portrait)').matches;
+function stop(){readyToken++;cancelAnimationFrame(frame);clearInterval(dotsTimer);clearTimeout(finishTimer);frame=0;film.pause();}
+function setProgress(v){const n=Math.round(clamp(v,0,100));rail.style.transform=`scaleX(${clamp(v/100)})`;if(n!==lastCount){lastCount=n;counter.textContent=String(n).padStart(2,'0')+'%';counter.setAttribute('aria-valuenow',String(n));}}
+function tick(){if(state!=='playing')return;const t=film.currentTime;setProgress(Math.floor(clamp(t/WIPE_AT)*100));if(t>=WIPE_AT){finish();return;}frame=requestAnimationFrame(tick);}
+function showReady(){if(state==='done')return;state='done';film.pause();setProgress(100);ready.classList.add('visible');window.dispatchEvent(new CustomEvent('pitstop:complete'));}
+function finish(){if(state==='done'||state==='wiping')return;state='wiping';cancelAnimationFrame(frame);clearInterval(dotsTimer);setProgress(100);loader.classList.add('wiping');const token=readyToken;finishTimer=setTimeout(()=>{if(token===readyToken)showReady()},matchMedia('(prefers-reduced-motion:reduce)').matches?250:700);}
+function start(){stop();const token=readyToken;state='preparing';ready.classList.remove('visible');error.classList.remove('visible');loader.classList.remove('wiping');const wipe=el('wipe');wipe.style.transition='none';void wipe.offsetWidth;requestAnimationFrame(()=>{if(token===readyToken)wipe.style.transition=''});setProgress(0);lastCount=0;let dotsCount=1;dots.textContent='.';dotsTimer=setInterval(()=>{if(state==='preparing'||state==='playing'){dotsCount=dotsCount%3+1;dots.textContent='.'.repeat(dotsCount)}},280);
+  for(const g of el('word').querySelectorAll('.glyph'))g.style.animation='none';void el('word').offsetWidth;for(const g of el('word').querySelectorAll('.glyph'))g.style.animation='';
+  const newSource=isMobile()?CLIPS.mobile:CLIPS.desktop;
+  if(source!==newSource){source=newSource;film.src=source;}
+  const play=()=>{
+    if(token!==readyToken||state!=='preparing')return;
+    film.play().then(()=>{
+      if(token!==readyToken||state!=='preparing')return;
+      state='playing';frame=requestAnimationFrame(tick);
+    }).catch(()=>{if(token===readyToken){state='error';error.classList.add('visible')}});
+  };
+  // Reload the same media when replaying from the ended state. Simply seeking to
+  // zero can leave Chromium's play promise pending on embedded video sources.
+  film.addEventListener('loadeddata',play,{once:true});
+  film.load();
+  if(film.readyState>=2)requestAnimationFrame(play);
+}
+el('replay').addEventListener('click',start);el('again').addEventListener('click',start);el('skip').addEventListener('click',()=>{stop();state='preparing';finish()});el('errorSkip').addEventListener('click',()=>{error.classList.remove('visible');stop();state='preparing';finish()});film.addEventListener('ended',()=>{if(state==='playing')finish()});film.addEventListener('error',()=>{if(state==='preparing'||state==='playing'){state='error';error.classList.add('visible')}});
+let lastMobile=isMobile();addEventListener('resize',()=>{const m=isMobile();if(m!==lastMobile){lastMobile=m;start()}},{passive:true});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='playing'){film.pause();cancelAnimationFrame(frame)}else if(!document.hidden&&state==='playing'){film.play().then(()=>frame=requestAnimationFrame(tick)).catch(()=>{})}});
+start();
+})();
+</script>
+<script>window.addEventListener('pitstop:complete',()=>parent.postMessage('pitstop:complete',location.origin));setTimeout(()=>{const v=document.querySelector('video');if(!v||v.error||v.readyState<2)parent.postMessage('pitstop:complete',location.origin)},3000);</script></body>
+</html>

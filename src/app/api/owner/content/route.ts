@@ -1,0 +1,12 @@
+import {z} from 'zod';
+import {ownerRequest} from '@/lib/auth/owner-request';
+import {ownerClient} from '@/lib/backend/runtime';
+import {cmsClient} from '@/lib/cms/content';
+import {bearerToken,endpoint,jsonResponse,readBody} from '@/lib/backend/http';
+import {ApiError,unavailable} from '@/lib/backend/errors';
+const identity=z.object({kind:z.enum(['project','journal','photo','album','settings']),slug:z.string().regex(/^[a-z0-9][a-z0-9-]{0,79}$/)});
+const schema=identity.extend({title:z.string().trim().min(1).max(200),body:z.string().max(50000),excerpt:z.string().max(500),image:z.string().max(2048).refine(v=>!v||v.startsWith('/projects/')||/^https:\/\//.test(v)),url:z.string().max(2048).refine(v=>!v||/^https:\/\//.test(v)),album:z.string().max(80),position:z.number().int().min(0).max(100000),published:z.boolean()}).strict();
+async function handle(request:Request){return endpoint(async()=>{const token=bearerToken(request);await ownerClient(token);const db=cmsClient(token);if(request.method==='GET'){const {data,error}=await db.from('portfolio_content').select('*').order('position');if(error)throw unavailable();return jsonResponse({items:data})}if(request.method==='DELETE'){const value=await readBody(request,identity.strict());const {data:record,error:lookupError}=await db.from('portfolio_content').select('image').eq('kind',value.kind).eq('slug',value.slug).maybeSingle();if(lookupError)throw unavailable();const {error}=await db.from('portfolio_content').delete().eq('kind',value.kind).eq('slug',value.slug);if(error)throw unavailable();if(record?.image){const prefix=db.storage.from('portfolio-media').getPublicUrl('').data.publicUrl;const {count}=await db.from('portfolio_content').select('slug',{count:'exact',head:true}).eq('image',record.image);if(count===0&&record.image.startsWith(prefix))await db.storage.from('portfolio-media').remove([record.image.slice(prefix.length)])}return jsonResponse({deleted:true})}if(request.method!=='PUT')throw new ApiError(405,'method_not_allowed');const value=await readBody(request,schema,256*1024);const {data,error}=await db.from('portfolio_content').upsert({...value,updated_at:new Date().toISOString()}).select().single();if(error)throw unavailable();return jsonResponse({item:data})})}
+export const GET=(r:Request)=>ownerRequest(r,handle);
+export const PUT=(r:Request)=>ownerRequest(r,handle);
+export const DELETE=(r:Request)=>ownerRequest(r,handle);

@@ -1,14 +1,1 @@
-import { Hero } from "@/components/sections/hero";
-import { About } from "@/components/sections/about";
-import { ProjectIndex } from "@/components/sections/project-index";
-import { Lately } from "@/components/universe/lately";
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <About compact />
-      <ProjectIndex featured />
-      <Lately />
-    </>
-  );
-}
+import {claude} from "@/data/claude";import {published} from "@/lib/cms/content";export const dynamic="force-dynamic";export default async function Page(){const {items}=await published("settings");const copy=items.find(i=>i.slug==="home");return <><div dangerouslySetInnerHTML={{__html:claude.home}}/>{copy&&<section className="editorial"><h2>{copy.title}</h2><p>{copy.body}</p></section>}</>}

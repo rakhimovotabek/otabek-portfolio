@@ -46,7 +46,7 @@ export function submissionConfig(env: NodeJS.ProcessEnv = process.env) {
       turnstileHostname: nonempty,
       hashSecret: z.string().min(32),
       ipHeader: z
-        .enum(["x-nf-client-connection-ip", "cf-connecting-ip"])
+        .enum(["x-nf-client-connection-ip", "cf-connecting-ip", "x-vercel-forwarded-for"])
         .optional(),
       mode: z.enum(["real", "test"]),
     })
@@ -81,6 +81,7 @@ export function submissionConfig(env: NodeJS.ProcessEnv = process.env) {
     (origin.protocol !== "https:" || !config.ipHeader)
   )
     throw unavailable();
+  if(config.ipHeader === "x-vercel-forwarded-for" && env.VERCEL !== "1") throw unavailable();
   const localIp =
     env.NODE_ENV !== "production" && env.BACKEND_LOCAL_IP === "true";
   if (!config.ipHeader && !localIp) throw unavailable();

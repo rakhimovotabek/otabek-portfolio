@@ -7,6 +7,7 @@ import "./archive.css";
 import "./worlds-theme.css";
 import "./universe.css";
 import "./room-motion.css";
+import "./claude.css";
 const body = localFont({
   src: "./fonts/DMSans.ttf",
   variable: "--font-body",

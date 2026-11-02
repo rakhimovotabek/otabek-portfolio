@@ -70,3 +70,11 @@ npm run build
 Keep content readable without animation. Reduced-motion preferences restore the exhibition and disable pinning, parallax, smooth scrolling and button transforms. Mobile uses natural scrolling. The selected desktop Vault preserves its chapter links and “Read as list” escape; full comments live on work detail pages. Public navigation and server-rendered category links work without JavaScript. Visitor forms need JavaScript and display accurate availability/errors. No JavaScript animation is required to read the portfolio.
 
 No private personal information or unverified social accounts are included. Never commit secret environment files or credentials; `.env.example` contains setup placeholders only. Downloaded reference ZIPs remain outside this repository and are unchanged.
+
+## Production integration (November 2026)
+
+The Claude Desktop design is implemented in the App Router. `/work` uses measured horizontal travel on desktop and native horizontal scrolling on mobile/reduced motion. `/connect` and `/guestbook` reuse the existing protected submission services. `/admin` retains owner MFA and adds Content Studio.
+
+Apply the additive `supabase/migrations/202611020001_content_and_media.sql` after the existing migrations; do not reset the database. It adds publication-protected content and an owner-only upload policy. Journal/photos use published database records; no sample posts or photographs are inserted. Use photo `album` values to group photographs. Published `settings` records with slug `home` or `about` add editable text to those pages.
+
+Configure all names in `.env.example` privately. On Vercel use `TRUSTED_IP_HEADER=x-vercel-forwarded-for` (accepted only when Vercel sets `VERCEL=1`). `SITE_ORIGIN` and `TURNSTILE_HOSTNAME` must match the production domain. Use real Turnstile keys in production; test bypasses remain prohibited. No credentials are committed. The deployment's Supabase credentials, owner MFA sign-in and real submissions require verification against the actual services.
